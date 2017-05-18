@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center" android:background="@color/white" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/item_min_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center|right" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/widget_common_height">
+        <TextView android:textColor="@color/white" android:gravity="center" android:id="@id/scene_cond_result_item_delete" android:background="@color/red" android:layout_width="@dimen/btn_common_width" android:layout_height="fill_parent" android:text="@string/scene_sel_cond_result_delete" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center|right" android:id="@id/scene_cond_result_item_shelter" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/widget_common_height">
+        <TextView android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/widget_common_height" android:contentDescription="@null" android:textIsSelectable="false" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_cond_result_item_move" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:id="@id/scene_cond_result_item_title_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/padding_hundred" android:textIsSelectable="false" android:alpha="0.7" />
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:textColorHint="@color/gray" android:gravity="right" android:id="@id/scene_cond_result_item_desc_txt" android:paddingLeft="@dimen/padding_three" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:textIsSelectable="false" android:alpha="0.7" />
+    </LinearLayout>
+</FrameLayout>

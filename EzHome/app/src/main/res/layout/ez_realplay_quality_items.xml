@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/preview_selection_bg" android:paddingTop="9.0dip" android:paddingBottom="6.0dip" android:layout_width="wrap_content" android:layout_height="105.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="@dimen/realplay_text_size" android:textColor="@color/quality_color_selector" android:id="@id/quality_hd_btn" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="13.0dip" android:text="@string/quality_hd" />
+    <Button android:textSize="@dimen/realplay_text_size" android:textColor="@color/quality_color_selector" android:id="@id/quality_balanced_btn" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="13.0dip" android:text="@string/quality_balanced" />
+    <Button android:textSize="@dimen/realplay_text_size" android:textColor="@color/quality_color_selector" android:id="@id/quality_flunet_btn" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="13.0dip" android:text="@string/quality_flunet" />
+</LinearLayout>

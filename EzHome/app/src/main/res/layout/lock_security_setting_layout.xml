@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_common_top_title_layout" />
+    <LinearLayout android:gravity="center" android:background="@color/white" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_twenty" android:minHeight="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/list_item_title_size" android:textStyle="bold" android:textColor="@color/list_item_title_color" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/executor_menu_lock_security" android:layout_weight="1.0" />
+        <Button android:layout_gravity="center_vertical" android:id="@id/lock_security_setting_button" android:background="@drawable/autologin_off" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/device_set_arrow_padding" android:layout_weight="0.0" />
+    </LinearLayout>
+</LinearLayout>

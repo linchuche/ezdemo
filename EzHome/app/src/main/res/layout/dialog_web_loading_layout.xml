@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/loading_bg" android:padding="@dimen/padding_twenty" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:id="@id/web_loading_progressbar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="false" android:indeterminateDrawable="@anim/ring_web_style" />
+    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:ellipsize="end" android:id="@id/web_loading_waiting_textvew" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_ten" android:text="@string/common_please_wait" android:singleLine="true" />
+</LinearLayout>

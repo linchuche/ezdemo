@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_common_top_title_layout" />
+    <com.android.potevio.easyhome.client.view.CustomPullToRefreshListView android:id="@id/camera_list_gridView" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@color/common_line_color" android:dividerHeight="@dimen/line_common_height" android:layout_weight="1.0" android:fastScrollEnabled="false" android:headerDividersEnabled="false" android:footerDividersEnabled="false" android:smoothScrollbar="true" />
+    <LinearLayout android:gravity="center" android:id="@id/camera_list_login_layout" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <include layout="@layout/camera_login_tip" />
+    </LinearLayout>
+</LinearLayout>

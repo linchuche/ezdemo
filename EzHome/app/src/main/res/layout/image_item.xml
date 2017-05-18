@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/item_pre_image_spacing"
+        android:background="@color/image_item_bg_color"
+        android:gravity="center"
+        android:minHeight="@dimen/image_item_width"
+        android:minWidth="@dimen/image_item_width"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@id/image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/item_padding"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@id/image_view_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColor="@color/gray_txt_color"
+                android:textIsSelectable="false"
+                android:textSize="@dimen/common_fontsize_normal" />
+
+            <ImageView
+                android:id="@id/image_view_sle_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/padding_ten"
+                android:contentDescription="@null"
+                android:scaleType="center"
+                android:src="@drawable/selected"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

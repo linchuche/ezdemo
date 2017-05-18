@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/top_title_bg_color"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/menu_layout_padding"
+    android:paddingRight="@dimen/menu_layout_padding">
+
+    <RelativeLayout
+        android:id="@id/room_menu_add_device_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/widget_common_height"
+        android:background="@drawable/press_transparent_selector"
+        android:orientation="horizontal"
+        android:padding="0.0dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="0.0dip"
+            android:singleLine="true"
+            android:text="@string/room_menu_add_device"
+            android:textColor="@color/white"
+            android:textSize="@dimen/common_fontsize_normal" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/line_common_height"
+        android:background="@color/common_line_color" />
+
+    <RelativeLayout
+        android:id="@id/room_menu_delete_device_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/widget_common_height"
+        android:background="@drawable/press_transparent_selector"
+        android:orientation="horizontal"
+        android:padding="0.0dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="0.0dip"
+            android:singleLine="true"
+            android:text="@string/room_menu_delete_device"
+            android:textColor="@color/white"
+            android:textSize="@dimen/common_fontsize_normal" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/line_common_height"
+        android:background="@color/common_line_color" />
+
+    <RelativeLayout
+        android:id="@id/room_menu_rename_room_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/widget_common_height"
+        android:background="@drawable/press_transparent_selector"
+        android:orientation="horizontal"
+        android:padding="0.0dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="0.0dip"
+            android:singleLine="true"
+            android:text="@string/room_menu_rename"
+            android:textColor="@color/white"
+            android:textSize="@dimen/common_fontsize_normal" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/line_common_height"
+        android:background="@color/common_line_color" />
+
+    <RelativeLayout
+        android:id="@id/room_menu_change_type_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/widget_common_height"
+        android:background="@drawable/press_transparent_selector"
+        android:orientation="horizontal"
+        android:padding="0.0dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="0.0dip"
+            android:singleLine="true"
+            android:text="@string/room_menu_change_type"
+            android:textColor="@color/white"
+            android:textSize="@dimen/common_fontsize_normal" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/line_common_height"
+        android:background="@color/common_line_color" />
+
+    <RelativeLayout
+        android:id="@id/room_menu_delete_room_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/widget_common_height"
+        android:background="@drawable/press_transparent_selector"
+        android:orientation="horizontal"
+        android:padding="0.0dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="0.0dip"
+            android:singleLine="true"
+            android:text="@string/room_menu_delete"
+            android:textColor="@color/white"
+            android:textSize="@dimen/common_fontsize_normal" />
+    </RelativeLayout>
+</LinearLayout>

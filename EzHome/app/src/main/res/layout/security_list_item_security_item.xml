@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/common_bg_color">
+
+    <FrameLayout
+        android:id="@id/security_item_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:id="@id/security_item_round_max_layout"
+            android:layout_width="@dimen/security_item_round_width"
+            android:layout_height="@dimen/security_item_round_width"
+            android:layout_gravity="center"
+            android:background="@drawable/security_item_round_bg"
+            android:gravity="center"
+            android:padding="5.0dip">
+
+            <com.android.potevio.easyhome.client.ui.widget.RoundProgressBar
+                android:id="@id/security_item_round1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android_custom:roundColor="@color/security_rund_back"
+                android_custom:roundProgressColor="@color/security_protect_yes"
+                android_custom:roundWidth="10.0dip"
+                android_custom:textIsDisplayable="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/security_item_round_min_layout"
+            android:layout_width="@dimen/security_item_round_width"
+            android:layout_height="@dimen/security_item_round_width"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="20.0dip">
+
+            <ImageView
+                android:id="@id/security_item_round2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                android:src="@drawable/security_noconfig" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/security_protect" />
+
+            <TextView
+                android:id="@id/security_item_round_tip_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_ten"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textIsSelectable="false"
+                android:textSize="@dimen/common_fontsize_normal" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@id/security_item_seting_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:paddingBottom="@dimen/padding_twenty"
+        android:paddingRight="@dimen/padding_twenty">
+
+        <com.android.potevio.easyhome.client.ui.widget.MarqueeTextView
+            android:id="@id/security_item_status_tv"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_twenty"
+            android:layout_weight="1.0"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textColor="@color/common_dark_font_color"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/common_fontsize_normal" />
+
+        <ImageView
+            android:id="@id/security_item_seting_iv"
+            android:layout_width="@dimen/padding_twenty"
+            android:layout_height="@dimen/padding_twenty"
+            android:contentDescription="@null"
+            android:src="@drawable/security_set_icon" />
+    </LinearLayout>
+</RelativeLayout>

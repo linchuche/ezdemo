@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SurfaceView android:layout_gravity="center" android:id="@id/scan_preview_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.potevio.enoceanscan.scan.view.ViewfinderView android:id="@id/scan_viewfinder_view" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/common_padding_ten" android:minWidth="@dimen/btn_min_width" android:text="@string/scan_tip_to_scan" android:singleLine="true" />
+</FrameLayout>

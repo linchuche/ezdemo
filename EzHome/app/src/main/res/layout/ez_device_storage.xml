@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/common_bg" android:paddingBottom="@dimen/padding_fifteen" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.potevio.easyhome.client.ui.widget.TitleWidget android:id="@id/title_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ez_device_storage_layout" android:background="@android:color/white" android:paddingLeft="@dimen/device_set_padding" android:paddingRight="@dimen/device_set_padding" android:layout_width="fill_parent" android:layout_height="@dimen/device_set_layout_height" android:layout_marginTop="@dimen/device_set_layout_padding">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:textSize="@dimen/device_set_sub_text_size" android:textColor="@color/common_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/ez_device_storage" android:layout_weight="1.0" />
+                    <TextView android:textSize="@dimen/device_set_text_size" android:textColor="@color/common_sub_text" android:layout_gravity="center_vertical" android:id="@id/ez_device_storage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="0.0" />
+                </LinearLayout>
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/device_set_arrow_padding" android:src="@drawable/arrow_next" android:layout_weight="0.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

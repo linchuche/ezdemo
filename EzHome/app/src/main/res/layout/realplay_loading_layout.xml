@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/realplay_loading_rl" android:background="@color/black_bg" android:layout_width="fill_parent" android:layout_height="200.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/realplay_tip_text_size" android:textColor="@color/white" android:gravity="center" android:id="@id/realplay_tip_tv" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="设备不在线" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/realplay_play_iv" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ez_leave_message_play_selector" android:scaleType="fitXY" android:layout_centerInParent="true" android:onClick="onClick" />
+    <com.android.potevio.easyhome.client.open.loading.LoadingTextView android:id="@id/realplay_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/LoadingTextView_Percent" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/realplay_privacy_ly" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:background="@drawable/preview_close1_video_ico" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        <TextView android:textSize="@dimen/realplay_button_text_size" android:textColor="@color/viewfinder_frame" android:id="@id/realplay_privacy_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="@string/camera_lens_closed" />
+    </LinearLayout>
+    <ImageView android:id="@id/realplay_page_anim_iv" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

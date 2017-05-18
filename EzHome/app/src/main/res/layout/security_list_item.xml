@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/item_min_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/security_list_item1" android:background="@drawable/securitrietm_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    <TextView android:background="@color/common_line_color" android:layout_width="@dimen/grid_line_common_height" android:layout_height="fill_parent" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/security_list_item2" android:background="@drawable/securitrietm_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    <TextView android:background="@color/common_line_color" android:layout_width="@dimen/grid_line_common_height" android:layout_height="fill_parent" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/security_list_item3" android:background="@drawable/securitrietm_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:paddingTop="@dimen/padding_five" android:paddingBottom="@dimen/padding_five" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/item_min_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingTop="@dimen/padding_five" android:paddingBottom="@dimen/padding_five" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/item_min_height">
+        <ImageView android:id="@id/gateway_share_list_item_icon" android:padding="0.0dip" android:visibility="visible" android:layout_width="@dimen/item_height" android:layout_height="@dimen/item_height" android:src="@drawable/gateway_share_list_item_icon" android:scaleType="fitXY" android:contentDescription="@null" />
+        <LinearLayout android:gravity="center|left" android:orientation="vertical" android:padding="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/list_item_title_size" android:textStyle="bold" android:textColor="@color/list_item_title_color" android:id="@id/gateway_share_list_item_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/login_title" />
+            <TextView android:textSize="@dimen/list_item_desc_size" android:textColor="@color/list_item_desc_color" android:id="@id/gateway_share_list_item_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/login_title" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/grid_line_common_height" />
+</LinearLayout>

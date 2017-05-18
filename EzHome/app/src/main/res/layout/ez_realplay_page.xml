@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/realplay_page_ly" android:background="@color/common_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.potevio.easyhome.client.ui.widget.TitleWidget android:id="@id/title_bar_portrait" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <RelativeLayout android:layout_gravity="center" android:id="@id/realplay_play_rl" android:background="@color/black_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <SurfaceView android:id="@id/realplay_sv" android:background="@android:color/transparent" android:layout_width="600.0dip" android:layout_height="200.0dip" android:layout_alignParentTop="true" android:layout_centerInParent="false" />
+        <include layout="@layout/realplay_loading_layout" />
+        <include layout="@layout/ez_play_control" />
+        <include layout="@layout/ez_realplay_prompt_layout" />
+        <RelativeLayout android:id="@id/realplay_capture_rl" android:background="@color/white" android:padding="1.0dip" android:visibility="gone" android:layout_width="65.0dip" android:layout_height="45.0dip" android:layout_alignLeft="@id/realplay_sv" android:layout_alignBottom="@id/realplay_sv" android:onClick="onClick">
+            <ImageView android:id="@id/realplay_capture_iv" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+            <ImageView android:id="@id/realplay_capture_watermark_iv" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/video_file_watermark" android:scaleType="fitXY" />
+        </RelativeLayout>
+        <include layout="@layout/realplay_full_operate_layout" />
+        <ImageView android:id="@id/realplay_ptz_direction_iv" android:background="@drawable/left_twinkle" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_alignBottom="@id/realplay_sv" android:layout_centerHorizontal="true" />
+        <ImageButton android:id="@id/realplay_full_anim_btn" android:background="@drawable/yuntai_pressed" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <include android:visibility="gone" layout="@layout/ezopen_realplay_operate_bar" />
+    <include android:visibility="gone" layout="@layout/ezopen_realplay_operate_bar2" />
+</LinearLayout>

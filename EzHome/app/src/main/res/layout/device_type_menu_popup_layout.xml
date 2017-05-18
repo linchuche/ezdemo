@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/top_title_bg_color" android:paddingLeft="@dimen/menu_layout_padding" android:paddingRight="@dimen/menu_layout_padding" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/device_type_add_device_layout" android:background="@drawable/press_transparent_selector" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/room_menu_add_device" android:singleLine="true" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
+    <RelativeLayout android:orientation="horizontal" android:id="@id/device_type_clear_layout" android:background="@drawable/press_transparent_selector" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/devicetype_clear" android:singleLine="true" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</LinearLayout>

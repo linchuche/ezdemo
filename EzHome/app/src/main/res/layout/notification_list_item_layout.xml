@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:minHeight="@dimen/item_min_height"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="@dimen/item_min_height"
+        android:paddingBottom="@dimen/padding_five"
+        android:paddingTop="@dimen/padding_five">
+
+        <ImageView
+            android:id="@id/notification_list_item_icon"
+            android:layout_width="@dimen/item_height"
+            android:layout_height="@dimen/item_height"
+            android:contentDescription="@null"
+            android:padding="0.0dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/notice_system_icon"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_ten">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@id/notification_list_item_title"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="@string/login_title"
+                    android:textColor="@color/list_item_title_color"
+                    android:textSize="@dimen/list_item_title_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@id/notification_list_item_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="time"
+                    android:textColor="@color/list_item_desc_color"
+                    android:textSize="@dimen/list_item_desc_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@id/notification_list_item_desc"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:ellipsize="end"
+                    android:paddingRight="@dimen/padding_five"
+                    android:singleLine="true"
+                    android:text="@string/login_title"
+                    android:textColor="@color/list_item_desc_color"
+                    android:textSize="@dimen/list_item_desc_size" />
+
+                <TextView
+                    android:id="@id/notification_list_item_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_title"
+                    android:textColor="@color/list_item_desc_color"
+                    android:textSize="@dimen/list_item_desc_size" />
+
+                <TextView
+                    android:id="@id/notification_list_item_unread_tv"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_marginLeft="@dimen/padding_five"
+                    android:background="@drawable/setting_unreadbg"
+                    android:textIsSelectable="false" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/grid_line_common_height"
+        android:background="@color/common_line_color" />
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/application_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/top_bar_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/btnBack" android:background="@drawable/common_title_back_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:onClick="onClick" />
+        <TextView android:textSize="@dimen/title_text_size" android:textStyle="normal" android:textColor="@color/black" android:id="@id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reset_device" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/lineConnectContainer" android:padding="38.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/imgResetPic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="17.0dip" android:src="@drawable/connect_reset" />
+        <TextView android:textSize="@dimen/large_text_size" android:textColor="@color/black" android:gravity="center" android:id="@id/tvTip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/reset_10_sec_to_release" />
+        <View android:layout_width="1.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        <Button android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:id="@id/btnReset" android:background="@drawable/common_btn_square_blue_selector" android:layout_width="fill_parent" android:layout_height="@dimen/btn_common_height" android:text="@string/already_reset" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.potevio.easyhome.client.ui.widget.TitleWidget android:id="@id/title_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/title_text_size" android:textColor="@color/black_text" android:id="@id/discover_tv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:text="@string/discovering_device" android:layout_weight="1.0" />
+        <Button android:textColor="@color/auto_wifi_blue" android:id="@id/retry_btn" android:background="@drawable/btn_auto_blue_selector" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:text="@string/retry" android:onClick="onClick" />
+    </LinearLayout>
+    <View android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <ListView android:id="@id/discover_list_lv" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="2.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="2.0dip" android:layout_marginBottom="3.0dip" android:cacheColorHint="#00000000" android:divider="@color/gray" android:dividerHeight="0.5dip" android:overScrollFooter="@null" />
+</LinearLayout>

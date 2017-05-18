@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/common_view_bg_color" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/common_fontsize_large" android:textColor="@color/common_dark_font_color" android:gravity="center" android:id="@id/sceneLevel_simple" android:paddingLeft="@dimen/padding_twenty" android:paddingRight="@dimen/padding_twenty" android:layout_width="fill_parent" android:layout_height="@dimen/widget_common_height" android:text="@string/sceneLevel_simple" android:scrollHorizontally="true" />
+    <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" />
+    <TextView android:textSize="@dimen/common_fontsize_large" android:textColor="@color/common_dark_font_color" android:gravity="center" android:id="@id/sceneLevel_advanced" android:paddingLeft="@dimen/padding_twenty" android:paddingRight="@dimen/padding_twenty" android:layout_width="fill_parent" android:layout_height="@dimen/widget_common_height" android:text="@string/sceneLevel_advanced" />
+</LinearLayout>

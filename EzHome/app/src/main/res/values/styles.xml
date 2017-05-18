@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppBaseTheme" parent="@android:style/Theme.Light" />
+
+    <style name="AppTheme" parent="@style/AppBaseTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ActionBarBackTheme" parent="@style/AppBaseTheme">
+        <item name="android:windowActionBar">true</item>
+        <item name="android:windowNoTitle">false</item>
+    </style>
+
+    <style name="CommonGroupLayout">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:dividerHeight">0.5dip</item>
+        <item name="android:dividerPadding">@dimen/device_set_padding</item>
+    </style>
+
+    <style name="AppComBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="CommonListView" parent="@android:style/Widget.ListView">
+        <item name="android:fadingEdgeLength">0.0dip</item>
+        <item name="android:listSelector">#00000000</item>
+        <item name="android:cacheColorHint">#00000000</item>
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0.0dip</item>
+        <item name="android:fastScrollEnabled">false</item>
+        <item name="android:headerDividersEnabled">false</item>
+        <item name="android:footerDividersEnabled">false</item>
+    </style>
+
+    <style name="LoadingTextView">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/gray_text</item>
+        <item name="android:text">@string/loading_text_default</item>
+    </style>
+
+    <style name="LoadingTextView_Percent" parent="@style/LoadingTextView">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:text"></item>
+    </style>
+
+    <style name="TitleBar_Dark">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/dark_bg_70p</item>
+    </style>
+
+    <style name="TitleBar_Light">
+        <item name="android:textColor">@color/common_text</item>
+        <item name="android:background">@drawable/common_title</item>
+    </style>
+
+    <style name="TitleBar_Light_Web" parent="@style/TitleBar_Light" />
+
+    <style name="UpgradeDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
+    <style name="auto_complete_textview" parent="@android:style/Widget.AutoCompleteTextView">
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:divider">@color/common_line_color</item>
+        <item name="android:dividerHeight">@dimen/line_common_height</item>
+        <item name="android:popupBackground">@drawable/rounded_back_background</item>
+        <item name="android:dropDownHorizontalOffset">0.0dip</item>
+        <item name="android:dropDownVerticalOffset">0.0dip</item>
+    </style>
+
+    <style name="auto_wifi_status_style_normal">
+        <item name="android:textSize">@dimen/loading_text_size</item>
+        <item name="android:textColor">@color/common_sub_text</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="common_ui_style" parent="@android:style/Theme.Holo">
+        <item name="android:background">@color/top_title_bg_color</item>
+    </style>
+
+    <style name="dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="main_tab_bottom">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:textColor">#ff666666</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">5.0dip</item>
+        <item name="android:paddingBottom">5.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">1.0dip</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="popwindowUpAnim">
+        <item name="android:windowEnterAnimation">@anim/fade_up</item>
+        <item name="android:windowExitAnimation">@anim/fade_down</item>
+    </style>
+
+    <style name="transparentActivity" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+</resources>

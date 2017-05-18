@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        icon="@drawable/easyhome"
+        id="@+id/tab_home"
+        activeColor="@color/blue"
+        inactiveColor="#666666"
+        title="我的易家" />
+    <tab
+        icon="@drawable/camera"
+        activeColor="@color/blue"
+        inactiveColor="#666666"
+        id="@+id/tab_camera"
+        title="智能摄像机" />
+    <tab
+        inactiveColor="#666666"
+        activeColor="@color/blue"
+        icon="@drawable/setting"
+        id="@+id/tab_person"
+        title="个人中心" />
+</tabs>

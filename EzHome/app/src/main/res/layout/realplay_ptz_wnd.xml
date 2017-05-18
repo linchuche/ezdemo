@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/common_bg" android:layout_width="fill_parent" android:layout_height="300.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/ptz_close_btn" android:background="@drawable/play_close_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:onClick="onClick" />
+    <LinearLayout android:orientation="vertical" android:id="@id/ptz_control_ly" android:background="@drawable/ptz_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:layout_centerInParent="true">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageButton android:id="@id/ptz_top_btn" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="0.0">
+            <ImageButton android:id="@id/ptz_left_btn" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="3.0" />
+            <ImageButton android:id="@id/ptz_flip_btn" android:background="@drawable/ptz_turn_selector" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="2.0" />
+            <ImageButton android:id="@id/ptz_right_btn" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="3.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageButton android:id="@id/ptz_bottom_btn" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

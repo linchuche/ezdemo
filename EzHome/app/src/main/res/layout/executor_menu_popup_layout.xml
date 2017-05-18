@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/top_title_bg_color" android:paddingLeft="@dimen/menu_layout_padding" android:paddingRight="@dimen/menu_layout_padding" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/executor_menu_lock_device_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@id/executor_menu_lock_record_device" android:background="@drawable/press_transparent_selector" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/widget_common_height">
+            <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:layout_gravity="center|left" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/executor_menu_lock_record_device" android:singleLine="true" />
+        </LinearLayout>
+        <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/executor_menu_lock_alert_device" android:background="@drawable/press_transparent_selector" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/widget_common_height">
+            <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:layout_gravity="center|left" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/executor_menu_lock_alert_device" android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/executor_menu_lock_main" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/executor_menu_lock_security" android:background="@drawable/press_transparent_selector" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/widget_common_height">
+                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:layout_gravity="center|left" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/executor_menu_lock_security" android:singleLine="true" />
+            </LinearLayout>
+            <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/executor_menu_lock_bind_device" android:background="@drawable/press_transparent_selector" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/widget_common_height">
+                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:layout_gravity="center|left" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gateway_menu_lock_device_info" android:singleLine="true" />
+            </LinearLayout>
+            <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/executor_menu_modify_device_info_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@id/executor_menu_modify_device_info" android:background="@drawable/press_transparent_selector" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/widget_common_height">
+            <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:layout_gravity="center|left" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gateway_menu_modify_device_info" android:singleLine="true" />
+        </LinearLayout>
+        <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/executor_menu_delete_device" android:background="@drawable/press_transparent_selector" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:layout_gravity="center|left" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gateway_menu_delete_device" android:singleLine="true" />
+    </LinearLayout>
+</LinearLayout>

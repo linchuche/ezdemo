@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/item_min_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/gray_txt_color" android:gravity="center" android:id="@id/share_gate_menu_item_name" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="@string/login_title" android:layout_weight="1.0" />
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_seltime_cycletype_none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/time_cycletype_none" android:layout_weight="1.0" />
+        <ImageView android:id="@id/scene_seltime_cycletype_none_icon" android:background="@drawable/selected_single" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_seltime_cycletype_everyday" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/time_cycletype_everyday" android:layout_weight="1.0" />
+        <ImageView android:id="@id/scene_seltime_cycletype_everyday_icon" android:background="@drawable/selected_single" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_seltime_cycletype_work" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:padding="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/time_cycletype_work" />
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/time_cycletype_work_tip" android:layout_weight="1.0" />
+        <ImageView android:id="@id/scene_seltime_cycletype_work_icon" android:background="@drawable/selected_single" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_seltime_cycletype_holiday" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:padding="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/time_cycletype_holiday" />
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/time_cycletype_holiday_tip" android:layout_weight="1.0" />
+        <ImageView android:id="@id/scene_seltime_cycletype_holiday_icon" android:background="@drawable/selected_single" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_seltime_cycletype_custom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/time_cycletype_custom" android:layout_weight="1.0" />
+        <ImageView android:id="@id/scene_seltime_cycletype_custom_icon" android:background="@drawable/selected_single" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+    </LinearLayout>
+</LinearLayout>

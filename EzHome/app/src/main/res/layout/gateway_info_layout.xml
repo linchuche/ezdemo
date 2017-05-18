@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/setting_layout" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_common_top_title_layout" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/white" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/gray_txt_color" android:padding="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gateway_info_brand" android:singleLine="true" />
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:gravity="right" android:id="@id/brand_tv" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/gateway_info_brand_content" android:layout_weight="1.0" />
+    </LinearLayout>
+    <TextView android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/white" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/gray_txt_color" android:padding="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gateway_info_type" android:singleLine="true" />
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:gravity="right" android:id="@id/type_tv" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/gateway_info_type_content" android:layout_weight="1.0" />
+    </LinearLayout>
+    <TextView android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/white" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/gray_txt_color" android:padding="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gateway_info_manid" android:singleLine="true" />
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:gravity="right" android:id="@id/manid_tv" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/gateway_info_manid_content" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

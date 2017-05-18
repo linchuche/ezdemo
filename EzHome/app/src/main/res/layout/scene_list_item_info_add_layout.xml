@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/item_min_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/scene_list_item__add_icon" android:padding="0.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_five" android:src="@drawable/screen_add" android:scaleType="center" android:contentDescription="@null" />
+    <TextView android:textSize="@dimen/scene_add_size" android:textColor="@color/screen_add_color" android:id="@id/scene_list_item_add_desc" android:padding="@dimen/padding_five" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/scene_list_add_scene" />
+    <TextView android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
+</LinearLayout>

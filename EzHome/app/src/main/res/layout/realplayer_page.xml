@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/realplay_display_view" android:background="@color/application_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:gesture-image="http://schemas.monkey.com/android">
+    <RelativeLayout android:id="@id/realplay_area" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <SurfaceView android:id="@id/realplay_wnd_sv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <FrameLayout android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.android.potevio.easyhome.client.open.widget.PagesGallery android:id="@id/realplay_pages_gallery" android:layout_width="fill_parent" android:layout_height="fill_parent" android:spacing="0.0dip" />
+        </FrameLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/realplay_top_bar" android:background="@drawable/top_bar_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageButton android:id="@id/realplay_back_btn" android:background="@drawable/backbtn_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_alignParentLeft="true" android:layout_centerInParent="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/title_text_size" android:textStyle="normal" android:textColor="@color/black" android:gravity="center" android:id="@id/realplay_title_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="horizontal" android:id="@id/realplay_control_bar" android:background="@drawable/control_bar_bg" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <RelativeLayout android:gravity="center" android:layout_width="50.0dip" android:layout_height="fill_parent" android:layout_alignParentLeft="true">
+            <ImageButton android:id="@id/realplay_play_btn" android:background="@drawable/playbtn_selector" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageButton android:id="@id/realplay_stop_btn" android:background="@drawable/stopbtn_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

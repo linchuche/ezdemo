@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/sms_verify_dailog_ly" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/ez_sms_code_lyt" android:background="@drawable/input_shade" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip">
+        <EditText android:textSize="@dimen/button_text_size" android:textColor="@color/gray_text" android:textColorHint="@color/gray" android:gravity="center|left" android:layout_gravity="center_vertical" android:id="@id/ez_sms_code_et" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:hint="@string/realplay_verifycode_error_placehold" android:singleLine="true" />
+    </LinearLayout>
+</LinearLayout>

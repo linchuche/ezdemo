@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/item_min_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/grid_line_common_height" />
+    <LinearLayout android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="0.0dip" android:minHeight="@dimen/item_min_height" android:layout_weight="1.0">
+        <TextView android:background="@color/common_line_color" android:layout_width="@dimen/grid_line_common_height" android:layout_height="fill_parent" />
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/room_list_item_layout" android:paddingBottom="@dimen/item_padding" android:descendantFocusability="blocksDescendants" android:layout_width="0.0dip" android:layout_height="wrap_content" android:minHeight="@dimen/item_min_height" android:layout_weight="1.0">
+            <ImageView android:id="@id/room_sel_type_item_icon" android:clickable="false" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_margin="@dimen/padding_ten" android:src="@drawable/room_type10" android:scaleType="fitXY" android:contentDescription="@null" />
+            <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/common_dark_font_color" android:ellipsize="end" android:gravity="center" android:id="@id/room_sel_type_item_txtvew" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_centerInParent="true" android:textIsSelectable="false" />
+                <ImageView android:id="@id/room_sel_type_item_sle_icon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/selected" android:scaleType="center" android:layout_alignParentRight="true" android:contentDescription="@null" />
+            </RelativeLayout>
+        </LinearLayout>
+        <TextView android:background="@color/common_line_color" android:layout_width="@dimen/grid_line_common_height" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/grid_line_common_height" />
+</LinearLayout>

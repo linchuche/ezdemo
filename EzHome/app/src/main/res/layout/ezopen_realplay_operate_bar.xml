@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView android:id="@id/ezopen_realplay_operate_bar" android:background="#ffe0e0e0" android:scrollbars="none" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/realplay_operate_ly" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/realplay_ptz_btn_ly" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageButton android:id="@id/realplay_ptz_btn" android:background="@drawable/play_ptz_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:onClick="onClick" />
+                <TextView android:textSize="@dimen/realplay_text_size" android:textColor="@color/common_sub_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/ptz" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/realplay_talk_btn_ly" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip">
+                <ImageButton android:id="@id/realplay_talk_btn" android:background="@drawable/play_talk_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:onClick="onClick" />
+                <TextView android:textSize="@dimen/realplay_text_size" android:textColor="@color/common_sub_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/talk" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/realplay_ssl_btn_ly" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RelativeLayout android:orientation="vertical" android:id="@id/realplay_ssl_btn_rl" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <Button android:textSize="@dimen/source_detection_text_size" android:textColor="@color/source_detection_btn_color" android:id="@id/realplay_ssl_btn" android:background="@drawable/sound_source" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/source_detection_off" android:onClick="onClick" />
+                    <ProgressBar android:id="@id/realplay_ssl_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminateDrawable="@drawable/common_loading_indeterminate" android:layout_centerInParent="true" />
+                </RelativeLayout>
+                <TextView android:textSize="@dimen/realplay_text_size" android:textColor="@color/common_sub_text" android:layout_gravity="center" android:id="@id/realplay_ssl_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/close_source_localization" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/realplay_privacy_btn_ly" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageButton android:id="@id/realplay_privacy_btn" android:background="@drawable/play_privacy_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:onClick="onClick" />
+                <TextView android:textSize="@dimen/realplay_text_size" android:textColor="@color/common_sub_text" android:layout_gravity="center" android:id="@id/realplay_privacy_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/close_camera_lens" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/realplay_previously_btn_ly" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageButton android:id="@id/realplay_previously_btn" android:background="@drawable/play_previously_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:onClick="onClick" />
+                <TextView android:textSize="@dimen/realplay_text_size" android:textColor="@color/common_sub_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/capture" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/realplay_video_container_ly" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip">
+                <FrameLayout android:id="@id/realplay_video_container" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageButton android:id="@id/realplay_video_btn" android:background="@drawable/play_video_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:onClick="onClick" />
+                    <ImageButton android:id="@id/realplay_video_start_btn" android:background="@drawable/play_video_sel" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:onClick="onClick" />
+                </FrameLayout>
+                <TextView android:textSize="@dimen/realplay_text_size" android:textColor="@color/common_sub_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:text="@string/record" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</HorizontalScrollView>

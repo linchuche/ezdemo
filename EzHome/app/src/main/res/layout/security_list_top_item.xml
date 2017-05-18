@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/common_bg_color"
+    android:minHeight="@dimen/security_list_item_top_min_height">
+
+    <LinearLayout
+        android:id="@id/security_list_item_top1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0"
+        android:background="@drawable/securitrietm_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <include layout="@layout/security_list_item_security_item" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="@dimen/grid_line_common_height"
+        android:layout_height="fill_parent"
+        android:background="@color/common_line_color" />
+
+    <LinearLayout
+        android:id="@id/security_list_item_top2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2.0"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@id/security_list_item_top3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/securitrietm_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include layout="@layout/security_sensor_item_layout" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/grid_line_common_height"
+            android:background="@color/common_line_color" />
+
+        <LinearLayout
+            android:id="@id/security_list_item_top4"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/securitrietm_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include layout="@layout/security_sensor_item_layout" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

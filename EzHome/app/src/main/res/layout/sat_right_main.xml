@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/sat_main_size" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="bottom|center|left" android:id="@id/sat_main" android:background="@drawable/device_seco_info_green" android:layout_width="@dimen/sat_main_width" android:layout_height="@dimen/sat_main_width" android:contentDescription="@string/empty" android:textIsSelectable="false" />
+</merge>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="action_order">
+        <item>任务一</item>
+        <item>任务二</item>
+        <item>任务三</item>
+        <item>任务四</item>
+        <item>任务五</item>
+        <item>任务六</item>
+        <item>任务七</item>
+        <item>任务八</item>
+        <item>任务九</item>
+        <item>任务十</item>
+    </string-array>
+    <string-array name="family_list">
+        <item>亲爱的</item>
+        <item>爸爸</item>
+        <item>妈妈</item>
+        <item>儿子</item>
+        <item>女儿</item>
+        <item>同居密友</item>
+        <item>其他家人</item>
+    </string-array>
+    <string-array name="family_list_num">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+    </string-array>
+</resources>

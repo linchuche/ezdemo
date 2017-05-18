@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:gravity="center" android:id="@id/gateway_menu_title" android:background="@color/white" android:paddingTop="@dimen/padding_twenty" android:paddingBottom="@dimen/padding_twenty" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="标题" />
+    <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" />
+    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/gray_txt_color" android:gravity="center" android:id="@id/gateway_menu_modify_device_info" android:background="@color/white" android:padding="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/gateway_menu_modify_device_info" />
+    <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" />
+    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/red" android:gravity="center" android:id="@id/gateway_menu_delete_device" android:background="@color/white" android:padding="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/gateway_menu_delete_device" />
+    <LinearLayout android:orientation="horizontal" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="@dimen/padding_ten" />
+    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/gray_txt_color" android:gravity="center" android:id="@id/gateway_menu_cancel" android:background="@color/white" android:padding="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/common_cancel" />
+</LinearLayout>

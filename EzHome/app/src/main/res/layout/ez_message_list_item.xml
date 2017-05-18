@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/message_layout" android:background="@drawable/message_item_bg_selector" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <CheckBox android:id="@id/message_check" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-5.0dip" android:button="@drawable/check_selector" />
+        <FrameLayout android:id="@id/message_image_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center" android:id="@id/message_image" android:layout_width="95.0dip" android:layout_height="70.0dip" android:scaleType="fitXY" android:contentDescription="@string/describtion" />
+            <com.videogo.widget.ProgressBarHaveText android:layout_gravity="center" android:id="@id/message_image_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:max="100" android:indeterminateDrawable="@drawable/my_progress_drawable" />
+        </FrameLayout>
+        <RelativeLayout android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="5.0dip">
+            <ImageView android:id="@id/message_unread" android:layout_width="25.0dip" android:layout_height="wrap_content" android:src="@drawable/no_read" android:scaleType="centerInside" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="15.0sp" android:textColor="@color/common_text" android:ellipsize="end" android:id="@id/message_type" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/message_time" android:layout_toRightOf="@id/message_unread" />
+            <TextView android:textSize="13.0sp" android:textColor="@color/common_hint_text" android:layout_gravity="center_horizontal" android:id="@id/message_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_alignParentRight="true" />
+            <TextView android:textSize="15.0sp" android:textColor="@color/common_hint_text" android:id="@id/message_from_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/message_come_from_tip" android:layout_below="@id/message_type" android:layout_alignLeft="@id/message_type" />
+            <TextView android:textSize="15.0sp" android:textColor="@color/common_hint_text" android:ellipsize="end" android:id="@id/message_from" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_toRightOf="@id/message_from_tip" android:layout_alignTop="@id/message_from_tip" />
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/common_bg" android:layout_width="fill_parent" android:layout_height="300.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.videogo.widget.RingView android:id="@id/talkback_rv" android:background="@color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ImageButton android:id="@id/talkback_close_btn" android:background="@drawable/play_close_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:onClick="onClick" />
+    <Button android:textSize="@dimen/realplay_button_text_size" android:textColor="@color/white" android:id="@id/talkback_control_btn" android:background="@drawable/play_talkback_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/press_to_talk_release_to_listen" android:layout_centerInParent="true" />
+</RelativeLayout>

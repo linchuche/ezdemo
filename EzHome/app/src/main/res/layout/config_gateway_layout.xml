@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/common_bg_color" android:paddingBottom="@dimen/padding_fifteen" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_common_top_title_layout" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/common_fontsize_xlarge" android:textColor="@color/config_gate_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_fifteen" android:text="@string/config_gateway_title" />
+            <ImageView android:layout_gravity="center" android:background="@drawable/config_gateway" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/padding_ten" android:scaleType="center" android:contentDescription="@null" />
+            <TextView android:textSize="@dimen/common_fontsize_large" android:textColor="@color/gray" android:gravity="center" android:id="@id/config_gateway_err_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginTop="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:text="@string/config_gateway_err_tip" android:alpha="0.7" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/config_gate_tip_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten">
+                <TextView android:textSize="@dimen/common_fontsize_large" android:textColor="@color/gray" android:gravity="center" android:id="@id/config_gate_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_three" android:text="@string/config_gateway_doing" />
+                <TextView android:textSize="@dimen/common_fontsize_large" android:textColor="@color/gray" android:id="@id/config_gate_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_three" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <Button android:textSize="@dimen/common_fontsize_large" android:textColor="@color/white" android:gravity="center" android:id="@id/config_gate_cancel" android:background="@drawable/common_btn_square_blue_selector" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/btn_common_height" android:layout_margin="@dimen/padding_five" android:text="@string/common_cancel" style="?android:attr/borderlessButtonStyle" />
+    <Button android:textSize="@dimen/common_fontsize_large" android:textColor="@color/white" android:gravity="center" android:id="@id/config_gate_retry" android:background="@drawable/common_btn_square_blue_selector" android:padding="0.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/btn_common_height" android:layout_margin="@dimen/padding_five" android:text="@string/common_retry" style="?android:attr/borderlessButtonStyle" />
+</LinearLayout>

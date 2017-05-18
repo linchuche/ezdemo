@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/item_min_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/device_item_layout" android:paddingBottom="@dimen/device_padding_bottom" android:descendantFocusability="blocksDescendants" android:layout_width="0.0dip" android:layout_height="fill_parent" android:minHeight="@dimen/item_min_height" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <RelativeLayout android:id="@id/device_item_icon_layout" android:layout_width="200.0dip" android:layout_height="200.0dip">
+                <ImageView android:id="@id/wave1" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                <ImageView android:id="@id/wave2" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                <ImageView android:id="@id/wave3" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                <ImageView android:id="@id/device_item_icon" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:src="@drawable/securitr_switch_default" android:scaleType="fitXY" android:layout_centerInParent="true" android:contentDescription="@null" />
+            </RelativeLayout>
+        </LinearLayout>
+        <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/common_dark_font_color" android:ellipsize="end" android:gravity="center" android:id="@id/device_item_title_txtvew" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_centerInParent="true" android:textIsSelectable="false" />
+            <ImageView android:id="@id/device_item_sle_icon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/selected" android:scaleType="center" android:layout_alignParentRight="true" android:contentDescription="@null" />
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView android:visibility="gone" android:layout_width="@dimen/grid_line_common_height" android:layout_height="fill_parent" />
+</LinearLayout>

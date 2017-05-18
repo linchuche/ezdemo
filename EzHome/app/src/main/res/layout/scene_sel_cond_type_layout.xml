@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/scene_launch_layout" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_common_top_title_layout" />
+    <LinearLayout android:orientation="vertical" android:id="@id/setting_notion" android:background="@color/white" android:padding="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/scene_sel_cond_type_time" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:gravity="center|left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height" android:text="@string/scene_sel_cond_type_time" />
+            <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:gravity="center|left" android:id="@id/scene_sel_cond_type_sensor" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height" android:text="@string/scene_sel_cond_type_sensor" />
+        <LinearLayout android:orientation="vertical" android:id="@id/scene_sel_cond_type_location" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" />
+            <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:gravity="center|left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height" android:text="@string/scene_sel_cond_type_location" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/scene_sel_cond_type_weather" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" />
+            <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:gravity="center|left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height" android:text="@string/scene_sel_cond_type_weather" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

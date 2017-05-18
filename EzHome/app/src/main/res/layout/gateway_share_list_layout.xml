@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/gateway_layout" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_common_top_title_layout" />
+    <com.android.potevio.easyhome.client.view.CustomPullToRefreshListView android:id="@id/gateway_share_listView" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:listSelector="@drawable/press_transparent_selector" android:cacheColorHint="@android:color/transparent" android:divider="@color/common_line_color" android:dividerHeight="@dimen/padding_zero" android:fastScrollEnabled="false" android:headerDividersEnabled="false" android:footerDividersEnabled="false" android:smoothScrollbar="true" />
+</LinearLayout>

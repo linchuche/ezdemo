@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent" android:baselineAligned="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_common_top_title_layout" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/main_tip_size" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/common_padding_ten" android:text="@string/scan_first_tip" />
+        <Button android:textSize="@dimen/main_tip_size" android:textColor="@color/white" android:gravity="center" android:id="@id/first_next" android:background="@drawable/common_btn_square_blue_selector" android:padding="@dimen/common_padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/btn_min_width" android:text="@string/next" />
+    </LinearLayout>
+</LinearLayout>

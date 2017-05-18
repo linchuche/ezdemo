@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/btn_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:id="@id/device_history_bottom_min_title_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/padding_hundred" android:textIsSelectable="false" android:alpha="0.7" />
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:gravity="right" android:id="@id/device_history_bottom_min_desc_txt" android:paddingLeft="@dimen/padding_three" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:textIsSelectable="false" android:alpha="0.5" />
+    </LinearLayout>
+    <TextView android:id="@id/device_history_bottom_line" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/btn_common_height">
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:id="@id/device_history_bottom_max_title_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/padding_hundred" android:textIsSelectable="false" android:alpha="0.7" />
+        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:gravity="right" android:id="@id/device_history_bottom_max_desc_txt" android:paddingLeft="@dimen/padding_three" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:textIsSelectable="false" android:alpha="0.5" />
+    </LinearLayout>
+</LinearLayout>

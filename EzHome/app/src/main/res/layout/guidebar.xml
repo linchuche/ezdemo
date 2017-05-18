@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/scrollbar_layout1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/guiderbar_bg_color"
+    android:gravity="center"
+    android:minHeight="@dimen/guidebar_height"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/line_common_height"
+        android:background="@color/common_line_color"
+        android:textIsSelectable="false" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@id/fr_easyhome"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@id/guide_easyhome_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/def_tv_unread_msg_margin_top"
+                android:scaleType="fitCenter"
+                android:src="@drawable/easyhome" />
+
+            <TextView
+                android:id="@id/guide_easyhome_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:text="@string/guidebar_easyhome"
+                android:textColor="@color/guide_bar_text_color"
+                android:textSize="@dimen/guide_bar_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/fr_camera"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@id/guidebar_camera_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/def_tv_unread_msg_margin_top"
+                android:scaleType="fitCenter"
+                android:src="@drawable/camera" />
+
+            <TextView
+                android:id="@id/guidebar_camera_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:text="@string/guidebar_camera"
+                android:textColor="@color/guide_bar_text_color"
+                android:textSize="@dimen/guide_bar_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/fr_setting"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@id/guidebar_setting_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/def_tv_unread_msg_margin_top"
+                    android:contentDescription="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/setting" />
+
+                <TextView
+                    android:id="@id/guidebar_setting_unread_tv"
+                    android:layout_width="@dimen/unread_width"
+                    android:layout_height="@dimen/unread_width"
+                    android:layout_gravity="center|right|top"
+                    android:background="@drawable/setting_unreadbg"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:shadowColor="#ffb47740"
+                    android:shadowDx="0.0"
+                    android:shadowDy="-1.0"
+                    android:shadowRadius="1.0"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/unread_textsize" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@id/guidebar_setting_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:text="@string/guidebar_setting"
+                android:textColor="@color/guide_bar_text_color"
+                android:textSize="@dimen/guide_bar_textsize" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

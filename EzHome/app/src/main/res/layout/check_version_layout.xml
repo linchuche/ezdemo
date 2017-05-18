@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:id="@id/check_version_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:gravity="center" android:layout_gravity="center" android:padding="0.0dip" android:layout_width="@dimen/padding_sisxty" android:layout_height="@dimen/padding_sisxty" android:src="@drawable/notify_icon" android:scaleType="center" android:contentDescription="@null" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingLeft="@dimen/padding_three" android:paddingRight="@dimen/padding_three" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textColor="@color/white" android:id="@id/check_version_title" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <TextView android:textColor="@color/gray_txt_color" android:id="@id/check_version_percent" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <ProgressBar android:id="@id/check_version_progressbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" style="?android:attr/progressBarStyleHorizontal" />
+        <TextView android:textColor="@color/gray_txt_color" android:id="@id/check_version_down" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

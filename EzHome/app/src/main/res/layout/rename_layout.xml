@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_common_top_title_layout" />
+    <com.android.potevio.easyhome.client.ui.widget.EdittxtWidget android:id="@id/rename_edittext_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_twenty" android:layout_marginBottom="@dimen/padding_forty" />
+    <Button android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/white" android:id="@id/rename_ok_btn" android:background="@drawable/common_btn_square_blue_selector" android:layout_width="fill_parent" android:layout_height="@dimen/btn_common_height" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:text="@string/common_ok" android:singleLine="true" />
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/realplay_control_rl" android:background="#ff222222" android:layout_width="fill_parent" android:layout_height="38.0dip" android:layout_below="@id/realplay_sv"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/realplay_play_btn" android:background="@drawable/play_play_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="onClick" />
+    <View android:id="@id/sound_line" android:background="#ff404040" android:layout_width="1.0dip" android:layout_height="18.0dip" />
+    <ImageButton android:id="@id/realplay_sound_btn" android:background="@drawable/ezopen_vertical_preview_sound_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="onClick" />
+    <View android:id="@id/quality_line" android:background="#ff404040" android:layout_width="1.0dip" android:layout_height="18.0dip" />
+    <Button android:textSize="@dimen/realplay_text_size" android:textColor="@color/white" android:id="@id/realplay_quality_btn" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/quality_balanced" android:layout_weight="1.0" android:onClick="onClick" />
+    <View android:id="@id/flow_line" android:background="#ff404040" android:layout_width="1.0dip" android:layout_height="18.0dip" />
+    <TextView android:textSize="@dimen/realplay_text_size" android:textColor="@color/white" android:id="@id/realplay_flow_tv" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="12k/s 5MB" android:layout_weight="1.0" />
+    <View android:id="@id/mirror_line" android:background="#ff404040" android:layout_width="1.0dip" android:layout_height="18.0dip" />
+    <com.videogo.widget.CheckTextButton android:id="@id/fullscreen_button" android:background="@drawable/preview_enlarge_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+</LinearLayout>

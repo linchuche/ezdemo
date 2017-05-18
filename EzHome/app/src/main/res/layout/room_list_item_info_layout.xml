@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/grid_line_common_height" />
+    <LinearLayout android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <TextView android:background="@color/common_line_color" android:layout_width="@dimen/grid_line_common_height" android:layout_height="fill_parent" />
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/room_list_item_layout" android:paddingBottom="@dimen/item_padding" android:descendantFocusability="blocksDescendants" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <FrameLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:layout_gravity="right" android:orientation="vertical" android:paddingTop="@dimen/padding_five" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/padding_five">
+                    <TextView android:textSize="@dimen/common_fontsize_samllest" android:textColor="@color/white" android:id="@id/room_list_item_tmp_tv" android:paddingLeft="@dimen/padding_three" android:paddingRight="@dimen/padding_three" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/padding_three" />
+                    <ImageView android:id="@id/room_list_item_wind_iv" android:background="@drawable/common_btn_square_wind_selector" android:padding="@dimen/padding_five" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/wind" />
+                </LinearLayout>
+                <ImageView android:layout_gravity="center" android:id="@id/room_list_item_icon" android:clickable="false" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:src="@drawable/room_type10" android:scaleType="fitXY" android:contentDescription="@null" />
+            </FrameLayout>
+            <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/common_dark_font_color" android:ellipsize="end" android:gravity="bottom|center" android:id="@id/room_list_item_title_txtvew" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+        </LinearLayout>
+        <TextView android:background="@color/common_line_color" android:layout_width="@dimen/grid_line_common_height" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/grid_line_common_height" />
+</LinearLayout>

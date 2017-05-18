@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/sel_device_layout" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_common_top_title_layout" />
+    <LinearLayout android:gravity="center" android:id="@id/sel_device_tab_layout" android:background="@color/common_press_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/sel_device_room_layout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="@dimen/easyhome_has_bar_textsize" android:textColor="@color/black" android:gravity="center" android:layout_gravity="center" android:id="@id/sel_device_room_tv" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginBottom="@dimen/padding_three" android:scaleType="fitCenter" android:text="@string/easyhome_room" android:layout_weight="1.0" />
+                <TextView android:id="@id/sel_device_room_line" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:textIsSelectable="false" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/sel_device_type_layout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="@dimen/easyhome_has_bar_textsize" android:textColor="@color/black" android:gravity="center" android:layout_gravity="center" android:id="@id/sel_device_type_tv" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginBottom="@dimen/padding_three" android:scaleType="fitCenter" android:text="@string/easyhome_type" android:layout_weight="1.0" />
+                <TextView android:id="@id/sel_device_type_line" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:textIsSelectable="false" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:id="@id/sel_device_frame" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

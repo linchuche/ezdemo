@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/item_min_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingTop="@dimen/padding_five" android:paddingBottom="@dimen/padding_five" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/scene_list_item_icon" android:padding="@dimen/padding_ten" android:visibility="visible" android:clickable="false" android:layout_width="@dimen/item_height" android:layout_height="@dimen/item_height" android:scaleType="center" android:contentDescription="@null" />
+        <LinearLayout android:gravity="center|left" android:orientation="vertical" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/list_item_title_size" android:textStyle="bold" android:textColor="@color/list_item_title_color" android:id="@id/scene_list_item__title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/login_title" />
+            <TextView android:textSize="@dimen/list_item_desc_size" android:textColor="@color/list_item_desc_color" android:ellipsize="end" android:id="@id/scene_list_item_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/login_title" android:singleLine="true" />
+        </LinearLayout>
+        <ImageView android:id="@id/scene_list_running_icon" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_three" android:layout_marginRight="@dimen/padding_three" android:scaleType="center" android:contentDescription="@null" />
+        <TextView android:textSize="@dimen/list_item_desc_size" android:textColor="@color/list_item_desc_color" android:id="@id/scene_list_item_status_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_three" android:layout_marginRight="@dimen/padding_three" android:text="@string/scene_destroy_tip" />
+    </LinearLayout>
+    <TextView android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
+</LinearLayout>

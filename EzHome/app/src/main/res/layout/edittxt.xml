@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scrollbar_edittxt_layout1" android:background="@color/white" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:textColorHint="@color/gray" android:gravity="center" android:id="@id/edittxt" android:background="@null" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/rename_hint" android:scrollHorizontally="true" android:singleLine="true" android:maxLength="5" android:layout_weight="1.0" android:inputType="text" android:textCursorDrawable="@null" />
+    <ImageView android:id="@id/clear_iv" android:background="@drawable/clear_button_selector" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="center" android:contentDescription="@null" />
+</LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/wheel_layout" android:background="@color/guiderbar_bg_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/guidebar_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:id="@id/wheel_tip_layout" android:background="@color/screen_tip_bg_color" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/common_fontsize_xlarge" android:textColor="@color/white" android:ellipsize="end" android:gravity="center" android:id="@id/wheel_tip_value_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2" android:singleLine="true" android:textIsSelectable="false" />
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/common_fontsize_samllest_est" android:textColor="@color/white" android:id="@id/wheel_tip_value_unit1_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_four" android:layout_marginTop="@dimen/padding_four" android:singleLine="true" android:textIsSelectable="false" />
+                <TextView android:textSize="@dimen/guide_bar_textsize" android:textColor="@color/white" android:layout_gravity="center|left|top" android:id="@id/wheel_tip_value_unit2_tv" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:textIsSelectable="false" />
+            </FrameLayout>
+        </LinearLayout>
+        <ImageView android:id="@id/wheel_invertedtriangle_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/invertedtriangle" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/wheel_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_fifteen" android:layout_marginRight="@dimen/padding_fifteen">
+            <LinearLayout android:background="@color/green" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@id/wheel_left_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:src="@drawable/invertedtriangle" />
+                <ImageView android:id="@id/wheel_right_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:src="@drawable/invertedtriangle" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_ten">
+                <LinearLayout android:gravity="center" android:layout_gravity="center" android:id="@id/wheel_left_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/common_fontsize_xlarge" android:textColor="@color/common_dark_font_color" android:ellipsize="end" android:gravity="center" android:id="@id/wheel_left_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2" android:singleLine="true" android:textIsSelectable="false" />
+                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/common_fontsize_samllest_est" android:textColor="@color/common_dark_font_color" android:id="@id/wheel_left_unit1_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_four" android:layout_marginTop="@dimen/padding_four" android:textIsSelectable="false" />
+                        <TextView android:textSize="@dimen/guide_bar_textsize" android:textColor="@color/common_dark_font_color" android:layout_gravity="center|left|top" android:id="@id/wheel_left_unit2_tv" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textIsSelectable="false" />
+                    </FrameLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:layout_gravity="center" android:id="@id/wheel_right_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/common_fontsize_xlarge" android:textColor="@color/common_dark_font_color" android:ellipsize="end" android:gravity="center" android:id="@id/wheel_right_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2" android:singleLine="true" android:textIsSelectable="false" />
+                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/common_fontsize_samllest_est" android:textColor="@color/common_dark_font_color" android:id="@id/wheel_right_unit1_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_four" android:layout_marginTop="@dimen/padding_four" android:textIsSelectable="false" />
+                        <TextView android:textSize="@dimen/guide_bar_textsize" android:textColor="@color/common_dark_font_color" android:layout_gravity="center|left|top" android:id="@id/wheel_right_unit2_tv" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textIsSelectable="false" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/wheel_curren_triangle" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:background="@color/screen_tip_bg_color" android:layout_width="@dimen/padding_two" android:layout_height="@dimen/padding_thirty" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/setting_unreadbg" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

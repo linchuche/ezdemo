@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/common_view_bg_color"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@id/tip_dialog_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/widget_common_height"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingLeft="@dimen/padding_twenty"
+        android:paddingRight="@dimen/padding_twenty"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/room_add_type_hint"
+        android:textColor="@color/common_dark_font_color"
+        android:textSize="@dimen/common_fontsize_large"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/padding_one"
+        android:background="@color/common_line_color"
+        android:orientation="horizontal" />
+
+    <GridView
+        android:id="@id/room_sel_type_dialog_gridView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@color/common_line_color"
+        android:dividerHeight="@dimen/padding_zero"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:listSelector="@drawable/press_transparent_selector"
+        android:numColumns="3"
+        android:scrollbars="vertical"
+        android:smoothScrollbar="true" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/padding_one"
+        android:background="@color/common_line_color"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:id="@id/tip_dialog_btn_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_twenty"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="0.0dip">
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/gateway_layout" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/view_common_top_title_layout" />
+    <com.android.potevio.easyhome.client.view.CustomPullToRefreshScrollView android:id="@id/curtain_info_gridView" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@color/common_line_color" android:dividerHeight="@dimen/padding_zero" android:fastScrollEnabled="false" android:headerDividersEnabled="false" android:footerDividersEnabled="false" android:smoothScrollbar="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/curtain_info_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="200.0dip">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/curtain_info_open" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="200.0dip" android:layout_weight="1.0">
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="200.0dip" android:layout_weight="1.0">
+                        <ImageView android:id="@id/open_wave1" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                        <ImageView android:id="@id/open_wave2" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                        <ImageView android:id="@id/open_wave3" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                        <ImageView android:id="@id/curtain_info_open_icon" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:src="@drawable/curtain_info_open" android:scaleType="fitXY" android:layout_centerInParent="true" android:contentDescription="@null" />
+                    </RelativeLayout>
+                    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/common_dark_font_color" android:ellipsize="end" android:paddingBottom="@dimen/device_padding_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/curtain_info_open" android:singleLine="true" android:textIsSelectable="false" />
+                </LinearLayout>
+                <TextView android:background="@color/common_line_color" android:layout_width="@dimen/grid_line_common_height" android:layout_height="fill_parent" />
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/curtain_info_stop" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="200.0dip" android:layout_weight="1.0">
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="200.0dip" android:layout_weight="1.0">
+                        <ImageView android:id="@id/stop_wave1" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                        <ImageView android:id="@id/stop_wave2" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                        <ImageView android:id="@id/stop_wave3" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                        <ImageView android:id="@id/curtain_info_stop_icon" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:src="@drawable/curtain_info_stop" android:scaleType="fitXY" android:layout_centerInParent="true" android:contentDescription="@null" />
+                    </RelativeLayout>
+                    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/common_dark_font_color" android:ellipsize="end" android:paddingBottom="@dimen/device_padding_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/curtain_info_stop" android:singleLine="true" android:textIsSelectable="false" />
+                </LinearLayout>
+                <TextView android:background="@color/common_line_color" android:layout_width="@dimen/grid_line_common_height" android:layout_height="fill_parent" />
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/curtain_info_close" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="200.0dip" android:layout_weight="1.0">
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="200.0dip" android:layout_weight="1.0">
+                        <ImageView android:id="@id/close_wave1" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                        <ImageView android:id="@id/close_wave2" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                        <ImageView android:id="@id/close_wave3" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:layout_centerInParent="true" />
+                        <ImageView android:id="@id/curtain_info_close_icon" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:src="@drawable/curtain_info_close" android:scaleType="fitXY" android:layout_centerInParent="true" android:contentDescription="@null" />
+                    </RelativeLayout>
+                    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/common_dark_font_color" android:ellipsize="end" android:paddingBottom="@dimen/device_padding_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/curtain_info_close" android:singleLine="true" android:textIsSelectable="false" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/grid_line_common_height" />
+        </LinearLayout>
+    </com.android.potevio.easyhome.client.view.CustomPullToRefreshScrollView>
+</LinearLayout>

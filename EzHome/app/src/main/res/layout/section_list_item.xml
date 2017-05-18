@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/white" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center|right" android:id="@id/header_parent" android:layout_width="50.0dip" android:layout_height="fill_parent">
+        <ImageView android:background="#ffadadad" android:layout_width="0.5dip" android:layout_height="fill_parent" android:layout_marginRight="6.0dip" android:layout_alignParentRight="true" />
+        <TextView android:textSize="10.0dip" android:textStyle="bold" android:textColor="#ff888888" android:gravity="center_horizontal" android:id="@id/header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="09点" android:drawableRight="@drawable/timeline" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@id/layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <FrameLayout android:id="@id/img_area1" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="65.0dip">
+                    <ImageView android:layout_gravity="center" android:id="@id/image1" android:background="@drawable/ez_border_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+                    <CheckBox android:layout_gravity="bottom|center|right" android:id="@id/check1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/playback_check_selector" />
+                    <LinearLayout android:layout_gravity="center" android:id="@id/local_l1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView android:layout_gravity="center_vertical" android:id="@id/local_alarm1" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/palyback_alarm_icon2" />
+                        <TextView android:textSize="@dimen/remotelist_item_local_time_size" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/local_time_part1" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="下午3:20" />
+                    </LinearLayout>
+                </FrameLayout>
+                <TextView android:textSize="@dimen/remotelist_time_text_size" android:id="@id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View android:layout_width="5.0dip" android:layout_height="fill_parent" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <FrameLayout android:id="@id/img_area2" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="65.0dip">
+                    <ImageView android:layout_gravity="center" android:id="@id/image2" android:background="@drawable/ez_border_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+                    <CheckBox android:layout_gravity="bottom|center|right" android:id="@id/check2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/playback_check_selector" />
+                    <LinearLayout android:layout_gravity="center" android:id="@id/local_l2" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView android:layout_gravity="center_vertical" android:id="@id/local_alarm2" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/palyback_alarm_icon2" />
+                        <TextView android:textSize="@dimen/remotelist_item_local_time_size" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/local_time_part2" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="下午3:20" />
+                    </LinearLayout>
+                </FrameLayout>
+                <TextView android:textSize="@dimen/remotelist_time_text_size" android:id="@id/text2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View android:layout_width="5.0dip" android:layout_height="fill_parent" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <FrameLayout android:id="@id/img_area3" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="65.0dip">
+                    <ImageView android:layout_gravity="center" android:id="@id/image3" android:background="@drawable/ez_border_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+                    <CheckBox android:layout_gravity="bottom|center|right" android:id="@id/check3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/playback_check_selector" />
+                    <LinearLayout android:layout_gravity="center" android:id="@id/local_l3" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView android:layout_gravity="center_vertical" android:id="@id/local_alarm3" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/palyback_alarm_icon2" />
+                        <TextView android:textSize="@dimen/remotelist_item_local_time_size" android:textColor="@color/white" android:layout_gravity="center_vertical" android:id="@id/local_time_part3" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="下午3:20" />
+                    </LinearLayout>
+                </FrameLayout>
+                <TextView android:textSize="@dimen/remotelist_time_text_size" android:id="@id/text3" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View android:layout_width="5.0dip" android:layout_height="fill_parent" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/layout_more_ly" android:background="@drawable/playback_button" android:layout_width="fill_parent" android:layout_height="37.0dip" android:layout_marginBottom="10.0dip" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/remotelist_item_more_text_size" android:textColor="@color/c1" android:gravity="center" android:id="@id/more_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/more_local_image" android:drawableRight="@drawable/playback_more_down1" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

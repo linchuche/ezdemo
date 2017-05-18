@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/device_seco_info_layout" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:android_custom="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/view_common_top_title_layout" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center" android:background="@drawable/tittle" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <LinearLayout android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/device_seco_info_tmp_size" android:textColor="@color/white" android:id="@id/device_seco_info_tmp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="23" android:textIsSelectable="false" />
+                    <TextView android:textSize="@dimen/common_fontsize_samllest_est" android:textColor="@color/white" android:gravity="bottom" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/padding_fifteen" android:text="@string/tmp_unit" android:textIsSelectable="false" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:id="@id/device_seco_info_hum_layout" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/device_seco_info_tmp_size" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/device_seco_info_hum" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="23" android:textIsSelectable="false" />
+                    <TextView android:textSize="@dimen/common_fontsize_samllest_est" android:textColor="@color/white" android:gravity="bottom" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/padding_fifteen" android:text="@string/hum_nuit" android:textIsSelectable="false" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:padding="@dimen/device_seco_info_padding" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="2.0">
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RelativeLayout android:id="@id/reduce_Layout" android:layout_width="@dimen/device_seco_info_stmp_layout_width" android:layout_height="@dimen/device_seco_info_stmp_layout_width">
+                    <ImageView android:id="@id/reduce_wave1" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/device_seco_info_add_width" android:layout_height="@dimen/device_seco_info_add_width" android:layout_centerInParent="true" />
+                    <ImageView android:id="@id/reduce_wave2" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/device_seco_info_add_width" android:layout_height="@dimen/device_seco_info_add_width" android:layout_centerInParent="true" />
+                    <ImageView android:id="@id/reduce_wave3" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/device_seco_info_add_width" android:layout_height="@dimen/device_seco_info_add_width" android:layout_centerInParent="true" />
+                    <LinearLayout android:gravity="center" android:background="@drawable/device_seco_info_ig_rs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                        <ImageView android:id="@id/device_seco_info_reduce" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/padding_five" android:src="@drawable/reduce_src" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="@dimen/device_seco_info_stmp_layout_width" android:layout_height="@dimen/device_seco_info_stmp_layout_width">
+                    <ImageView android:id="@id/rs_wave1" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/device_seco_info_stmp_width" android:layout_height="@dimen/device_seco_info_stmp_width" android:layout_centerInParent="true" />
+                    <ImageView android:id="@id/rs_wave2" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/device_seco_info_stmp_width" android:layout_height="@dimen/device_seco_info_stmp_width" android:layout_centerInParent="true" />
+                    <ImageView android:id="@id/rs_wave3" android:visibility="gone" android:layout_width="100.0dip" android:layout_height="100.0dip" android:src="@drawable/wave" android:layout_centerInParent="true" />
+                    <ImageView android:id="@id/rs_close" android:visibility="gone" android:layout_width="@dimen/item_icon_width" android:layout_height="@dimen/item_icon_width" android:src="@drawable/seco_close" android:layout_centerInParent="true" />
+                    <LinearLayout android:gravity="center" android:id="@id/device_seco_info_rs_layout" android:background="@drawable/device_seco_info_rs" android:layout_width="@dimen/device_seco_info_stmp_width" android:layout_height="@dimen/device_seco_info_stmp_width" android:layout_centerInParent="true">
+                        <Button android:textSize="@dimen/about_appname_size" android:textColor="@color/white" android:id="@id/device_seco_info_rs" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="23" android:textIsSelectable="false" />
+                        <TextView android:textSize="@dimen/common_fontsize_samllest_est" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_five" android:text="@string/tmp_unit" android:textIsSelectable="false" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/add_Layout" android:layout_width="@dimen/device_seco_info_stmp_layout_width" android:layout_height="@dimen/device_seco_info_stmp_layout_width">
+                    <ImageView android:id="@id/add_wave1" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/device_seco_info_add_width" android:layout_height="@dimen/device_seco_info_add_width" android:layout_centerInParent="true" />
+                    <ImageView android:id="@id/add_wave2" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/device_seco_info_add_width" android:layout_height="@dimen/device_seco_info_add_width" android:layout_centerInParent="true" />
+                    <ImageView android:id="@id/add_wave3" android:background="@drawable/wave" android:visibility="gone" android:layout_width="@dimen/device_seco_info_add_width" android:layout_height="@dimen/device_seco_info_add_width" android:layout_centerInParent="true" />
+                    <LinearLayout android:gravity="center" android:background="@drawable/device_seco_info_ig_rs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                        <ImageView android:id="@id/device_seco_info_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/padding_five" android:src="@drawable/add_src" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" android:layout_alignParentBottom="true">
+                <FrameLayout android:layout_gravity="bottom|center|left" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <android.view.ext.SatelliteMenu android:layout_gravity="bottom|center|left" android:id="@id/device_seco_info_menu" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </FrameLayout>
+                <FrameLayout android:layout_gravity="bottom|center|right" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <android.view.ext.SatelliteMenu android:layout_gravity="bottom|center|right" android:id="@id/device_seco_info_menu1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </FrameLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
