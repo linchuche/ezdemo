@@ -1,6 +1,7 @@
 package com.comslin.ezhome.oriUi.activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 
@@ -21,6 +22,29 @@ public class NotificationActivity extends BaseActivity {
         LayoutInflater.from(this).inflate(R.layout.activity_notification, topContentView);
         initView();
         NotificationAdapter notificationAdapter=new NotificationAdapter();
+        mRvNotification.setLayoutManager(new LinearLayoutManager(this));
+
+        mXrvNotification.setXRefreshViewListener(new XRefreshView.SimpleXRefreshListener() {
+            @Override
+            public void onRefresh(boolean isPullDown) {
+                super.onRefresh(isPullDown);
+            }
+
+            @Override
+            public void onLoadMore(boolean isSilence) {
+                super.onLoadMore(isSilence);
+            }
+
+            @Override
+            public void onRelease(float direction) {
+                super.onRelease(direction);
+            }
+
+            @Override
+            public void onHeaderMove(double offset, int offsetY) {
+                super.onHeaderMove(offset, offsetY);
+            }
+        });
         mRvNotification.setAdapter(notificationAdapter);
     }
 
