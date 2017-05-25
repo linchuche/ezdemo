@@ -153,7 +153,7 @@ public class ForgetPassword extends AppCompatActivity implements View.OnClickLis
                     return;
                 }
                 startTimer();
-                UserHttp.sendSms(new SendSmsCode(mEdtGeg1.getText().toString(),"REGISTER"))
+                UserHttp.Companion.sendSms(new SendSmsCode(mEdtGeg1.getText().toString(),"REGISTER"))
                         .execute(new ResultCallBack<LoginRequest>(LoginRequest.class) {
                             @Override
                             public void onError(Call call, Exception e, int id) {
@@ -184,9 +184,9 @@ public class ForgetPassword extends AppCompatActivity implements View.OnClickLis
                 registerBean.setPassword(edtList.get(2).getText().toString());
                 registerBean.setNewPassword(edtList.get(2).getText().toString());
                 if (type == 0)
-                    UserHttp.rigister(new RigisterRequest()).execute(listResultCallBack);
+                    UserHttp.Companion.rigister(new RigisterRequest()).execute(listResultCallBack);
                 else
-                    UserHttp.reSetPassWord(registerBean).execute(listResultCallBack);
+                    UserHttp.Companion.reSetPassWord(registerBean).execute(listResultCallBack);
                 break;
             case R.id.tv_exit_acount:
                 onBackPressed();

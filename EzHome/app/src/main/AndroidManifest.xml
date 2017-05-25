@@ -33,11 +33,12 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".oriUi.activity.MainPageActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".oriUi.activity.RoomAddActivity"
-            android:theme="@style/ActionBarBackTheme"></activity>
-        <activity android:name=".oriUi.activity.NotificationActivity"></activity>
+            android:theme="@style/ActionBarBackTheme" />
+        <activity android:name=".oriUi.activity.NotificationActivity" />
+        <activity android:name=".oriUi.activity.AboutAppActivity"></activity>
     </application>
 
 </manifest>

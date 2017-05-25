@@ -78,7 +78,7 @@ public class RoomAddActivity extends BaseActivity implements View.OnClickListene
                 } else {
                     showProgress(true);
                     RoomAdd roomAdd = new RoomAdd(text, selectedType);
-                    RoomHttp.addRoom(roomAdd).execute(
+                    RoomHttp.Companion.addRoom(roomAdd).execute(
                             new ResultCallBack<LinkedTreeMap>(LinkedTreeMap.class) {
                                 @Override
                                 public void onResponse(HttpResultBean<LinkedTreeMap> response, int id) {

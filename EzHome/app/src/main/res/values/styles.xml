@@ -3,7 +3,7 @@
 
     <style name="AppBaseTheme" parent="@android:style/Theme.Light" />
 
-    <style name="AppTheme" parent="@style/AppBaseTheme">
+    <style name="AppTheme" parent="@style/Theme.Design.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

@@ -101,7 +101,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             showProgress(true);
             LoginRequest loginRequest = new LoginRequest(password, email);
 
-            UserHttp.login(loginRequest).execute(new ResultCallBack<LinkedTreeMap>(LinkedTreeMap.class) {
+            UserHttp.Companion.login(loginRequest).execute(new ResultCallBack<LinkedTreeMap>(LinkedTreeMap.class) {
                 @Override
                 public void onResponse(HttpResultBean<LinkedTreeMap> response, int id) {
                     showProgress(false);

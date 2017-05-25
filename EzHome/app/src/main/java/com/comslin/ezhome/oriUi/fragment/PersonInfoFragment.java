@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.comslin.ezhome.R;
+import com.comslin.ezhome.oriUi.activity.AboutAppActivity;
 import com.comslin.ezhome.oriUi.activity.NotificationActivity;
 
 /**
@@ -47,6 +48,7 @@ public class PersonInfoFragment extends Fragment implements View.OnClickListener
         View v = inflater.inflate(R.layout.setting_layout, container, false);
         initView(v);
         mSettingNotion.setOnClickListener(this);
+        mSettingAbout.setOnClickListener(this);
         return v;
     }
 
@@ -68,6 +70,10 @@ public class PersonInfoFragment extends Fragment implements View.OnClickListener
             case R.id.setting_notion:
                 Intent intent=new Intent(getActivity(), NotificationActivity.class);
                 getActivity().startActivity(intent);
+                break;
+            case R.id.setting_about:
+                Intent intent2=new Intent(getActivity(), AboutAppActivity.class);
+                getActivity().startActivity(intent2);
         }
     }
 }

@@ -47,7 +47,7 @@ public class MainPageFragment extends Fragment {
         return v;
     }
     private void getData() {
-        RoomHttp.list().execute(new ListResultCallBack<Room>(Room.class) {
+        RoomHttp.Companion.list().execute(new ListResultCallBack<Room>(Room.class) {
             @Override
             public void onError(Call call, Exception e, int id) {
 
@@ -58,7 +58,7 @@ public class MainPageFragment extends Fragment {
                 mAdapterMain.setRoomList(response.getData());
             }
         });
-        GatewayHttp.list().execute(new ListResultCallBack<Gateway>(Gateway.class) {
+        GatewayHttp.Companion.list().execute(new ListResultCallBack<Gateway>(Gateway.class) {
             @Override
             public void onError(Call call, Exception e, int id) {
 
