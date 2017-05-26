@@ -3,11 +3,13 @@ package com.comslin.ezhome.oriUi.fragment;
 import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.andview.refreshview.XRefreshView;
 import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.http.HttpListResultBean;
 import com.comslin.ezhome.oriUi.http.ListResultCallBack;
@@ -24,7 +26,7 @@ public class MainPageFragment extends Fragment {
     private DiffTablayout mStlMain;
     private ViewPager mVpMain;
     private MainViewPagerAdapter mAdapterMain;
-
+    private XRefreshView xRefreshView;
     public MainPageFragment() {
         // Required empty public constructor
     }
@@ -40,6 +42,21 @@ public class MainPageFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_main_page, container, false);
         mStlMain = (DiffTablayout) v.findViewById(R.id.stl_main);
         mVpMain = (ViewPager) v.findViewById(R.id.vp_main);
+        xRefreshView=(XRefreshView)v.findViewById(R.id.xrv_main_page);
+        xRefreshView.setMoveForHorizontal(true);
+        xRefreshView.setPinnedContent(true);
+        xRefreshView.setXRefreshViewListener(new XRefreshView.SimpleXRefreshListener(){
+            @Override
+            public void onRefresh(boolean isPullDown) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        xRefreshView.stopRefresh();
+                    }
+                }, 2000);
+
+            }
+        });
         mAdapterMain = new MainViewPagerAdapter(getActivity());
         mVpMain.setAdapter(mAdapterMain);
         mStlMain.setViewPager(mVpMain);
