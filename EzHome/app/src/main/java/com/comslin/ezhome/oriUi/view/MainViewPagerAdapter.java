@@ -20,6 +20,9 @@ import com.comslin.ezhome.oriUi.activity.RoomAddActivity;
 import com.comslin.ezhome.oriUi.http.bean.devices.Device;
 import com.comslin.ezhome.oriUi.http.bean.gateway.Gateway;
 import com.comslin.ezhome.oriUi.http.bean.room.Room;
+import com.felipecsl.asymmetricgridview.library.Utils;
+import com.felipecsl.asymmetricgridview.library.widget.AsymmetricGridView;
+import com.felipecsl.asymmetricgridview.library.widget.AsymmetricGridViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,10 +32,9 @@ public class MainViewPagerAdapter extends PagerAdapter {
     private LayoutInflater layoutInflater;
     private List<Device> deviceList = new ArrayList<>();
     private List<Room> roomList = new ArrayList<>();
-    RoomAdapter roomAdapter = new RoomAdapter();
+    RoomAdapter  roomAdapter=new RoomAdapter();
     DevicesAdapter devicesAdapter = new DevicesAdapter();
-    GatewayAdapter gatewayAdapter = new GatewayAdapter();
-
+    GatewayAdapter gatewayAdapter=new GatewayAdapter();
     public void setDeviceList(List<Device> deviceList) {
         this.deviceList = deviceList;
         devicesAdapter.setDeviceList(deviceList);
@@ -43,13 +45,13 @@ public class MainViewPagerAdapter extends PagerAdapter {
         this.roomList = roomList;
         roomAdapter.setRoomList(roomList);
     }
-
-    public void setGatewayList(List<Gateway> gatewayList) {
+    public void setGatewayList(List<Gateway> gatewayList){
         gatewayAdapter.setGatewayList(gatewayList);
         gatewayAdapter.notifyDataSetChanged();
     }
 
     public MainViewPagerAdapter() {
+
 
 
     }
@@ -68,16 +70,6 @@ public class MainViewPagerAdapter extends PagerAdapter {
         mContext = context;
         layoutInflater = LayoutInflater.from(mContext);
 //        ListAdapter listAdapter
-        initView();
-    }
-
-    GridView deviceGrid;
-    GridView roomGrid;
-    GridView gatewayGrid;
-    private void initView() {
-        deviceGrid = new GridView(mContext);
-        roomGrid = new GridView(mContext);
-        gatewayGrid = new GridView(mContext);
     }
 
     private String[] titles = new String[]{"main", "场景", "类型", "房间", "网关"};
@@ -91,41 +83,44 @@ public class MainViewPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         switch (position) {
-//            case 0:
-//                DevicesAdapter devicesAdapter=new DevicesAdapter();
-//                AsymmetricGridView asymmetricGridView=new AsymmetricGridView(mContext,null);
-//                AsymmetricGridViewAdapter asymmetricGridViewAdapter=new AsymmetricGridViewAdapter(mContext,asymmetricGridView,devicesAdapter);
-//                asymmetricGridView.setAdapter(asymmetricGridViewAdapter);
-//                asymmetricGridView.setRequestedColumnCount(4);
-//                return asymmetricGridView;
+            case 0:
+                DevicesAdapter devicesAdapter=new DevicesAdapter();
+                AsymmetricGridView asymmetricGridView=new AsymmetricGridView(mContext,null);
+                AsymmetricGridViewAdapter<Device> asymmetricGridViewAdapter=
+                        new AsymmetricGridViewAdapter<>(mContext,asymmetricGridView,devicesAdapter);
+                asymmetricGridView.setRequestedColumnCount(4);
+                asymmetricGridView.setRequestedHorizontalSpacing(Utils.dpToPx(mContext, 3));
+                asymmetricGridView.setAdapter(asymmetricGridViewAdapter);
+                asymmetricGridView.setDebugging(true);
+                return asymmetricGridView;
             case 2:
-                deviceGrid.setNumColumns(3);
-                deviceGrid.setAdapter(devicesAdapter);
-                deviceGrid.setTag(position);
-                container.addView(deviceGrid);
-                return deviceGrid;
+                DevicesAdapter deviceType=new DevicesAdapter();
+                GridView gridView = new GridView(mContext);
+                gridView.setNumColumns(3);
+                gridView.setAdapter(deviceType);
+                container.addView(gridView);
+                return gridView;
             case 3:
+                final GridView roomGrid = new GridView(mContext);
                 roomGrid.setNumColumns(3);
                 roomGrid.setAdapter(roomAdapter);
                 roomGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        if (position == roomAdapter.getCount() - 1) {
-                            Intent intent = new Intent(mContext, RoomAddActivity.class);
+                        if (position==roomAdapter.getCount()-1){
+                            Intent intent=new Intent(mContext, RoomAddActivity.class);
                             mContext.startActivity(intent);
                         }
                     }
                 });
-                roomGrid.setTag(position);
                 container.addView(roomGrid);
                 return roomGrid;
             case 4:
+                final GridView gatewayGrid= new GridView(mContext);
                 gatewayGrid.setNumColumns(3);
                 gatewayGrid.setAdapter(gatewayAdapter);
-                gatewayGrid.setTag(position);
                 container.addView(gatewayGrid);
                 return gatewayGrid;
-
 
         }
         TextView textView = new TextView(mContext);
@@ -134,7 +129,6 @@ public class MainViewPagerAdapter extends PagerAdapter {
         container.addView(textView);
         return textView;
     }
-
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);

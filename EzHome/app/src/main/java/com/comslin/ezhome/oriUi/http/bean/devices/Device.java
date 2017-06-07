@@ -1,6 +1,10 @@
 package com.comslin.ezhome.oriUi.http.bean.devices;
 
-public class Device {
+import android.os.Parcel;
+
+import com.felipecsl.asymmetricgridview.library.model.AsymmetricItem;
+
+public class Device implements AsymmetricItem {
     private int deviceAdapterId;
     private int deviceTypeId;
     private String currentStatus;
@@ -12,6 +16,18 @@ public class Device {
     private int slotNo;
     private int userId;
     private int gatewayId;
+
+    @Override
+    public int getColumnSpan() {
+        return 1;
+    }
+
+    @Override
+    public int getRowSpan() {
+        return 1;
+    }
+
+
 
     public int getDeviceAdapterId() {
         return this.deviceAdapterId;
@@ -100,4 +116,53 @@ public class Device {
     public void setGatewayId(int gatewayId) {
         this.gatewayId = gatewayId;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.deviceAdapterId);
+        dest.writeInt(this.deviceTypeId);
+        dest.writeString(this.currentStatus);
+        dest.writeString(this.name);
+        dest.writeString(this.deviceTypeName);
+        dest.writeString(this.deviceSubTypeName);
+        dest.writeInt(this.id);
+        dest.writeInt(this.deviceSubTypeId);
+        dest.writeInt(this.slotNo);
+        dest.writeInt(this.userId);
+        dest.writeInt(this.gatewayId);
+    }
+
+    public Device() {
+    }
+
+    protected Device(Parcel in) {
+        this.deviceAdapterId = in.readInt();
+        this.deviceTypeId = in.readInt();
+        this.currentStatus = in.readString();
+        this.name = in.readString();
+        this.deviceTypeName = in.readString();
+        this.deviceSubTypeName = in.readString();
+        this.id = in.readInt();
+        this.deviceSubTypeId = in.readInt();
+        this.slotNo = in.readInt();
+        this.userId = in.readInt();
+        this.gatewayId = in.readInt();
+    }
+
+    public static final Creator<Device> CREATOR = new Creator<Device>() {
+        @Override
+        public Device createFromParcel(Parcel source) {
+            return new Device(source);
+        }
+
+        @Override
+        public Device[] newArray(int size) {
+            return new Device[size];
+        }
+    };
 }
