@@ -48,8 +48,13 @@ public class DevicesAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
-        return new Device();
+    public Object getItem(int position) {//for asymmetricGridView display on mainViewPager
+        Device device=new Device();
+        if (position==0){
+            device.setRowSpan(2);
+            device.setColumnSpan(2);
+        }
+        return device;
     }
 
     @Override
@@ -67,13 +72,10 @@ public class DevicesAdapter extends BaseAdapter {
             deviceHolder = (DeviceHolder) convertView.getTag();
         }
         if (displayAll) {
-            deviceHolder.imageView.setImageResource(getResByTypeId(position));
-        }
+            deviceHolder.imageView.setImageResource(getResByTypeId(position));}
         else {
             Device device = deviceList.get(position);
-            deviceHolder.imageView.setImageResource(getResByTypeId(device.getDeviceTypeId()));
-
-        }
+            deviceHolder.imageView.setImageResource(getResByTypeId(device.getDeviceTypeId()));}
         return convertView;
     }
 

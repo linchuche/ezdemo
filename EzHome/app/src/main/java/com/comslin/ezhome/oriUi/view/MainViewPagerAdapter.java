@@ -7,6 +7,7 @@ package com.comslin.ezhome.oriUi.view;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -86,13 +87,20 @@ public class MainViewPagerAdapter extends PagerAdapter {
             case 0:
                 DevicesAdapter devicesAdapter=new DevicesAdapter();
                 AsymmetricGridView asymmetricGridView=new AsymmetricGridView(mContext,null);
+                asymmetricGridView.setDebugging(false);
                 AsymmetricGridViewAdapter<Device> asymmetricGridViewAdapter=
                         new AsymmetricGridViewAdapter<>(mContext,asymmetricGridView,devicesAdapter);
                 asymmetricGridView.setRequestedColumnCount(4);
-                asymmetricGridView.setRequestedHorizontalSpacing(Utils.dpToPx(mContext, 3));
+//                asymmetricGridView.setRequestedHorizontalSpacing(Utils.dpToPx(mContext, 3));
                 asymmetricGridView.setAdapter(asymmetricGridViewAdapter);
-                asymmetricGridView.setDebugging(true);
+                container.addView(asymmetricGridView);
                 return asymmetricGridView;
+            case 1:
+                TextView textView = new TextView(mContext);
+                textView.setText("blank");
+                textView.setGravity(Gravity.CENTER);
+                container.addView(textView);
+                return textView;
             case 2:
                 DevicesAdapter deviceType=new DevicesAdapter();
                 GridView gridView = new GridView(mContext);
@@ -121,13 +129,14 @@ public class MainViewPagerAdapter extends PagerAdapter {
                 gatewayGrid.setAdapter(gatewayAdapter);
                 container.addView(gatewayGrid);
                 return gatewayGrid;
-
+            default:
+                TextView defaultTV = new TextView(mContext);
+                defaultTV.setText("blank");
+                defaultTV.setGravity(Gravity.CENTER);
+                container.addView(defaultTV);
+                return defaultTV;
         }
-        TextView textView = new TextView(mContext);
-        textView.setText("blank");
-        textView.setGravity(Gravity.CENTER);
-        container.addView(textView);
-        return textView;
+
     }
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {

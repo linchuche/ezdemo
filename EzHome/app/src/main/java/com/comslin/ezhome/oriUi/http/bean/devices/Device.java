@@ -17,16 +17,26 @@ public class Device implements AsymmetricItem {
     private int userId;
     private int gatewayId;
 
+    private int columnSpan = 1;
+    private int rowSpan = 1;
+
+    public void setColumnSpan(int columnSpan) {
+        this.columnSpan = columnSpan;
+    }
+
+    public void setRowSpan(int rowSpan) {
+        this.rowSpan = rowSpan;
+    }
+
     @Override
     public int getColumnSpan() {
-        return 1;
+        return columnSpan;
     }
 
     @Override
     public int getRowSpan() {
-        return 1;
+        return rowSpan;
     }
-
 
 
     public int getDeviceAdapterId() {
