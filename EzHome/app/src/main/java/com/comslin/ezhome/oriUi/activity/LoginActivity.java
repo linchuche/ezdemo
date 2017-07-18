@@ -40,12 +40,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-
+    private View blank;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
         mEmailView = (EditText) findViewById(R.id.login_username_edittxt);
+        blank = findViewById(R.id.view_blank);
         findViewById(R.id.login_forget_password_btn).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -151,6 +152,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             // and hide the relevant UI components.
             mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+            blank.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
 

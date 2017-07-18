@@ -25,6 +25,7 @@ public class RoomAdapter extends BaseAdapter {
     boolean displayAll;
     public void setRoomList(List<Room> deviceList) {
         this.roomList= deviceList;
+        notifyDataSetChanged();
     }
     @Override
     public long getItemId(int position) {

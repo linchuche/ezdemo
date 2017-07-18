@@ -34,6 +34,7 @@ public class RoomAddActivity extends BaseActivity implements View.OnClickListene
     private LinearLayout mRoomAddSelType;
     private GridView mGridRoomType;
     private int selectedType=-1;
+    private String selectedTypeName;
     PopupWindow popupWindow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,8 @@ public class RoomAddActivity extends BaseActivity implements View.OnClickListene
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectedType=position;
                 mRoomAddTypeIcon.setImageResource(ResContent.getRoomTypeByTypeId(position));
-                mRoomAddType.setText(ResContent.getRoomNameByTypeId(position));
+                selectedTypeName = ResContent.getRoomNameByTypeId(position);
+                mRoomAddType.setText(selectedTypeName);
                 popupWindow.dismiss();
             }
         });
@@ -77,7 +79,7 @@ public class RoomAddActivity extends BaseActivity implements View.OnClickListene
                     ToastUtil.showToast(this, "房间名不能为空");
                 } else {
                     showProgress(true);
-                    RoomAdd roomAdd = new RoomAdd(text, selectedType);
+                    RoomAdd roomAdd = new RoomAdd(text, selectedTypeName);//改成了使用TYPE NAME而不是 TYPE ID
                     RoomHttp.Companion.addRoom(roomAdd).execute(
                             new ResultCallBack<LinkedTreeMap>(LinkedTreeMap.class) {
                                 @Override
@@ -85,6 +87,7 @@ public class RoomAddActivity extends BaseActivity implements View.OnClickListene
                                     showProgress(false);
                                     if (response.getDesc().equals("成功")) {
                                         ToastUtil.showToast(RoomAddActivity.this, "添加房间成功");
+
                                     } else {
                                         ToastUtil.showToast(RoomAddActivity.this, response.getDesc());
                                     }

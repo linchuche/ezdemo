@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.andview.refreshview.XRefreshView;
 import com.comslin.ezhome.oriUi.activity.RoomAddActivity;
 import com.comslin.ezhome.oriUi.http.bean.devices.Device;
 import com.comslin.ezhome.oriUi.http.bean.gateway.Gateway;
@@ -28,14 +30,20 @@ import com.felipecsl.asymmetricgridview.library.widget.AsymmetricGridViewAdapter
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainViewPagerAdapter extends PagerAdapter {
+public class MainViewPagerAdapter extends PagerAdapter implements XRefreshView.XRefreshViewListener {
     private Context mContext;
     private LayoutInflater layoutInflater;
     private List<Device> deviceList = new ArrayList<>();
     private List<Room> roomList = new ArrayList<>();
-    RoomAdapter  roomAdapter=new RoomAdapter();
-    DevicesAdapter devicesAdapter = new DevicesAdapter();
-    GatewayAdapter gatewayAdapter=new GatewayAdapter();
+    private RoomAdapter roomAdapter = new RoomAdapter();
+    private DevicesAdapter devicesAdapter = new DevicesAdapter();
+    private GatewayAdapter gatewayAdapter = new GatewayAdapter();
+    private int currentPosition = 0;
+
+    public int getCurrentPosition() {
+        return currentPosition;
+    }
+
     public void setDeviceList(List<Device> deviceList) {
         this.deviceList = deviceList;
         devicesAdapter.setDeviceList(deviceList);
@@ -46,7 +54,8 @@ public class MainViewPagerAdapter extends PagerAdapter {
         this.roomList = roomList;
         roomAdapter.setRoomList(roomList);
     }
-    public void setGatewayList(List<Gateway> gatewayList){
+
+    public void setGatewayList(List<Gateway> gatewayList) {
         gatewayAdapter.setGatewayList(gatewayList);
         gatewayAdapter.notifyDataSetChanged();
     }
@@ -54,8 +63,8 @@ public class MainViewPagerAdapter extends PagerAdapter {
     public MainViewPagerAdapter() {
 
 
-
     }
+
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
@@ -83,13 +92,14 @@ public class MainViewPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+        currentPosition = position;
         switch (position) {
             case 0:
-                DevicesAdapter devicesAdapter=new DevicesAdapter();
-                AsymmetricGridView asymmetricGridView=new AsymmetricGridView(mContext,null);
+                DevicesAdapter devicesAdapter = new DevicesAdapter();
+                AsymmetricGridView asymmetricGridView = new AsymmetricGridView(mContext, null);
                 asymmetricGridView.setDebugging(false);
-                AsymmetricGridViewAdapter<Device> asymmetricGridViewAdapter=
-                        new AsymmetricGridViewAdapter<>(mContext,asymmetricGridView,devicesAdapter);
+                AsymmetricGridViewAdapter<Device> asymmetricGridViewAdapter =
+                        new AsymmetricGridViewAdapter<>(mContext, asymmetricGridView, devicesAdapter);
                 asymmetricGridView.setRequestedColumnCount(4);
 //                asymmetricGridView.setRequestedHorizontalSpacing(Utils.dpToPx(mContext, 3));
                 asymmetricGridView.setAdapter(asymmetricGridViewAdapter);
@@ -102,7 +112,7 @@ public class MainViewPagerAdapter extends PagerAdapter {
                 container.addView(textView);
                 return textView;
             case 2:
-                DevicesAdapter deviceType=new DevicesAdapter();
+                DevicesAdapter deviceType = new DevicesAdapter();
                 GridView gridView = new GridView(mContext);
                 gridView.setNumColumns(3);
                 gridView.setAdapter(deviceType);
@@ -115,8 +125,8 @@ public class MainViewPagerAdapter extends PagerAdapter {
                 roomGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        if (position==roomAdapter.getCount()-1){
-                            Intent intent=new Intent(mContext, RoomAddActivity.class);
+                        if (position == roomAdapter.getCount() - 1) {
+                            Intent intent = new Intent(mContext, RoomAddActivity.class);
                             mContext.startActivity(intent);
                         }
                     }
@@ -124,7 +134,7 @@ public class MainViewPagerAdapter extends PagerAdapter {
                 container.addView(roomGrid);
                 return roomGrid;
             case 4:
-                final GridView gatewayGrid= new GridView(mContext);
+                final GridView gatewayGrid = new GridView(mContext);
                 gatewayGrid.setNumColumns(3);
                 gatewayGrid.setAdapter(gatewayAdapter);
                 container.addView(gatewayGrid);
@@ -138,9 +148,40 @@ public class MainViewPagerAdapter extends PagerAdapter {
         }
 
     }
+
+    String TAG = "MainViewPagerAdapter";
+
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
+    }
+
+    @Override
+    public void onRefresh() {
+        Log.d(TAG, "onRefresh: ");
+        switch (currentPosition) {
+
+        }
+    }
+
+    @Override
+    public void onRefresh(boolean isPullDown) {
+        Log.d(TAG, "onRefresh: ");
+    }
+
+    @Override
+    public void onLoadMore(boolean isSilence) {
+        Log.d(TAG, "onLoadMore: ");
+    }
+
+    @Override
+    public void onRelease(float direction) {
+        Log.d(TAG, "onRelease: ");
+    }
+
+    @Override
+    public void onHeaderMove(double headerMovePercent, int offsetY) {
+        Log.d(TAG, "onHeaderMove: ");
     }
 }
 

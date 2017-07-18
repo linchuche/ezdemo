@@ -5,5 +5,5 @@ package com.comslin.ezhome.oriUi.http.function
  */
 
 object HttpConstant {
-   var EzHomeHost = "http://119.23.75.28"
+   var EzHomeHost = "http://119.23.75.28:29924"
 }

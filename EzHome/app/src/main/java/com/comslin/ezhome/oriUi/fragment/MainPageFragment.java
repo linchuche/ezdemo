@@ -33,7 +33,7 @@ public class MainPageFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getData();
+        getRoom();
     }
 
     @Override
@@ -45,45 +45,54 @@ public class MainPageFragment extends Fragment {
         xRefreshView=(XRefreshView)v.findViewById(R.id.xrv_main_page);
         xRefreshView.setMoveForHorizontal(true);
         xRefreshView.setPinnedContent(true);
+        mAdapterMain = new MainViewPagerAdapter(getActivity());
+//        xRefreshView.setXRefreshViewListener(mAdapterMain);
         xRefreshView.setXRefreshViewListener(new XRefreshView.SimpleXRefreshListener(){
             @Override
             public void onRefresh(boolean isPullDown) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        xRefreshView.stopRefresh();
-                    }
-                }, 2000);
+                switch (mAdapterMain.getCurrentPosition()){
+//                {"main", "场景", "类型", "房间", "网关"};
+                    case 0:
+                    case 1:
+                    case 2:xRefreshView.stopRefresh();break;
+                    case 3:getRoom();break;
+                    case 4:getGateway();break;
+                    default:xRefreshView.stopRefresh();break;
 
+                }
             }
         });
-        mAdapterMain = new MainViewPagerAdapter(getActivity());
         mVpMain.setAdapter(mAdapterMain);
         mStlMain.setViewPager(mVpMain);
         mStlMain.setSelectedIndicatorColors(Color.WHITE);
         return v;
     }
-    private void getData() {
+    private void getRoom() {
         RoomHttp.Companion.list().execute(new ListResultCallBack<Room>(Room.class) {
             @Override
             public void onError(Call call, Exception e, int id) {
+                xRefreshView.stopRefresh(false);
 
             }
 
             @Override
             public void onResponse(HttpListResultBean response, int id) {
                 mAdapterMain.setRoomList(response.getData());
+                xRefreshView.stopRefresh(true);
             }
         });
+    }
+    private void getGateway(){
         GatewayHttp.Companion.list().execute(new ListResultCallBack<Gateway>(Gateway.class) {
             @Override
             public void onError(Call call, Exception e, int id) {
-
+                xRefreshView.stopRefresh(false);
             }
 
             @Override
             public void onResponse(HttpListResultBean response, int id) {
                 mAdapterMain.setGatewayList(response.getData());
+                xRefreshView.stopRefresh(true);
             }
         });
 

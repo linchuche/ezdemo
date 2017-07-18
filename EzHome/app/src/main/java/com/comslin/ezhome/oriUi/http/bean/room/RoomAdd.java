@@ -2,7 +2,7 @@ package com.comslin.ezhome.oriUi.http.bean.room;
 
 public class RoomAdd {
     private String name;
-    private int roomTypeId;
+    private String  roomType;
 
     public String getName() {
         return this.name;
@@ -12,16 +12,16 @@ public class RoomAdd {
         this.name = name;
     }
 
-    public int getRoomTypeId() {
-        return this.roomTypeId;
+    public String getRoomTypeId() {
+        return this.roomType;
     }
 
-    public void setRoomTypeId(int roomTypeId) {
-        this.roomTypeId = roomTypeId;
+    public void setRoomTypeId(String roomTypeId) {
+        this.roomType = roomTypeId;
     }
 
-    public RoomAdd(String name, int roomTypeId) {
+    public RoomAdd(String name, String roomTypeId) {
         this.name = name;
-        this.roomTypeId = roomTypeId;
+        this.roomType = roomTypeId;
     }
 }
