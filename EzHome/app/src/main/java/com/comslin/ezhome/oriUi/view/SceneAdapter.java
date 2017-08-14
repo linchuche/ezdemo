@@ -3,6 +3,7 @@ package com.comslin.ezhome.oriUi.view;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,28 +79,39 @@ public class SceneAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             ((SceneViewHolder) holder).imageView.setImageResource(getResBySceneType(type));
             ((SceneViewHolder) holder).name.setText(scene.getSceneName());
             ((SceneViewHolder) holder).description.setText(scene.getDescription());
-            ((SceneViewHolder) holder).aSwitch.setOnClickListener(new View.OnClickListener() {
+            ((SceneViewHolder) holder).aSwitch.setChecked(scene.getEnabled());
+            ((SceneViewHolder) holder).aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
-                public void onClick(View v) {
-                    ((BaseActivity) context).showProgress(true);
-                    SceneHttp.Companion.changeAble(new ChanggeSceneAble(scene.getSceneId())).execute(new ListResultCallBack<Scene>(Scene.class) {
-                        @Override
-                        public void onError(Call call, Exception e, int id) {
-                            ((SceneViewHolder) holder).aSwitch.setChecked(!((SceneViewHolder) holder).aSwitch.isChecked());
-//                            ((BaseActivity) context).showProgress(false);
-
-                        }
-
-                        @Override
-                        public void onResponse(HttpListResultBean response, int id) {
-//                            ((BaseActivity) context).showProgress(false);
-                            sceneList = response.getData();
-                            notifyDataSetChanged();
-                        }
-                    });
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                    changeAble(scene.getSceneId(),isChecked);
                 }
             });
         }
+
+    }
+
+    String TAG = "SceneAdapter";
+
+    private void changeAble(int position,boolean able) {
+        Scene scene = sceneList.get(position);
+        if (scene.getEnabled()==able){
+            return;
+        }
+        ((BaseActivity) context).showProgress(true);
+        SceneHttp.Companion.changeAble(new ChanggeSceneAble(scene.getSceneId())).execute(new ListResultCallBack<Scene>(Scene.class) {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+                ((BaseActivity) context).showProgress(false);
+                notifyDataSetChanged();
+            }
+
+            @Override
+            public void onResponse(HttpListResultBean response, int id) {
+                ((BaseActivity) context).showProgress(false);
+                notifyDataSetChanged();
+            }
+        });
 
     }
 
