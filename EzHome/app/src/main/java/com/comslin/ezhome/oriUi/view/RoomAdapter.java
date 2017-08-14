@@ -58,8 +58,8 @@ public class RoomAdapter extends BaseAdapter {
         }
         if (position<roomList.size()){
             Room room=roomList.get(position);
-            roomHolder.imageView.setImageResource(ResContent.getRoomTypeByTypeId(room.getRoomTypeId()));
-            roomHolder.name.setText(room.getName());
+            roomHolder.imageView.setImageResource(ResContent.getRoomTypeByTypeId(room.getRoomId()));
+            roomHolder.name.setText(room.getRoomName());
         }
         else {
             roomHolder.imageView.setImageResource(R.drawable.room_add);

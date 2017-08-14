@@ -14,21 +14,21 @@ public class BaseHttpFunc {
 
     public static String token;
     private Object object=new Object();
-    public static RequestCall getTokenBuilder(String url, Object o) {
-        return OkHttpUtils.postString()
-                .url(url)
-                .addHeader("Access-Token", token)
-                .mediaType(MediaType.parse("application/json"))
-                .content(new Gson().toJson(o))
-                .build();
-    }
-
     public static RequestCall getTokenBuilder(String url) {
         return OkHttpUtils.postString()
                 .url(url)
                 .addHeader("Access-Token", token)
                 .mediaType(MediaType.parse("application/json"))
                 .content(new Gson().toJson(new Object()))
+                .build();
+    }
+
+    public static RequestCall getTokenBuilder(String url, Object o) {
+        return OkHttpUtils.postString()
+                .url(url)
+                .addHeader("Access-Token", token)
+                .mediaType(MediaType.parse("application/json"))
+                .content(new Gson().toJson(o))
                 .build();
     }
 

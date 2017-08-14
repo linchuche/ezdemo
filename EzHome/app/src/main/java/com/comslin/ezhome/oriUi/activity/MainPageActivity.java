@@ -13,7 +13,7 @@ import com.comslin.ezhome.oriUi.fragment.PersonInfoFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
-public class MainPageActivity extends AppCompatActivity {
+public class MainPageActivity extends BaseActivity {
 
     private BottomBar mBottomBar;
     private String TAG = "MainPageActivity";

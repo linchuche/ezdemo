@@ -49,8 +49,8 @@ public class DevicesAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {//for asymmetricGridView display on mainViewPager
-        Device device=new Device();
-        if (position==0){
+        Device device = new Device();
+        if (position == 0) {
             device.setRowSpan(2);
             device.setColumnSpan(2);
         }
@@ -72,38 +72,66 @@ public class DevicesAdapter extends BaseAdapter {
             deviceHolder = (DeviceHolder) convertView.getTag();
         }
         if (displayAll) {
-            deviceHolder.imageView.setImageResource(getResByTypeId(position));}
-        else {
+            deviceHolder.imageView.setImageResource(getResByTypeId(position));
+            deviceHolder.name.setText(getNameByTypeId(position));
+        } else {
             Device device = deviceList.get(position);
-            deviceHolder.imageView.setImageResource(getResByTypeId(device.getDeviceTypeId()));}
+            deviceHolder.imageView.setImageResource(getResByTypeId(device.getDeviceTypeId()));
+        }
         return convertView;
     }
 
+    private String getNameByTypeId(int typeId) {
+        switch (typeId) {
+            case 0:
+                return "照明";
+            case 1:
+                return "插座、电器";
+            case 2:
+                return "传感器";
+            case 3:
+                return "能耗计量";
+            case 4:
+                return "门窗磁";
+            case 5:
+                return "电机";
+            case 6:
+                return "家电遥控";
+            case 7:
+                return "暖通系统";
+            case 8:
+                return "开关";
+            case 9:
+                return "锁";
+            default:
+                return "设备";
+        }
+    }
 
     private int getResByTypeId(int typeId) {
         switch (typeId) {
             case 0:
-                return R.drawable.device_type_id4000_icon;
+                return R.drawable.device_type_id1000_icon;
             case 1:
-                return R.drawable.device_type_id3000_icon;
-            case 2:
-                return R.drawable.device_type_id2002_icon;
-            case 3:
-                return R.drawable.device_type_id2003_icon;
-            case 4:
-                return R.drawable.device_type_id2004_icon;
-            case 5:
-                return R.drawable.device_type_id2005_icon;
-            case 6:
-                return R.drawable.device_type_id2006_icon;
-            case 7:
-                return R.drawable.device_type_id2007_icon;
-            case 8:
-                return R.drawable.device_type_id2008_icon;
-            case 9:
-                return R.drawable.device_type_id2009_icon;
-            default:
                 return R.drawable.device_type_id2000_icon;
+            case 2:
+                return R.drawable.device_type_id3000_icon;
+            case 3:
+                return R.drawable.device_type_id4000_icon;
+            case 4:
+                return R.drawable.device_type_id5000_icon;
+            case 5:
+                return R.drawable.device_type_id6000_icon;
+            case 6:
+                return R.drawable.device_type_id7000_icon;
+            case 7:
+                return R.drawable.device_type_id8000_icon;
+            case 8:
+                return R.drawable.device_type_id9000_icon;
+            case 9:
+                return R.drawable.device_type_id10001_icon;
+            default:
+                return R.drawable.device_type_id1000_icon;
         }
     }
 

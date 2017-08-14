@@ -9,6 +9,7 @@ import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.StringRes;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -115,7 +116,7 @@ public abstract class BaseActivity extends Activity {
         });
     }
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-    protected void showProgress(final boolean show) {
+    public void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
         // for very easy animations. If available, use these APIs to fade-in
         // the progress spinner.
@@ -132,6 +133,11 @@ public abstract class BaseActivity extends Activity {
         } else {
             mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
         }
+    }
+    protected void setTopRightText(@StringRes int res){
+        topRightTitleTxt.setText(res);
+        topRightTitleTxt.setVisibility(View.VISIBLE);
+
     }
     protected void setTopRightText(String text) {
         if (null == text) {

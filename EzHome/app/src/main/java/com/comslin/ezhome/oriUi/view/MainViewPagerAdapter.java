@@ -7,8 +7,9 @@ package com.comslin.ezhome.oriUi.view;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -23,7 +24,7 @@ import com.comslin.ezhome.oriUi.activity.RoomAddActivity;
 import com.comslin.ezhome.oriUi.http.bean.devices.Device;
 import com.comslin.ezhome.oriUi.http.bean.gateway.Gateway;
 import com.comslin.ezhome.oriUi.http.bean.room.Room;
-import com.felipecsl.asymmetricgridview.library.Utils;
+import com.comslin.ezhome.oriUi.http.bean.scene.Scene;
 import com.felipecsl.asymmetricgridview.library.widget.AsymmetricGridView;
 import com.felipecsl.asymmetricgridview.library.widget.AsymmetricGridViewAdapter;
 
@@ -38,6 +39,8 @@ public class MainViewPagerAdapter extends PagerAdapter implements XRefreshView.X
     private RoomAdapter roomAdapter = new RoomAdapter();
     private DevicesAdapter devicesAdapter = new DevicesAdapter();
     private GatewayAdapter gatewayAdapter = new GatewayAdapter();
+    SceneAdapter sceneAdapter=new SceneAdapter();
+
     private int currentPosition = 0;
 
     public int getCurrentPosition() {
@@ -59,7 +62,10 @@ public class MainViewPagerAdapter extends PagerAdapter implements XRefreshView.X
         gatewayAdapter.setGatewayList(gatewayList);
         gatewayAdapter.notifyDataSetChanged();
     }
-
+    public void setScendList(List<Scene> scendList){
+        sceneAdapter.setSceneList(scendList);
+        sceneAdapter.notifyDataSetChanged();
+    }
     public MainViewPagerAdapter() {
 
 
@@ -106,11 +112,11 @@ public class MainViewPagerAdapter extends PagerAdapter implements XRefreshView.X
                 container.addView(asymmetricGridView);
                 return asymmetricGridView;
             case 1:
-                TextView textView = new TextView(mContext);
-                textView.setText("blank");
-                textView.setGravity(Gravity.CENTER);
-                container.addView(textView);
-                return textView;
+                RecyclerView recyclerView=new RecyclerView(mContext);
+                recyclerView.setAdapter(sceneAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+                container.addView(recyclerView);
+                return recyclerView;
             case 2:
                 DevicesAdapter deviceType = new DevicesAdapter();
                 GridView gridView = new GridView(mContext);

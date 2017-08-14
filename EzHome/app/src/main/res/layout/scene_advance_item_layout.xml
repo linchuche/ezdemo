@@ -1,37 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:gravity="center" android:background="@color/white" android:paddingTop="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/scene_advance_min_height"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:id="@id/scene_advance_act_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/widget_common_height">
-        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:id="@id/scene_advance_num_txt" android:paddingLeft="@dimen/padding_twenty" android:paddingBottom="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_twenty" android:textIsSelectable="false" android:alpha="0.5" />
-        <LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingLeft="@dimen/padding_ten" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/widget_common_height">
-            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_advance_device_layout" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:textColorHint="@color/black" android:id="@id/scene_advance_device" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/scene_manual_info_name_hint" android:layout_weight="1.0" android:textIsSelectable="false" android:alpha="0.7" />
-                <ImageView android:background="@drawable/arrow_right_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/white"
+             android:gravity="center"
+             android:minHeight="@dimen/scene_advance_min_height"
+             android:paddingTop="@dimen/padding_ten">
+
+    <LinearLayout
+        android:id="@id/scene_advance_act_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:minHeight="@dimen/widget_common_height"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@id/scene_advance_num_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_twenty"
+            android:alpha="0.5"
+            android:paddingBottom="@dimen/padding_ten"
+            android:paddingLeft="@dimen/padding_twenty"
+            android:textColor="@color/black"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/common_fontsize_normal"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:minHeight="@dimen/widget_common_height"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_ten">
+
+            <LinearLayout
+                android:id="@id/scene_advance_device_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:minHeight="@dimen/widget_common_height"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@id/scene_advance_device"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:alpha="0.7"
+                    android:hint="@string/scene_manual_info_name_hint"
+                    android:padding="@dimen/padding_ten"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/common_fontsize_normal"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_ten"
+                    android:layout_marginRight="@dimen/padding_ten"
+                    android:background="@drawable/arrow_right_bg"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"/>
             </LinearLayout>
-            <TextView android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
-            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_advance_action_layout" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:textColorHint="@color/black" android:id="@id/scene_advance_action" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/scene_advance_action" android:layout_weight="1.0" android:textIsSelectable="false" android:alpha="0.7" />
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/gray" android:id="@id/scene_advance_action_desc" android:padding="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="开" android:textIsSelectable="false" />
-                <ImageView android:background="@drawable/arrow_right_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/line_common_height"
+                android:background="@color/common_line_color"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:id="@id/scene_advance_action_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:minHeight="@dimen/widget_common_height"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@id/scene_advance_action"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:alpha="0.7"
+                    android:hint="@string/scene_advance_action"
+                    android:padding="@dimen/padding_ten"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/common_fontsize_normal"/>
+
+                <TextView
+                    android:id="@id/scene_advance_action_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_ten"
+                    android:text="开"
+                    android:textColor="@color/gray"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/common_fontsize_normal"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_ten"
+                    android:layout_marginRight="@dimen/padding_ten"
+                    android:background="@drawable/arrow_right_bg"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"/>
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:id="@id/scene_advance_start_time_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <TextView android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
-                <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
-                    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:textColorHint="@color/black" android:id="@id/scene_advance_start_time" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/scene_advance_start_time" android:layout_weight="1.0" android:textIsSelectable="false" android:alpha="0.7" />
-                    <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/gray" android:id="@id/scene_advance_start_time_desc" android:padding="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4分钟" android:textIsSelectable="false" />
-                    <ImageView android:background="@drawable/arrow_right_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+
+            <LinearLayout
+                android:id="@id/scene_advance_start_time_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/line_common_height"
+                    android:background="@color/common_line_color"
+                    android:orientation="horizontal"/>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:minHeight="@dimen/widget_common_height"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@id/scene_advance_start_time"
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:alpha="0.7"
+                        android:hint="@string/scene_advance_start_time"
+                        android:padding="@dimen/padding_ten"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textIsSelectable="false"
+                        android:textSize="@dimen/common_fontsize_normal"/>
+
+                    <TextView
+                        android:id="@id/scene_advance_start_time_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_ten"
+                        android:text="4分钟"
+                        android:textColor="@color/gray"
+                        android:textIsSelectable="false"
+                        android:textSize="@dimen/common_fontsize_normal"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_ten"
+                        android:layout_marginRight="@dimen/padding_ten"
+                        android:background="@drawable/arrow_right_bg"
+                        android:contentDescription="@null"
+                        android:scaleType="fitXY"/>
                 </LinearLayout>
             </LinearLayout>
-            <TextView android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" />
-            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_advance_continue_time_layout" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/widget_common_height">
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:textColorHint="@color/black" android:id="@id/scene_advance_continue_time" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/scene_advance_continue_time" android:layout_weight="1.0" android:textIsSelectable="false" android:alpha="0.7" />
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/gray" android:id="@id/scene_advance_continue_time_desc" android:padding="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4分钟" android:textIsSelectable="false" />
-                <ImageView android:background="@drawable/arrow_right_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/line_common_height"
+                android:background="@color/common_line_color"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:id="@id/scene_advance_continue_time_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:minHeight="@dimen/widget_common_height"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@id/scene_advance_continue_time"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:alpha="0.7"
+                    android:hint="@string/scene_advance_continue_time"
+                    android:padding="@dimen/padding_ten"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/common_fontsize_normal"/>
+
+                <TextView
+                    android:id="@id/scene_advance_continue_time_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_ten"
+                    android:text="4分钟"
+                    android:textColor="@color/gray"
+                    android:textIsSelectable="false"
+                    android:textSize="@dimen/common_fontsize_normal"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_ten"
+                    android:layout_marginRight="@dimen/padding_ten"
+                    android:background="@drawable/arrow_right_bg"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <FrameLayout android:orientation="horizontal" android:id="@id/scene_advance_delete_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/widget_common_height">
-        <TextView android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="fill_parent" android:alpha="0.3" />
-        <ImageView android:layout_gravity="right" android:id="@id/scene_advance_delete_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/scenec_advance_delete" android:scaleType="fitXY" android:contentDescription="@null" />
+
+    <FrameLayout
+        android:id="@id/scene_advance_delete_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:minHeight="@dimen/widget_common_height"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:alpha="0.3"
+            android:background="@color/gray"/>
+
+        <ImageView
+            android:id="@id/scene_advance_delete_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/scenec_advance_delete"/>
     </FrameLayout>
 </FrameLayout>

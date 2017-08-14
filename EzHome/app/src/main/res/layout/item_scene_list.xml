@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imv_scene_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/screen_auto"/>
+
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imv_scene_state">
+
+        <TextView
+            android:id="@+id/tv_scene_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试场景"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_scene_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="有人开灯，无人关灯"
+            android:textColor="@color/grey"/>
+    </LinearLayout>
+
+    <Switch
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/swt_scene"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
