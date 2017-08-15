@@ -8,6 +8,7 @@
     tools:context="com.comslin.ezhome.oriUi.activity.RoomDetailActivity">
 <GridView
     android:id="@+id/gv_room_detail"
+    android:numColumns="3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
 </android.support.constraint.ConstraintLayout>

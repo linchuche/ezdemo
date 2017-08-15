@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.comslin.ezhome.R;
+import com.comslin.ezhome.oriUi.activity.user.UserInfo;
 import com.comslin.ezhome.oriUi.http.HttpResultBean;
 import com.comslin.ezhome.oriUi.http.ResultCallBack;
 import com.comslin.ezhome.oriUi.http.bean.user.LoginRequest;
@@ -41,6 +42,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private View mProgressView;
     private View mLoginFormView;
     private View blank;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,10 +108,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 @Override
                 public void onResponse(HttpResultBean<LinkedTreeMap> response, int id) {
                     showProgress(false);
-                    if (response.getDesc().equals("成功")) {
+                    if ("成功".equals(response.getDesc())) {
                         SpManager.getInstance().putData(email, password);
-                        UserHttp.token=(String)response.getResult().get("accessToken");
-                        startActivity(new Intent(LoginActivity.this,MainPageActivity.class));
+                        UserInfo.registerTime = (String) response.getResult().get("registerTime");
+                        UserInfo.phoneNumber = (String) response.getResult().get("phoneNumber");
+                        UserInfo.token = (String) response.getResult().get("accessToken");
+                        startActivity(new Intent(LoginActivity.this, MainPageActivity.class));
+                        finish();
                     } else {
                         ToastUtil.showToast(LoginActivity.this, response.getDesc());
                     }

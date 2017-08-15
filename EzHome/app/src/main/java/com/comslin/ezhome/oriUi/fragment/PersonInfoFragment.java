@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.activity.AboutAppActivity;
 import com.comslin.ezhome.oriUi.activity.NotificationActivity;
+import com.comslin.ezhome.oriUi.activity.user.UserInfoActivity;
 
 /**
  * Created by linChao on 2017-04-26.
@@ -37,6 +38,8 @@ public class PersonInfoFragment extends Fragment implements View.OnClickListener
 
     }
 
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +50,6 @@ public class PersonInfoFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.setting_layout, container, false);
         initView(v);
-        mSettingNotion.setOnClickListener(this);
-        mSettingAbout.setOnClickListener(this);
         return v;
     }
 
@@ -62,6 +63,10 @@ public class PersonInfoFragment extends Fragment implements View.OnClickListener
         mSettingDataManager = (LinearLayout) v.findViewById(R.id.setting_data_manager);
         mSettingAbout = (LinearLayout) v.findViewById(R.id.setting_about);
         mSettingLayout = (LinearLayout) v.findViewById(R.id.setting_layout);
+
+        mSettingNotion.setOnClickListener(this);
+        mSettingAbout.setOnClickListener(this);
+        mSettingPerson.setOnClickListener(this);
     }
 
     @Override
@@ -74,6 +79,11 @@ public class PersonInfoFragment extends Fragment implements View.OnClickListener
             case R.id.setting_about:
                 Intent intent2=new Intent(getActivity(), AboutAppActivity.class);
                 getActivity().startActivity(intent2);
+                break;
+            case R.id.setting_person:
+                Intent intent3=new Intent(getActivity(), UserInfoActivity.class);
+                getActivity().startActivity(intent3);
+                break;
         }
     }
 }

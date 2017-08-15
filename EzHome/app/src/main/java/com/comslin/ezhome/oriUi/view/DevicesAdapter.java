@@ -108,7 +108,7 @@ public class DevicesAdapter extends BaseAdapter {
         }
     }
 
-    private int getResByTypeId(int typeId) {
+    public  static int getResByTypeId(int typeId) {
         switch (typeId) {
             case 0:
                 return R.drawable.device_type_id1000_icon;

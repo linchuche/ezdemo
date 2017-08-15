@@ -2,6 +2,7 @@ package com.comslin.ezhome.oriUi.http.function
 
 
 import android.util.Log
+import com.comslin.ezhome.oriUi.activity.user.UserInfo
 
 import com.comslin.ezhome.oriUi.http.HttpResultBean
 import com.comslin.ezhome.oriUi.http.ResultCallBack
@@ -45,7 +46,7 @@ class UserHttp : BaseHttpFunc() {
         fun loginOut() {
             OkHttpUtils.post()
                     .url(LOGOUT)
-                    .addHeader("Access-Token", BaseHttpFunc.token)
+                    .addHeader("Access-Token", UserInfo.token)
                     .build()
                     .execute(object : ResultCallBack<Any>(Any::class.java) {
                         override fun onResponse(response: HttpResultBean<Any>, id: Int) {

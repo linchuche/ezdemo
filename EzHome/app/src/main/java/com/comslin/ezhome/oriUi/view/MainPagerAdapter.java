@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.andview.refreshview.XRefreshView;
 import com.comslin.ezhome.oriUi.activity.RoomAddActivity;
+import com.comslin.ezhome.oriUi.activity.room.RoomDetailActivity;
 import com.comslin.ezhome.oriUi.http.bean.devices.Device;
 import com.comslin.ezhome.oriUi.http.bean.gateway.Gateway;
 import com.comslin.ezhome.oriUi.http.bean.room.Room;
@@ -31,7 +32,7 @@ import com.felipecsl.asymmetricgridview.library.widget.AsymmetricGridViewAdapter
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainViewPagerAdapter extends PagerAdapter implements XRefreshView.XRefreshViewListener {
+public class MainPagerAdapter extends PagerAdapter implements XRefreshView.XRefreshViewListener {
     private Context mContext;
     private LayoutInflater layoutInflater;
     private List<Device> deviceList = new ArrayList<>();
@@ -66,7 +67,7 @@ public class MainViewPagerAdapter extends PagerAdapter implements XRefreshView.X
         sceneAdapter.setSceneList(scendList);
         sceneAdapter.notifyDataSetChanged();
     }
-    public MainViewPagerAdapter() {
+    public MainPagerAdapter() {
 
 
     }
@@ -82,7 +83,7 @@ public class MainViewPagerAdapter extends PagerAdapter implements XRefreshView.X
         return 5;
     }
 
-    public MainViewPagerAdapter(Activity context) {
+    public MainPagerAdapter(Activity context) {
         mContext = context;
         layoutInflater = LayoutInflater.from(mContext);
 //        ListAdapter listAdapter
@@ -97,7 +98,7 @@ public class MainViewPagerAdapter extends PagerAdapter implements XRefreshView.X
 
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(final ViewGroup container, int position) {
         currentPosition = position;
         switch (position) {
             case 0:
@@ -135,6 +136,11 @@ public class MainViewPagerAdapter extends PagerAdapter implements XRefreshView.X
                             Intent intent = new Intent(mContext, RoomAddActivity.class);
                             mContext.startActivity(intent);
                         }
+                        else {
+                            Intent intent=new Intent(mContext, RoomDetailActivity.class);
+                            intent.putExtra("room",roomList.get(position));
+                            mContext.startActivity(intent);
+                        }
                     }
                 });
                 container.addView(roomGrid);
@@ -155,7 +161,7 @@ public class MainViewPagerAdapter extends PagerAdapter implements XRefreshView.X
 
     }
 
-    String TAG = "MainViewPagerAdapter";
+    String TAG = "MainPagerAdapter";
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {

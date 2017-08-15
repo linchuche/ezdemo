@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,7 @@ import com.comslin.ezhome.oriUi.http.bean.scene.Scene;
 import com.comslin.ezhome.oriUi.http.function.GatewayHttp;
 import com.comslin.ezhome.oriUi.http.function.RoomHttp;
 import com.comslin.ezhome.oriUi.http.function.SceneHttp;
-import com.comslin.ezhome.oriUi.view.MainViewPagerAdapter;
+import com.comslin.ezhome.oriUi.view.MainPagerAdapter;
 import com.comslin.ezhome.oriUi.widget.DiffTablayout;
 
 import okhttp3.Call;
@@ -26,7 +27,7 @@ import okhttp3.Call;
 public class MainPageFragment extends Fragment {
     private DiffTablayout mStlMain;
     private ViewPager mVpMain;
-    private MainViewPagerAdapter mAdapterMain;
+    private MainPagerAdapter mAdapterMain;
     private XRefreshView xRefreshView;
 
     public MainPageFragment() {
@@ -41,6 +42,8 @@ public class MainPageFragment extends Fragment {
         getGateway();
     }
 
+    String TAG = "MainPageFragment";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,18 +53,22 @@ public class MainPageFragment extends Fragment {
         xRefreshView = (XRefreshView) v.findViewById(R.id.xrv_main_page);
         xRefreshView.setMoveForHorizontal(true);
         xRefreshView.setPinnedContent(true);
-        mAdapterMain = new MainViewPagerAdapter(getActivity());
+        mAdapterMain = new MainPagerAdapter(getActivity());
 //        xRefreshView.setXRefreshViewListener(mAdapterMain);
         xRefreshView.setXRefreshViewListener(new XRefreshView.SimpleXRefreshListener() {
             @Override
             public void onRefresh(boolean isPullDown) {
+                Log.d(TAG, "onRefresh: " + mAdapterMain.getCurrentPosition());
                 switch (mAdapterMain.getCurrentPosition()) {
 //                {"main", "场景", "类型", "房间", "网关"};
                     case 1:
+                        xRefreshView.stopRefresh();
+                        break;
                     case 2:
+                        getSceneList();
                         break;
                     case 3:
-                        getSceneList();
+                        xRefreshView.stopRefresh();
                         break;
                     case 4:
                         getRoom();
@@ -112,7 +119,8 @@ public class MainPageFragment extends Fragment {
         });
 
     }
-    private void getSceneList(){
+
+    private void getSceneList() {
         SceneHttp.Companion.list().execute(new ListResultCallBack<Scene>(Scene.class) {
             @Override
             public void onError(Call call, Exception e, int id) {
@@ -123,6 +131,8 @@ public class MainPageFragment extends Fragment {
             public void onResponse(HttpListResultBean response, int id) {
                 xRefreshView.stopRefresh(true);
                 mAdapterMain.setScendList(response.getData());
+                xRefreshView.stopRefresh(true);
+
             }
         });
     }

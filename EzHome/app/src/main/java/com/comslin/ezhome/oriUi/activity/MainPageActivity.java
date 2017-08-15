@@ -1,10 +1,12 @@
 package com.comslin.ezhome.oriUi.activity;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.fragment.BlankFragment;
@@ -22,6 +24,7 @@ public class MainPageActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRunningActivity(this);
         initView();
 //        setSelectedPage(0);
         mBottomBar.setOnTabSelectListener(new OnTabSelectListener() {
@@ -34,6 +37,12 @@ public class MainPageActivity extends BaseActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        setRunningActivity(null);
     }
 
     MainPageFragment mainPageFragment;
@@ -85,11 +94,23 @@ public class MainPageActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        interfaceTest();
 
     }
+    long exitTime = 0;
 
-
+    @Override
+    public void onBackPressed() {
+        if ((System.currentTimeMillis() - exitTime) > 2000) {
+            Toast.makeText(getApplicationContext(), "再按一次退出程序",
+                    Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            Intent home = new Intent(Intent.ACTION_MAIN);
+            home.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            home.addCategory(Intent.CATEGORY_HOME);
+            startActivity(home);
+        }
+    }
 
     private void initView() {
         mBottomBar = (BottomBar) findViewById(R.id.bottomBar);

@@ -76,7 +76,7 @@ public class DiffTablayout extends SlidingTabLayout {
     protected TextView createDefaultTabView(Context context) {
         TextView textView = super.createDefaultTabView(context);
         textView.setTextColor(Color.WHITE);
-        textView.setTextSize(20);
+        textView.setTextSize(16);
         return textView;
     }
 }

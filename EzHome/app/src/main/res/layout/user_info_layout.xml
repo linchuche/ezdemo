@@ -1,28 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.android.potevio.easyhome.client.ui.widget.TitleWidget android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <ScrollView android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
-        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/widget_common_height" android:layout_marginLeft="@dimen/padding_twenty" android:layout_marginTop="@dimen/padding_twenty" android:layout_marginRight="@dimen/padding_twenty">
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textStyle="bold" android:textColor="@color/common_gray_font_color" android:ellipsize="none" android:id="@id/user_info_account_title" android:focusableInTouchMode="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:text="@string/user_info_account" android:scrollHorizontally="true" android:singleLine="true" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/common_light_font_color" android:ellipsize="none" android:id="@id/user_info_account_txtvew" android:focusableInTouchMode="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/padding_ten" android:scrollHorizontally="true" android:singleLine="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/common_bg_color"
+              android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/widget_common_height"
+                android:layout_marginLeft="@dimen/padding_twenty"
+                android:layout_marginRight="@dimen/padding_twenty"
+                android:layout_marginTop="@dimen/padding_twenty">
+
+                <TextView
+                    android:id="@id/user_info_account_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/padding_ten"
+                    android:ellipsize="none"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/user_info_account"
+                    android:textColor="@color/common_gray_font_color"
+                    android:textSize="@dimen/common_fontsize_normal"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@id/user_info_account_txtvew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/padding_ten"
+                    android:ellipsize="none"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/common_light_font_color"
+                    android:textSize="@dimen/common_fontsize_normal"/>
             </RelativeLayout>
-            <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" android:layout_marginLeft="@dimen/padding_twenty" android:layout_marginRight="@dimen/padding_twenty" />
-            <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/widget_common_height" android:layout_marginLeft="@dimen/padding_twenty" android:layout_marginRight="@dimen/padding_twenty">
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textStyle="bold" android:textColor="@color/common_gray_font_color" android:ellipsize="none" android:id="@id/user_info_create_time_title" android:focusableInTouchMode="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:text="@string/user_info_create_time" android:scrollHorizontally="true" android:singleLine="true" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/common_light_font_color" android:ellipsize="none" android:gravity="right" android:id="@id/user_info_create_time_txtvew" android:focusableInTouchMode="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/padding_ten" android:scrollHorizontally="true" android:singleLine="true" android:layout_toRightOf="@id/user_info_create_time_title" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:marqueeRepeatLimit="marquee_forever" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/line_common_height"
+                android:layout_marginLeft="@dimen/padding_twenty"
+                android:layout_marginRight="@dimen/padding_twenty"
+                android:background="@color/common_line_color"
+                android:orientation="horizontal"/>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/widget_common_height"
+                android:layout_marginLeft="@dimen/padding_twenty"
+                android:layout_marginRight="@dimen/padding_twenty">
+
+                <TextView
+                    android:id="@id/user_info_create_time_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/padding_ten"
+                    android:ellipsize="none"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/user_info_create_time"
+                    android:textColor="@color/common_gray_font_color"
+                    android:textSize="@dimen/common_fontsize_normal"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@id/user_info_create_time_txtvew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/padding_ten"
+                    android:layout_toRightOf="@id/user_info_create_time_title"
+                    android:ellipsize="none"
+                    android:focusableInTouchMode="true"
+                    android:gravity="right"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/common_light_font_color"
+                    android:textSize="@dimen/common_fontsize_normal"/>
             </RelativeLayout>
-            <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" android:layout_marginLeft="@dimen/padding_twenty" android:layout_marginRight="@dimen/padding_twenty" />
-            <LinearLayout android:gravity="center" android:id="@id/user_info_password_layout" android:layout_width="fill_parent" android:layout_height="@dimen/widget_common_height" android:layout_marginLeft="@dimen/padding_twenty" android:layout_marginRight="@dimen/padding_twenty">
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textStyle="bold" android:textColor="@color/common_gray_font_color" android:ellipsize="none" android:id="@id/user_info_password_title" android:focusableInTouchMode="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:text="@string/user_info_password" android:scrollHorizontally="true" android:singleLine="true" android:layout_weight="1.0" android:marqueeRepeatLimit="marquee_forever" />
-                <ImageView android:id="@id/user_info_password_txtvew" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/padding_ten" android:src="@drawable/arrow_right_bg" android:contentDescription="@null" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/line_common_height"
+                android:layout_marginLeft="@dimen/padding_twenty"
+                android:layout_marginRight="@dimen/padding_twenty"
+                android:background="@color/common_line_color"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:id="@id/user_info_password_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/widget_common_height"
+                android:layout_marginLeft="@dimen/padding_twenty"
+                android:layout_marginRight="@dimen/padding_twenty"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@id/user_info_password_title"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_ten"
+                    android:layout_weight="1.0"
+                    android:ellipsize="none"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/user_info_password"
+                    android:textColor="@color/common_gray_font_color"
+                    android:textSize="@dimen/common_fontsize_normal"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@id/user_info_password_txtvew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/padding_ten"
+                    android:contentDescription="@null"
+                    android:src="@drawable/arrow_right_bg"/>
             </LinearLayout>
-            <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/line_common_height" android:layout_marginLeft="@dimen/padding_twenty" android:layout_marginRight="@dimen/padding_twenty" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/line_common_height"
+                android:layout_marginLeft="@dimen/padding_twenty"
+                android:layout_marginRight="@dimen/padding_twenty"
+                android:background="@color/common_line_color"
+                android:orientation="horizontal"/>
         </LinearLayout>
     </ScrollView>
-    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <Button android:textSize="@dimen/common_fontsize_large" android:textColor="@color/white" android:gravity="center" android:id="@id/user_info_exit_btn" android:background="@drawable/common_btn_square_blue_selector" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/btn_common_height" android:layout_margin="@dimen/padding_five" android:text="@string/user_info_exit" android:layout_weight="1.0" style="?android:attr/borderlessButtonStyle" />
-        <Button android:textSize="@dimen/common_fontsize_large" android:textColor="@color/white" android:gravity="center" android:id="@id/user_info_logout_btn" android:background="@drawable/common_btn_square_blue_selector" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/btn_common_height" android:layout_margin="@dimen/padding_five" android:text="@string/user_info_logout" android:layout_weight="1.0" style="?android:attr/borderlessButtonStyle" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@id/user_info_exit_btn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/btn_common_height"
+            android:layout_margin="@dimen/padding_five"
+            android:layout_weight="1.0"
+            android:background="@drawable/common_btn_square_blue_selector"
+            android:gravity="center"
+            android:padding="0.0dip"
+            android:text="@string/user_info_exit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/common_fontsize_large"/>
+
+        <Button
+            android:id="@id/user_info_logout_btn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/btn_common_height"
+            android:layout_margin="@dimen/padding_five"
+            android:layout_weight="1.0"
+            android:background="@drawable/common_btn_square_blue_selector"
+            android:gravity="center"
+            android:padding="0.0dip"
+            android:text="@string/user_info_logout"
+            android:textColor="@color/white"
+            android:textSize="@dimen/common_fontsize_large"/>
     </LinearLayout>
 </LinearLayout>

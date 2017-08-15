@@ -6,13 +6,14 @@ import com.zhy.http.okhttp.request.RequestCall;
 
 import okhttp3.MediaType;
 
+import static com.comslin.ezhome.oriUi.activity.user.UserInfo.token;
+
 /**
  * Created by linChao on 2017-04-25.
  */
 
 public class BaseHttpFunc {
 
-    public static String token;
     private Object object=new Object();
     public static RequestCall getTokenBuilder(String url) {
         return OkHttpUtils.postString()
