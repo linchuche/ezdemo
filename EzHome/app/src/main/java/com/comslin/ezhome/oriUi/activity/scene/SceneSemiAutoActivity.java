@@ -11,7 +11,7 @@ public class SceneSemiAutoActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LayoutInflater.from(this).inflate(R.layout.scene_manual_info_layout,topContentView);
+        LayoutInflater.from(this).inflate(R.layout.scene_manual_add_layout,topContentView);
         setLeftButton(R.drawable.backbtn_selector);
         setTitle(R.string.scene_add_semiauto_title);
         setTopRightText(R.string.scene_save);

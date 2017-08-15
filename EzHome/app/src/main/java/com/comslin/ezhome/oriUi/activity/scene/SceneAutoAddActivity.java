@@ -1,6 +1,6 @@
 package com.comslin.ezhome.oriUi.activity.scene;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.view.View;
 import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.activity.BaseActivity;
 
-public class SceneAutoActivity extends BaseActivity implements View.OnClickListener{
+public class SceneAutoAddActivity extends BaseActivity implements View.OnClickListener{
 
 
     View launchCondition;
@@ -23,7 +23,7 @@ public class SceneAutoActivity extends BaseActivity implements View.OnClickListe
     }
 
     private void initTopBar() {
-        LayoutInflater.from(this).inflate(R.layout.scene_auto_info_layout, topContentView);
+        LayoutInflater.from(this).inflate(R.layout.scene_auto_add_layout, topContentView);
         setLeftButton(R.drawable.backbtn_selector);
         setTitle(R.string.scene_add_auto_title);
         setTopRightText(R.string.scene_save);
@@ -37,7 +37,8 @@ public class SceneAutoActivity extends BaseActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.scene_auto_info_cond:
-
+                Intent intent=new Intent(this,ChoseConditionActivity.class);
+                startActivity(intent);
         }
     }
 }

@@ -14,12 +14,15 @@ import android.widget.TextView;
 
 import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.activity.BaseActivity;
+import com.comslin.ezhome.oriUi.activity.scene.SceneAutoInfoActivity;
+import com.comslin.ezhome.oriUi.activity.scene.SceneManualInfoActivity;
 import com.comslin.ezhome.oriUi.activity.scene.SceneLanchActivity;
 import com.comslin.ezhome.oriUi.http.HttpListResultBean;
 import com.comslin.ezhome.oriUi.http.ListResultCallBack;
 import com.comslin.ezhome.oriUi.http.bean.scene.ChanggeSceneAble;
 import com.comslin.ezhome.oriUi.http.bean.scene.Scene;
 import com.comslin.ezhome.oriUi.http.function.SceneHttp;
+import com.comslin.ezhome.oriUi.util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,7 +87,21 @@ public class SceneAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     Log.d(TAG, "onCheckedChanged: " + isChecked);
-                    changeAble(scene.getSceneId(),isChecked);
+                    changeAble(scene.getSceneId(), isChecked);
+                }
+            });
+            ((SceneViewHolder) holder).itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i;
+                    if (Scene.MANUAL.equals(scene.getSceneType())) {
+                        i = new Intent(context, SceneManualInfoActivity.class);
+                    } else {
+                        i = new Intent(context, SceneAutoInfoActivity.class);
+                    }
+                    i.putExtra("scene", scene);
+                    context.startActivity(i);
+
                 }
             });
         }
@@ -93,9 +110,9 @@ public class SceneAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     String TAG = "SceneAdapter";
 
-    private void changeAble(int position,boolean able) {
+    private void changeAble(int position, boolean able) {
         Scene scene = sceneList.get(position);
-        if (scene.getEnabled()==able){
+        if (scene.getEnabled() == able) {
             return;
         }
         ((BaseActivity) context).showProgress(true);
@@ -110,9 +127,9 @@ public class SceneAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             public void onResponse(HttpListResultBean response, int id) {
                 ((BaseActivity) context).showProgress(false);
                 notifyDataSetChanged();
+                ToastUtil.showToast(context, response.getMsg());
             }
         });
-
     }
 
     private int getResBySceneType(String type) {
@@ -135,9 +152,11 @@ public class SceneAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         TextView name;
         TextView description;
         Switch aSwitch;
+        View itemView;
 
         public SceneViewHolder(View itemView) {
             super(itemView);
+            this.itemView = itemView;
             imageView = (ImageView) itemView.findViewById(R.id.imv_scene_state);
             name = (TextView) itemView.findViewById(R.id.tv_scene_name);
             description = (TextView) itemView.findViewById(R.id.tv_scene_description);

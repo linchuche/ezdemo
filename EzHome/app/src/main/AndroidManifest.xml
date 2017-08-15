@@ -43,12 +43,17 @@
         </activity>
         <activity android:name=".oriUi.activity.scene.SceneLanchActivity">
         </activity>
-        <activity android:name=".oriUi.activity.scene.SceneAutoActivity">
+        <activity android:name=".oriUi.activity.scene.SceneAutoAddActivity">
         </activity>
-        <activity android:name=".oriUi.activity.scene.SceneManualActivity">
+        <activity android:name=".oriUi.activity.scene.SceneManualAddActivity">
         </activity>
         <activity android:name=".oriUi.activity.scene.SceneSemiAutoActivity">
         </activity>
+        <activity android:name=".oriUi.activity.scene.SceneManualInfoActivity">
+        </activity>
+        <activity android:name=".oriUi.activity.scene.SceneAutoInfoActivity">
+        </activity>
+
     </application>
 
 </manifest>

@@ -1,6 +1,12 @@
 package com.comslin.ezhome.oriUi.http.bean.scene;
 
-public class Scene {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Scene implements Parcelable {
+    public static final String AUTO = "AUTO";
+    public static final String MANUAL= "MANUAL";
+
     private SceneConditionList[] conditionList;
     private String sceneType;
     private String sceneName;
@@ -82,4 +88,49 @@ public class Scene {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeTypedArray(this.conditionList, flags);
+        dest.writeString(this.sceneType);
+        dest.writeString(this.sceneName);
+        dest.writeInt(this.sceneId);
+        dest.writeString(this.description);
+        dest.writeTypedArray(this.taskList, flags);
+        dest.writeString(this.validTime);
+        dest.writeString(this.triggerType);
+        dest.writeByte(this.enabled ? (byte) 1 : (byte) 0);
+    }
+
+    public Scene() {
+    }
+
+    protected Scene(Parcel in) {
+        this.conditionList = in.createTypedArray(SceneConditionList.CREATOR);
+        this.sceneType = in.readString();
+        this.sceneName = in.readString();
+        this.sceneId = in.readInt();
+        this.description = in.readString();
+        this.taskList = in.createTypedArray(SceneTaskList.CREATOR);
+        this.validTime = in.readString();
+        this.triggerType = in.readString();
+        this.enabled = in.readByte() != 0;
+    }
+
+    public static final Parcelable.Creator<Scene> CREATOR = new Parcelable.Creator<Scene>() {
+        @Override
+        public Scene createFromParcel(Parcel source) {
+            return new Scene(source);
+        }
+
+        @Override
+        public Scene[] newArray(int size) {
+            return new Scene[size];
+        }
+    };
 }

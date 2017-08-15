@@ -1,7 +1,6 @@
 package com.comslin.ezhome.oriUi.activity.scene;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,11 +18,11 @@ public class SceneLanchActivity extends BaseActivity implements View.OnClickList
                 break;
 
             case R.id.scene_launch_auto:
-                Intent intent1=new Intent(this,SceneAutoActivity.class);
+                Intent intent1=new Intent(this,SceneAutoAddActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.scene_launch_manual:
-                Intent intent2=new Intent(this,SceneManualActivity.class);
+                Intent intent2=new Intent(this,SceneManualAddActivity.class);
                 startActivity(intent2);
                 break;
         }

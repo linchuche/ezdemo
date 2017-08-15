@@ -28,7 +28,7 @@
                 android:textIsSelectable="false"
                 android:textSize="@dimen/common_fontsize_normal"/>
 
-            <EditText
+            <TextView
                 android:id="@id/scene_auto_info_name"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
                 android:textIsSelectable="false"
                 android:textSize="@dimen/common_fontsize_normal"/>
 
-            <EditText
+            <TextView
                 android:id="@id/scene_auto_info_desc"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -81,7 +81,6 @@
                     android:layout_gravity="bottom"
                     android:layout_marginRight="@dimen/padding_ten"
                     android:gravity="bottom"
-                    android:text="@string/scene_add_auto_tip2"
                     android:textColor="@color/gray_txt_color"
                     android:textSize="@dimen/common_fontsize_samllest_est"/>
             </LinearLayout>
@@ -157,7 +156,6 @@
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
-                    android:hint="@string/scene_add_auto_tip6"
                     android:padding="@dimen/padding_ten"
                     android:textColor="@color/black"
                     android:textSize="@dimen/common_fontsize_normal"/>
