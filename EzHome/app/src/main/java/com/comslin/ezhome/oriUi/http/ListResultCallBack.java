@@ -2,6 +2,7 @@ package com.comslin.ezhome.oriUi.http;
 
 
 import android.util.Log;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -56,5 +57,6 @@ public abstract class ListResultCallBack<T> extends Callback<HttpListResultBean>
             requestBean.setData(list);
         }
         return requestBean;
+
     }
 }

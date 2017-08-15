@@ -116,7 +116,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                         startActivity(new Intent(LoginActivity.this, MainPageActivity.class));
                         finish();
                     } else {
-                        ToastUtil.showToast(LoginActivity.this, response.getDesc());
+                        ToastUtil.INSTANCE.showToast(LoginActivity.this, response.getDesc());
                     }
                 }
             });

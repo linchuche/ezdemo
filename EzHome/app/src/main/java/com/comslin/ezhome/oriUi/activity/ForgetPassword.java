@@ -120,12 +120,12 @@ public class ForgetPassword extends AppCompatActivity implements View.OnClickLis
     ListResultCallBack<Object> listResultCallBack = new ListResultCallBack<Object>(Object.class) {
         @Override
         public void onError(Call call, Exception e, int id) {
-            ToastUtil.showToast(ForgetPassword.this, e.getMessage());
+            ToastUtil.INSTANCE.showToast(ForgetPassword.this, e.getMessage());
         }
 
         @Override
         public void onResponse(HttpListResultBean response, int id) {
-            ToastUtil.showToast(ForgetPassword.this, response.getMsg());
+            ToastUtil.INSTANCE.showToast(ForgetPassword.this, response.getMsg());
         }
     };
 
@@ -157,15 +157,15 @@ public class ForgetPassword extends AppCompatActivity implements View.OnClickLis
                         .execute(new ResultCallBack<LoginRequest>(LoginRequest.class) {
                             @Override
                             public void onError(Call call, Exception e, int id) {
-                                ToastUtil.showToast(ForgetPassword.this, e.getMessage());
+                                ToastUtil.INSTANCE.showToast(ForgetPassword.this, e.getMessage());
                                 enableSendSms();
                             }
 
                             @Override
                             public void onResponse(HttpResultBean<LoginRequest> response, int id) {
-                                ToastUtil.showToast(ForgetPassword.this, response.getDesc());
+                                ToastUtil.INSTANCE.showToast(ForgetPassword.this, response.getDesc());
                                 if (response.getDesc().equals("成功")) {
-                                    ToastUtil.showToast(ForgetPassword.this, "请查看手机验证码");
+                                    ToastUtil.INSTANCE.showToast(ForgetPassword.this, "请查看手机验证码");
                                 }
                                 else {
                                     enableSendSms();
@@ -175,7 +175,7 @@ public class ForgetPassword extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.btn_complete:
                 if (!edtList.get(3).getText().toString().equals(edtList.get(2).getText().toString())) {
-                    ToastUtil.showToast(this, "两次密码不相同");
+                    ToastUtil.INSTANCE.showToast(this, "两次密码不相同");
                     return;
                 }
                 RigisterRequest registerBean = new RigisterRequest();

@@ -34,7 +34,7 @@ public abstract class ResultCallBack<T> extends Callback<HttpResultBean<T>> {
         Log.i(TAG, "parseNetworkResponse body: "+body);
         JsonObject jsonObject = new JsonParser().parse(body).getAsJsonObject();
         Gson gson = new Gson() ;
-        Type jsonType = new TypeToken<HttpResultBean>(){}.getType() ;
+        Type jsonType = new TypeToken<HttpResultBean>(){}.getType();
         HttpResultBean requestBean = gson.fromJson(body ,jsonType);
         if(requestBean.getCode() == 200 && mClass != null){
             JsonObject dataJson = jsonObject.getAsJsonObject("result") ;

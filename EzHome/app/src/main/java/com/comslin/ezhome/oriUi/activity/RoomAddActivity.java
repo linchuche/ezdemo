@@ -76,7 +76,7 @@ public class RoomAddActivity extends BaseActivity implements View.OnClickListene
             case R.id.room_add_ok_btn:
                 String text = mRoomAddEdittextLayout.getText().toString();
                 if (TextUtils.isEmpty(text)) {
-                    ToastUtil.showToast(this, "房间名不能为空");
+                    ToastUtil.INSTANCE.showToast(this, "房间名不能为空");
                 } else {
                     showProgress(true);
                     RoomAdd roomAdd = new RoomAdd(text, selectedTypeName);//改成了使用TYPE NAME而不是 TYPE ID
@@ -86,10 +86,10 @@ public class RoomAddActivity extends BaseActivity implements View.OnClickListene
                                 public void onResponse(HttpResultBean<LinkedTreeMap> response, int id) {
                                     showProgress(false);
                                     if (response.getDesc().equals("成功")) {
-                                        ToastUtil.showToast(RoomAddActivity.this, "添加房间成功");
+                                        ToastUtil.INSTANCE.showToast(RoomAddActivity.this, "添加房间成功");
 
                                     } else {
-                                        ToastUtil.showToast(RoomAddActivity.this, response.getDesc());
+                                        ToastUtil.INSTANCE.showToast(RoomAddActivity.this, response.getDesc());
                                     }
                                 }
                             }

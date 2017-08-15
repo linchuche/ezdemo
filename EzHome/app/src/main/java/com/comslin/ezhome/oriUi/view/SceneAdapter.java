@@ -127,7 +127,7 @@ public class SceneAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             public void onResponse(HttpListResultBean response, int id) {
                 ((BaseActivity) context).showProgress(false);
                 notifyDataSetChanged();
-                ToastUtil.showToast(context, response.getMsg());
+                ToastUtil.INSTANCE.showToast(context, response.getMsg());
             }
         });
     }
