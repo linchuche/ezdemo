@@ -1,5 +1,6 @@
 package com.comslin.ezhome.oriUi.activity.scene;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,13 +22,17 @@ public class ChoseConditionActivity extends BaseActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
+        Intent intent = null;
         switch (v.getId()) {
             case R.id.scene_sel_cond_type_time:
             case R.id.scene_sel_cond_type_location:
             case R.id.scene_sel_cond_type_weather:
+                intent = new Intent(this, WeatherConditionActivity.class);
             case R.id.scene_sel_cond_type_sensor:
                 break;
-
+        }
+        if (intent != null) {
+            startActivity(intent);
         }
     }
 }

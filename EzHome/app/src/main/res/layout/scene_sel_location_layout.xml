@@ -1,27 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/scene_launch_layout" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/view_common_top_title_layout" />
-    <com.baidu.mapapi.map.MapView android:id="@id/scene_location_cond_map" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginBottom="@dimen/padding_ten" android:layout_weight="1.0" />
-    <TextView android:textSize="@dimen/common_fontsize_samll" android:textColor="@color/gray_txt_color" android:gravity="bottom" android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:text="@string/scene_location_cond_tip1" />
-    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_location_cond_distance" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_ten" android:minHeight="@dimen/scene_location_cond_height">
-        <EditText android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:textColorHint="@color/gray_txt_color" android:id="@id/scene_location_cond_distance_txt" android:background="@null" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="fill_parent" android:hint="@string/scene_location_cond_tip2" android:maxLength="9" android:layout_weight="1.0" android:inputType="number" android:alpha="0.6" android:textCursorDrawable="@null" />
-        <ImageView android:background="@drawable/arrow_right_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@id/scene_launch_layout"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/common_bg_color"
+              android:orientation="vertical">
+
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@id/scene_location_cond_map"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_marginBottom="@dimen/padding_ten"
+        android:layout_weight="1.0"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="@dimen/padding_ten"
+        android:layout_marginRight="@dimen/padding_ten"
+        android:gravity="bottom"
+        android:text="@string/scene_location_cond_tip1"
+        android:textColor="@color/gray_txt_color"
+        android:textSize="@dimen/common_fontsize_samll"/>
+
+    <LinearLayout
+        android:id="@id/scene_location_cond_distance"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_ten"
+        android:background="@color/white"
+        android:gravity="center"
+        android:minHeight="@dimen/scene_location_cond_height"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@id/scene_location_cond_distance_txt"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:alpha="0.6"
+            android:background="@null"
+            android:hint="@string/scene_location_cond_tip2"
+            android:inputType="number"
+            android:maxLength="9"
+            android:paddingLeft="@dimen/padding_ten"
+            android:paddingRight="@dimen/padding_ten"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray_txt_color"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/common_fontsize_normal"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_ten"
+            android:layout_marginRight="@dimen/padding_ten"
+            android:background="@drawable/arrow_right_bg"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"/>
     </LinearLayout>
-    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_location_cond_point" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_ten" android:layout_marginBottom="@dimen/padding_ten" android:minHeight="@dimen/scene_location_cond_height">
-        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:textColorHint="@color/gray_txt_color" android:id="@id/scene_location_cond_point_txt" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/scene_location_cond_tip1" android:layout_weight="1.0" android:textIsSelectable="false" android:alpha="0.7" />
-        <ImageView android:background="@drawable/arrow_right_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+
+    <LinearLayout
+        android:id="@id/scene_location_cond_point"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_ten"
+        android:layout_marginTop="@dimen/padding_ten"
+        android:background="@color/white"
+        android:gravity="center"
+        android:minHeight="@dimen/scene_location_cond_height"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@id/scene_location_cond_point_txt"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:alpha="0.7"
+            android:hint="@string/scene_location_cond_tip1"
+            android:padding="@dimen/padding_ten"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray_txt_color"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/common_fontsize_normal"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_ten"
+            android:layout_marginRight="@dimen/padding_ten"
+            android:background="@drawable/arrow_right_bg"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:visibility="gone"/>
     </LinearLayout>
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_location_cond_min" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/scene_location_cond_height">
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:padding="@dimen/padding_fifteen" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/scene_adjust_statu_min_btn" android:layout_weight="1.0" android:alpha="0.7" />
-                <ImageView android:id="@id/scene_location_cond_min_icon" android:background="@drawable/selected_single" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_fifteen" android:scaleType="fitXY" android:contentDescription="@null" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@id/scene_location_cond_min"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minHeight="@dimen/scene_location_cond_height"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:alpha="0.7"
+                    android:padding="@dimen/padding_fifteen"
+                    android:text="@string/scene_adjust_statu_min_btn"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/common_fontsize_normal"/>
+
+                <ImageView
+                    android:id="@id/scene_location_cond_min_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_ten"
+                    android:layout_marginRight="@dimen/padding_fifteen"
+                    android:background="@drawable/selected_single"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"/>
             </LinearLayout>
-            <LinearLayout android:orientation="horizontal" android:background="@color/common_line_color" android:layout_width="fill_parent" android:layout_height="@dimen/padding_one" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" />
-            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_location_cond_max" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/scene_location_cond_height">
-                <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:padding="@dimen/padding_fifteen" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/scene_adjust_statu_max_btn" android:layout_weight="1.0" android:alpha="0.7" />
-                <ImageView android:id="@id/scene_location_cond_max_icon" android:background="@drawable/selected_single" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_fifteen" android:scaleType="fitXY" android:contentDescription="@null" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/padding_one"
+                android:layout_marginLeft="@dimen/padding_ten"
+                android:layout_marginRight="@dimen/padding_ten"
+                android:background="@color/common_line_color"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:id="@id/scene_location_cond_max"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minHeight="@dimen/scene_location_cond_height"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:alpha="0.7"
+                    android:padding="@dimen/padding_fifteen"
+                    android:text="@string/scene_adjust_statu_max_btn"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/common_fontsize_normal"/>
+
+                <ImageView
+                    android:id="@id/scene_location_cond_max_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_ten"
+                    android:layout_marginRight="@dimen/padding_fifteen"
+                    android:background="@drawable/selected_single"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -11,6 +11,25 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi'// ,'arm64-v8a'  'x86', 'armeabi-v7a', 'x86_64',
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file("\\key\\ezhome.keystore")
+            keyAlias "android.keystore"
+            storePassword "lcwan123"
+            keyPassword "lcwan123"
+        }
+        debug {
+            storeFile file("\\key\\ezhome.keystore")
+            keyAlias "android.keystore"
+            storePassword "lcwan123"
+            keyPassword "lcwan123"
+        }
+
     }
     buildTypes {
         release {
@@ -18,6 +37,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['jniLibs']
+        }
+    }
+
 }
 
 dependencies {
@@ -26,6 +51,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(':okhttputils')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.roughike:bottom-bar:2.3.1'
     compile 'com.google.code.gson:gson:2.7'
