@@ -1,4 +1,4 @@
-package com.comslin.ezhome.oriUi.activity;
+package com.comslin.ezhome.oriUi.activity.account;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

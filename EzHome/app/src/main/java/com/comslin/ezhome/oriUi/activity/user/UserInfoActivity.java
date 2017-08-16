@@ -11,8 +11,7 @@ import android.widget.TextView;
 
 import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.activity.BaseActivity;
-import com.comslin.ezhome.oriUi.activity.LoginActivity;
-import com.comslin.ezhome.oriUi.activity.MainPageActivity;
+import com.comslin.ezhome.oriUi.activity.account.LoginActivity;
 
 /**
  * Created by linchaoer@qq.com on 2017/8/15.

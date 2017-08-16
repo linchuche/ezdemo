@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.comslin.ezhome.R;
-import com.comslin.ezhome.oriUi.activity.AboutAppActivity;
+import com.comslin.ezhome.oriUi.activity.account.AboutAppActivity;
 import com.comslin.ezhome.oriUi.activity.NotificationActivity;
 import com.comslin.ezhome.oriUi.activity.user.UserInfoActivity;
 

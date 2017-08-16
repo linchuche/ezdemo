@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".oriUi.activity.LoginActivity"
+            android:name=".oriUi.activity.account.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".oriUi.activity.ForgetPassword"
+            android:name=".oriUi.activity.account.ForgetPassword"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".oriUi.activity.MainPageActivity"
@@ -38,7 +38,7 @@
             android:name=".oriUi.activity.RoomAddActivity"
             android:theme="@style/ActionBarBackTheme"/>
         <activity android:name=".oriUi.activity.NotificationActivity"/>
-        <activity android:name=".oriUi.activity.AboutAppActivity"/>
+        <activity android:name=".oriUi.activity.account.AboutAppActivity"/>
         <activity android:name=".oriUi.activity.RoomDetailActivity">
         </activity>
         <activity android:name=".oriUi.activity.scene.SceneLanchActivity">
