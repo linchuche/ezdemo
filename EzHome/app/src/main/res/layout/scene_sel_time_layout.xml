@@ -1,15 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/scene_launch_layout" android:background="@color/common_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/view_common_top_title_layout" />
-    <TextView android:textSize="@dimen/common_fontsize_samll" android:textColor="@color/gray_txt_color" android:layout_gravity="bottom" android:padding="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_ten" android:text="@string/scene_sel_time_cycle" />
-    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/scene_sel_time_cycle_type" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/padding_ten" android:minHeight="@dimen/widget_common_height">
-        <TextView android:textSize="@dimen/common_fontsize_normal" android:textColor="@color/black" android:id="@id/scene_sel_time_cycle_tv" android:padding="@dimen/padding_ten" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/time_cycletype_everyday" android:layout_weight="1.0" />
-        <ImageView android:background="@drawable/arrow_right_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/padding_ten" android:layout_marginRight="@dimen/padding_ten" android:scaleType="fitXY" android:contentDescription="@null" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@id/scene_launch_layout"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/common_bg_color"
+              android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/padding_ten"
+        android:padding="@dimen/padding_ten"
+        android:text="@string/scene_sel_time_cycle"
+        android:textColor="@color/gray_txt_color"
+        android:textSize="@dimen/common_fontsize_samll"/>
+
+    <LinearLayout
+        android:id="@id/scene_sel_time_cycle_type"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_ten"
+        android:background="@color/white"
+        android:gravity="center"
+        android:minHeight="@dimen/widget_common_height"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@id/scene_sel_time_cycle_tv"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:padding="@dimen/padding_ten"
+            android:text="@string/time_cycletype_everyday"
+            android:textColor="@color/black"
+            android:textSize="@dimen/common_fontsize_normal"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_ten"
+            android:layout_marginRight="@dimen/padding_ten"
+            android:background="@drawable/arrow_right_bg"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"/>
     </LinearLayout>
-    <TextView android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_weight="1.0" />
-    <LinearLayout android:background="@color/scene_sel_time_picker_bg_color" android:layout_width="fill_parent" android:layout_height="@dimen/scene_sel_time_picker">
-        <com.android.potevio.easyhome.client.ui.widget.HomePickerView android:id="@id/scene_sel_time_picker_hour" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
-        <com.android.potevio.easyhome.client.ui.widget.HomePickerView android:id="@id/scene_sel_time_picker_minute" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
-    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"/>
+    <TimePicker
+        android:id="@+id/tp_scene"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TimePicker>
 </LinearLayout>

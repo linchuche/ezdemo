@@ -25,10 +25,16 @@ public class ChoseConditionActivity extends BaseActivity implements View.OnClick
         Intent intent = null;
         switch (v.getId()) {
             case R.id.scene_sel_cond_type_time:
+                intent = new Intent(this, TimePickerActivity.class);
+                break;
             case R.id.scene_sel_cond_type_location:
+                intent = new Intent(this, LocationConditionActivity.class);
+                break;
             case R.id.scene_sel_cond_type_weather:
                 intent = new Intent(this, WeatherConditionActivity.class);
+                break;
             case R.id.scene_sel_cond_type_sensor:
+                intent=new Intent(this,SensorSetActivity.class);
                 break;
         }
         if (intent != null) {

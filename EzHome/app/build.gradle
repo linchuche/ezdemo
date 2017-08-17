@@ -61,6 +61,8 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.huxq17.xrefreshview:xrefreshview:3.6.9'
+//    compile 'com.contrarywind:Android-PickerView:3.2.3'
+
     testCompile 'junit:junit:4.12'
 }
 repositories {

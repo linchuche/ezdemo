@@ -41,7 +41,7 @@ import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.activity.BaseActivity;
 
 
-public class WeatherConditionActivity extends BaseActivity implements OnClickListener, OnGetGeoCoderResultListener {
+public class LocationConditionActivity extends BaseActivity implements OnClickListener, OnGetGeoCoderResultListener {
     private static final String TAG = "WeatherCondition";
     // 定位相关
     LocationClient mLocClient;
