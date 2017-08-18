@@ -1,16 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/common_bg_color" android:paddingBottom="@dimen/padding_twenty" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/view_common_top_title_layout" />
-    <ImageView android:layout_gravity="center" android:background="@drawable/add_device_active_gate" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/padding_ten" android:scaleType="center" android:contentDescription="@null" />
-    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/step1_layout" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
-        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
-            <TextView android:textSize="@dimen/common_fontsize_large" android:textColor="@color/gray" android:gravity="center" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_twenty" android:text="@string/lock_bind_gate_tip1" />
-            <TextView android:textSize="@dimen/common_fontsize_large" android:textColor="@color/gray" android:gravity="center" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lock_bind_gate_tip11" />
-            <TextView android:textSize="@dimen/common_fontsize_large" android:textColor="@color/gray" android:gravity="center" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lock_bind_gate_tip12" />
-            <TextView android:textSize="@dimen/common_fontsize_large" android:textColor="@color/gray" android:gravity="center" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lock_bind_gate_tip13" />
-            <TextView android:textSize="@dimen/common_fontsize_large" android:textColor="@color/gray" android:gravity="center" android:id="@id/lock_bind_gate_tv" android:paddingLeft="@dimen/padding_ten" android:paddingRight="@dimen/padding_ten" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/padding_five" android:text="@string/lock_bind_gate_tip2" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/common_bg_color"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/padding_twenty">
+
+    <include layout="@layout/view_common_top_title_layout"/>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/padding_ten"
+        android:background="@drawable/add_device_active_gate"
+        android:contentDescription="@null"
+        android:padding="0.0dip"
+        android:scaleType="center"/>
+
+    <LinearLayout
+        android:id="@id/step1_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_twenty"
+                android:gravity="center"
+                android:paddingLeft="@dimen/padding_ten"
+                android:paddingRight="@dimen/padding_ten"
+                android:text="@string/lock_bind_gate_tip1"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/common_fontsize_large"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="@dimen/padding_ten"
+                android:paddingRight="@dimen/padding_ten"
+                android:text="@string/lock_bind_gate_tip11"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/common_fontsize_large"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="@dimen/padding_ten"
+                android:paddingRight="@dimen/padding_ten"
+                android:text="@string/lock_bind_gate_tip12"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/common_fontsize_large"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="@dimen/padding_ten"
+                android:paddingRight="@dimen/padding_ten"
+                android:text="@string/lock_bind_gate_tip13"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/common_fontsize_large"/>
+
+            <TextView
+                android:id="@id/lock_bind_gate_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_five"
+                android:gravity="center"
+                android:paddingLeft="@dimen/padding_ten"
+                android:paddingRight="@dimen/padding_ten"
+                android:text="@string/lock_bind_gate_tip2"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/common_fontsize_large"
+                android:visibility="gone"/>
         </LinearLayout>
-        <Button android:textSize="@dimen/common_fontsize_large" android:textColor="@color/white" android:gravity="center" android:id="@id/lock_bind_gate_btn" android:background="@drawable/common_btn_square_blue_selector" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/btn_common_height" android:layout_margin="@dimen/padding_five" android:text="@string/gateway_menu_lock_device_info" style="?android:attr/borderlessButtonStyle" />
+
+        <Button
+            android:id="@id/lock_bind_gate_btn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/btn_common_height"
+            android:layout_margin="@dimen/padding_five"
+            android:background="@drawable/common_btn_square_blue_selector"
+            android:gravity="center"
+            android:padding="0.0dip"
+            android:text="@string/gateway_menu_lock_device_info"
+            android:textColor="@color/white"
+            android:textSize="@dimen/common_fontsize_large"/>
     </LinearLayout>
 </LinearLayout>
