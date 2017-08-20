@@ -13,7 +13,7 @@ public class SceneLanchActivity extends BaseActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.scene_launch_semiauto:
-                Intent intent0=new Intent(this,SceneSemiAutoActivity.class);
+                Intent intent0=new Intent(this,SceneSemiAddActivity.class);
                 startActivity(intent0);
                 break;
 

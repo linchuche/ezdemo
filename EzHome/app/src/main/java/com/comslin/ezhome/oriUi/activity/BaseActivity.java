@@ -73,6 +73,7 @@ public abstract class BaseActivity extends Activity {
         topLeftBtn.setVisibility(View.GONE);
         topRightTitleTxt.setVisibility(View.GONE);
         setContentView(topContentView);
+        setLeftButton(R.drawable.backbtn_selector);
     }
 
     protected void setLeftText(String text) {

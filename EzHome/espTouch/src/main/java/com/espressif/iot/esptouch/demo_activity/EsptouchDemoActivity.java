@@ -1,11 +1,5 @@
 package com.espressif.iot.esptouch.demo_activity;
 
-import com.espressif.iot.esptouch.EsptouchTask;
-import com.espressif.iot.esptouch.IEsptouchResult;
-import com.espressif.iot.esptouch.IEsptouchTask;
-import com.espressif.iot.esptouch.task.__IEsptouchTask;
-import com.espressif.iot_esptouch_demo.R;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -19,6 +13,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.espressif.iot.esptouch.EsptouchTask;
+import com.espressif.iot.esptouch.IEsptouchResult;
+import com.espressif.iot.esptouch.IEsptouchTask;
+import com.espressif.iot.esptouch.task.__IEsptouchTask;
+import com.espressif.iot_esptouch_demo.R;
 
 public class EsptouchDemoActivity extends Activity implements OnClickListener {
 
@@ -36,7 +36,6 @@ public class EsptouchDemoActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.esptouch_demo_activity);
-
 		mWifiAdmin = new EspWifiAdminSimple(this);
 		mTvApSsid = (TextView) findViewById(R.id.tvApSssidConnected);
 		mEdtApPassword = (EditText) findViewById(R.id.edtApPassword);

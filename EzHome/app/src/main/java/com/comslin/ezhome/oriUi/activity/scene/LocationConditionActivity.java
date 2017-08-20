@@ -1,12 +1,14 @@
 package com.comslin.ezhome.oriUi.activity.scene;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -22,7 +24,7 @@ import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BaiduMap.OnMapClickListener;
 import com.baidu.mapapi.map.BaiduMapOptions;
-import com.baidu.mapapi.map.InfoWindow;
+import com.baidu.mapapi.map.CircleOptions;
 import com.baidu.mapapi.map.MapPoi;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
@@ -30,6 +32,8 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.Marker;
 import com.baidu.mapapi.map.MyLocationConfiguration.LocationMode;
 import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.map.Stroke;
 import com.baidu.mapapi.map.UiSettings;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.search.geocode.GeoCodeResult;
@@ -39,6 +43,7 @@ import com.baidu.mapapi.search.geocode.ReverseGeoCodeOption;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.activity.BaseActivity;
+import com.comslin.ezhome.oriUi.util.ToastUtil;
 
 
 public class LocationConditionActivity extends BaseActivity implements OnClickListener, OnGetGeoCoderResultListener {
@@ -60,14 +65,15 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
     private String currentLoc = "";
     private double latitude = 0.0;
     private double longitude = 0.0;
-    private TextView mSceneWeatherTxt;
-    private LinearLayout mSceneLocationCondPoint;
-    private ImageView mSceneWeatherRainIcon;
-    private LinearLayout mSceneWeatherRain;
-    private ImageView mSceneWeatherNoRainIcon;
-    private LinearLayout mSceneWeatherNoRain;
-    private LinearLayout mSceneLaunchLayout;
     String currentLocation;
+    private MapView mSceneLocationCondMap;
+    private EditText mSceneLocationCondDistanceTxt;
+    private LinearLayout mSceneLocationCondDistance;
+    private TextView mSceneLocationCondPointTxt;
+    private ImageView mSceneLocationCondMinIcon;
+    private LinearLayout mSceneLocationCondMin;
+    private ImageView mSceneLocationCondMaxIcon;
+    private LinearLayout mSceneLocationCondMax;
 
     @Override
     public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
@@ -78,7 +84,7 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
     public void onGetReverseGeoCodeResult(ReverseGeoCodeResult reverseGeoCodeResult) {
         if (reverseGeoCodeResult.getAddress() != null) {
             currentLocation = reverseGeoCodeResult.getAddress();
-            mSceneWeatherTxt.setText(currentLocation);
+            mSceneLocationCondPointTxt.setText(currentLocation);
         }
     }
 
@@ -103,7 +109,6 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
             LatLng ptCenter = new LatLng(location.getLatitude(), location.getLongitude());
 
             MyLocationData locData = new MyLocationData.Builder()
-                    .accuracy(location.getRadius())
                     // 此处设置开发者获取到的方向信息，顺时针0-360
                     .direction(100).latitude(location.getLatitude())
                     .longitude(location.getLongitude()).build();
@@ -131,8 +136,7 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
         SDKInitializer.initialize(getApplicationContext());
         mSearch = GeoCoder.newInstance();
         mSearch.setOnGetGeoCodeResultListener(this);
-
-        LayoutInflater.from(this).inflate(R.layout.scene_weather_layout, topContentView);
+        LayoutInflater.from(this).inflate(R.layout.scene_sel_location_layout, topContentView);
         initView();
         initLocation();
     }
@@ -145,14 +149,15 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
         setLeftButton(R.drawable.backbtn_selector);
         setTitle(R.string.scene_sel_cond_type_weather);
         setTopRightText(R.string.common_save);
-        mMapView = (MapView) findViewById(R.id.scene_weather_map);
-        mSceneWeatherTxt = (TextView) findViewById(R.id.scene_weather_txt);
-        mSceneLocationCondPoint = (LinearLayout) findViewById(R.id.scene_location_cond_point);
-        mSceneWeatherRainIcon = (ImageView) findViewById(R.id.scene_weather_rain_icon);
-        mSceneWeatherRain = (LinearLayout) findViewById(R.id.scene_weather_rain);
-        mSceneWeatherNoRainIcon = (ImageView) findViewById(R.id.scene_weather_no_rain_icon);
-        mSceneWeatherNoRain = (LinearLayout) findViewById(R.id.scene_weather_no_rain);
-        mSceneLaunchLayout = (LinearLayout) findViewById(R.id.scene_launch_layout);
+        mMapView = (MapView) findViewById(R.id.scene_location_cond_map);
+        mSceneLocationCondDistanceTxt = (EditText) findViewById(R.id.scene_location_cond_distance_txt);
+        mSceneLocationCondDistance = (LinearLayout) findViewById(R.id.scene_location_cond_distance);
+        mSceneLocationCondPointTxt = (TextView) findViewById(R.id.scene_location_cond_point_txt);
+//        mSceneLocationCondPoint = (LinearLayout) findViewById(R.id.scene_location_cond_point);
+        mSceneLocationCondMinIcon = (ImageView) findViewById(R.id.scene_location_cond_min_icon);
+//        mSceneLocationCondMin = (LinearLayout) findViewById(R.id.scene_location_cond_min);
+        mSceneLocationCondMaxIcon = (ImageView) findViewById(R.id.scene_location_cond_max_icon);
+//        mSceneLocationCondMax = (LinearLayout) findViewById(R.id.scene_location_cond_max);
     }
 
     boolean rainy = true;
@@ -160,15 +165,13 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.scene_weather_no_rain:
-                mSceneWeatherRainIcon.setVisibility(View.INVISIBLE);
-                mSceneWeatherNoRainIcon.setVisibility(View.VISIBLE);
-                rainy = false;
+            case R.id.scene_location_cond_max:
+                mSceneLocationCondMaxIcon.setVisibility(View.VISIBLE);
+                mSceneLocationCondMinIcon.setVisibility(View.INVISIBLE);
                 break;
-            case R.id.scene_weather_rain:
-                mSceneWeatherRainIcon.setVisibility(View.VISIBLE);
-                mSceneWeatherNoRainIcon.setVisibility(View.INVISIBLE);
-                rainy = true;
+            case R.id.scene_location_cond_min:
+                mSceneLocationCondMinIcon.setVisibility(View.INVISIBLE);
+                mSceneLocationCondMinIcon.setVisibility(View.VISIBLE);
                 break;
 
         }
@@ -189,32 +192,25 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
         mUiSettings.setCompassEnabled(false);//启用指南针图层
         mBaiduMap.setOnMapClickListener(new OnMapClickListener() {
             public void onMapClick(LatLng point) {
+                clearClick();
+                String r = mSceneLocationCondDistanceTxt.getText().toString();
+                if (TextUtils.isEmpty(r)){
+                    ToastUtil.INSTANCE.showToast(LocationConditionActivity.this,R.string.scene_location_cond_tip1);
+                    return;
+                }
+                int i = Integer.valueOf(r);
+                if (i<100||i>500){
+                    ToastUtil.INSTANCE.showToast(LocationConditionActivity.this,R.string.scene_location_cond_tip4);
+                    return;
+                }
+                writeCircle(point, i);
+                mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(point));
+
                 // 在此处理点击事件
             }
 
             public boolean onMapPoiClick(MapPoi poi) {
-                // 在此处理底图标注点击事件
-                if (poi != null) {
-                    mBaiduMap.showInfoWindow(new InfoWindow(popupText, new LatLng(
-                            poi.getPosition().latitude,
-                            poi.getPosition().longitude), 0));
 
-                    latitude = poi.getPosition().latitude;
-                    longitude = poi.getPosition().longitude;
-//                    positionText.setText(currentLoc + "-" + poi.getName());
-                    MyLocationData locData = new MyLocationData.Builder()
-                            .accuracy(0)
-                            // 此处设置开发者获取到的方向信息，顺时针0-360
-                            .direction(100).latitude(poi.getPosition().latitude)
-                            .longitude(poi.getPosition().longitude).build();
-                    mBaiduMap.setMyLocationData(locData);
-
-                    LatLng ll = new LatLng(poi.getPosition().latitude,
-                            poi.getPosition().longitude);
-                    MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
-                    mBaiduMap.animateMapStatus(u);
-                    mSceneWeatherTxt.setText(poi.getName());
-                }
                 return false;
             }
         });
@@ -232,19 +228,17 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
         mLocClient.start();
     }
 
-    /**
-     * 手动请求定位的方法
-     */
-    public void requestLocation() {
-        if (mLocClient != null && mLocClient.isStarted()) {
-            isFirstLoc = true;
-            pgbLoading.setVisibility(View.VISIBLE);
-            mLocClient.requestLocation();
-        } else {
-            Log.d("log", "locClient is null or not started");
-        }
+    private void writeCircle(LatLng latLng, int radius) {
+        OverlayOptions ooCircle = new CircleOptions().fillColor(0X66999999)
+                .center(latLng).stroke(new Stroke(5, 0xAA999999))
+                .radius(radius);
+        mBaiduMap.addOverlay(ooCircle);
     }
 
+    public void clearClick() {
+        // 清除所有图层
+        mMapView.getMap().clear();
+    }
     @Override
     protected void onPause() {
         mMapView.onPause();

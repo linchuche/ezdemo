@@ -9,10 +9,19 @@ import android.widget.Toast
 
 object ToastUtil {
     private var toast: Toast? = null
-    fun showToast(context: Context, content: String) {//防止多次Toast叠加
+    fun showToast(context: Context, content: String?) {//防止多次Toast叠加
+        if(content==null){
+            return
+        }
         if (toast != null)
             toast!!.cancel()
         toast = Toast.makeText(context.applicationContext, content, Toast.LENGTH_SHORT)
+        toast!!.show()
+    }
+    fun showToast(context: Context, res: Int) {//防止多次Toast叠加
+        if (toast != null)
+            toast!!.cancel()
+        toast = Toast.makeText(context.applicationContext, res, Toast.LENGTH_SHORT)
         toast!!.show()
     }
 }

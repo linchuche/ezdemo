@@ -8,13 +8,7 @@
               android:paddingBottom="@dimen/padding_twenty">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/padding_fifteen"
-        android:text="@string/config_gateway_guide_find_gate"
-        android:textColor="@color/config_gate_title_color"
-        android:textSize="@dimen/common_fontsize_xlarge"/>
+
 
     <ImageView
         android:id="@id/config_gate_iv"
@@ -49,6 +43,7 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:onClick="onClick"
                 android:id="@id/config_gate_step1_cancel"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="fill_parent"
@@ -63,6 +58,7 @@
                 android:textSize="@dimen/common_fontsize_large"/>
 
             <Button
+                android:onClick="onClick"
                 android:id="@id/config_gate_step1_ok"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="fill_parent"
@@ -105,6 +101,7 @@
         </LinearLayout>
 
         <Button
+            android:onClick="onClick"
             android:id="@id/config_gate_step2_yes"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="fill_parent"

@@ -3,7 +3,7 @@ package com.comslin.ezhome.oriUi.http.bean.gateway;
 public class Gateway {
     private String serialNumber;
     private GatewayDeviceAdapters[] deviceAdapters;
-    private String name;
+    private String gatewayName;
     private boolean binding;
     private String model;
     private int id;
@@ -28,12 +28,12 @@ public class Gateway {
         this.deviceAdapters = deviceAdapters;
     }
 
-    public String getName() {
-        return this.name;
+    public String getGatewayName() {
+        return this.gatewayName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGatewayName(String gatewayName) {
+        this.gatewayName = gatewayName;
     }
 
     public boolean getBinding() {

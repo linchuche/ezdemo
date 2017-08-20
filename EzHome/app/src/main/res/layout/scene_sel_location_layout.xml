@@ -109,6 +109,8 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:clickable="true"
+                android:onClick="onClick"
                 android:id="@id/scene_location_cond_min"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -138,6 +140,8 @@
             </LinearLayout>
 
             <LinearLayout
+                android:clickable="true"
+                android:onClick="onClick"
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/padding_one"
                 android:layout_marginLeft="@dimen/padding_ten"

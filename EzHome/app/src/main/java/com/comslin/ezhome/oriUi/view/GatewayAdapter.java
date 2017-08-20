@@ -55,9 +55,10 @@ public class GatewayAdapter extends BaseAdapter {
             roomHolder = (ImgTvHolder) convertView.getTag();
         }
         if (position<gatewayList.size()){
+
             Gateway gateway=gatewayList.get(position);
             roomHolder.imageView.setImageResource(R.drawable.notice_system_icon);
-            roomHolder.name.setText(gateway.getName());
+            roomHolder.name.setText(gateway.getGatewayName());
         }
         else {
             roomHolder.imageView.setImageResource(R.drawable.add_btn);

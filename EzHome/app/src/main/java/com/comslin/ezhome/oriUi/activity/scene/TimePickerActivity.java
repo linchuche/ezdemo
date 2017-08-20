@@ -30,6 +30,7 @@ public class TimePickerActivity extends BaseActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         LayoutInflater.from(this).inflate(R.layout.scene_sel_time_layout,topContentView);
         initView();
+        setTitle(R.string.scene_sel_time_title);
     }
 
     private void initView() {

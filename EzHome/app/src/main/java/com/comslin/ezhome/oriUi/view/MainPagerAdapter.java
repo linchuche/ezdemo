@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.andview.refreshview.XRefreshView;
 import com.comslin.ezhome.oriUi.activity.RoomAddActivity;
+import com.comslin.ezhome.oriUi.activity.gateway.FindGateWayActivity;
 import com.comslin.ezhome.oriUi.activity.room.RoomDetailActivity;
 import com.comslin.ezhome.oriUi.http.bean.devices.Device;
 import com.comslin.ezhome.oriUi.http.bean.gateway.Gateway;
@@ -150,6 +151,19 @@ public class MainPagerAdapter extends PagerAdapter implements XRefreshView.XRefr
                 gatewayGrid.setNumColumns(3);
                 gatewayGrid.setAdapter(gatewayAdapter);
                 container.addView(gatewayGrid);
+                gatewayGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        if (position == gatewayAdapter.getCount() - 1) {
+                            Intent intent = new Intent(mContext, FindGateWayActivity.class);
+                            mContext.startActivity(intent);
+                        }
+                        else {
+
+                        }
+
+                    }
+                });
                 return gatewayGrid;
             default:
                 TextView defaultTV = new TextView(mContext);
