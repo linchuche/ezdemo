@@ -10,8 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.comslin.ezhome.R;
-import com.comslin.ezhome.oriUi.activity.BaseActivity;
-import com.comslin.ezhome.oriUi.http.bean.devices.Device;
 import com.comslin.ezhome.oriUi.http.bean.room.RoomEquipments;
 
 import java.util.ArrayList;
@@ -26,10 +24,21 @@ import static com.comslin.ezhome.oriUi.view.DevicesAdapter.getResByTypeId;
 public class EquipmentAdapter extends BaseAdapter {
     List<RoomEquipments> roomEquipmentses = new ArrayList<>();
     Context mContext;
+    private int select = -1;
 
     public EquipmentAdapter(List<RoomEquipments> roomEquipments) {
         roomEquipmentses = roomEquipments;
     }
+
+    public void setSelect(int i) {
+        if (select == i) {
+            select = -1;
+        } else {
+            select = i;
+        }
+        notifyDataSetChanged();
+    }
+
 
     @Override
     public int getCount() {
@@ -59,13 +68,20 @@ public class EquipmentAdapter extends BaseAdapter {
                 convertView = layoutInflater.inflate(R.layout.device_type_list_item_layout, parent, false);
                 eqpHolder.imageView = (ImageView) convertView.findViewById(R.id.device_type_list_item_icon);
                 eqpHolder.name = (TextView) convertView.findViewById(R.id.device_type_list_item_title_txtvew);
+                eqpHolder.selected = (ImageView) convertView.findViewById(R.id.device_type_list_item_sle_icon);
                 convertView.setTag(eqpHolder);
             } else {
                 eqpHolder = (EquipmentHolder) convertView.getTag();
             }
+
             RoomEquipments roomEquipment = roomEquipmentses.get(position);
             eqpHolder.name.setText(roomEquipment.getEquipmentName());
             eqpHolder.imageView.setImageResource(getResByTypeId(roomEquipment.getTypeId()));
+            if (select == position) {
+                eqpHolder.selected.setVisibility(View.VISIBLE);
+            } else {
+                eqpHolder.selected.setVisibility(View.INVISIBLE);
+            }
             return convertView;
         }
     }
@@ -81,5 +97,6 @@ public class EquipmentAdapter extends BaseAdapter {
     class EquipmentHolder {
         ImageView imageView;
         TextView name;
+        ImageView selected;
     }
 }

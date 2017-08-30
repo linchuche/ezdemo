@@ -18,15 +18,17 @@ import java.util.List;
  * Created by linChao on 2017-05-07.
  */
 
-public class RoomAdapter extends BaseAdapter {
-    List<Room> roomList= new ArrayList<>();
+public class ListRoomAdapter extends BaseAdapter {
+    List<Room> roomList = new ArrayList<>();
     Context mContext;
     LayoutInflater layoutInflater;
     boolean displayAll;
+
     public void setRoomList(List<Room> deviceList) {
-        this.roomList= deviceList;
+        this.roomList = deviceList;
         notifyDataSetChanged();
     }
+
     @Override
     public long getItemId(int position) {
         return 0;
@@ -34,7 +36,7 @@ public class RoomAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return roomList.size()+1;
+        return roomList.size();
     }
 
     @Override
@@ -56,21 +58,11 @@ public class RoomAdapter extends BaseAdapter {
         } else {
             roomHolder = (ImgTvHolder) convertView.getTag();
         }
-        if (position<roomList.size()){
-            Room room=roomList.get(position);
-            roomHolder.imageView.setImageResource(ResContent.getRoomTypeByTypeId(room.getRoomId()));
-            roomHolder.name.setText(room.getRoomName());
-        }
-        else {
-            roomHolder.imageView.setImageResource(R.drawable.room_add);
-            roomHolder.name.setText("添加房间");
-        }
+        Room room = roomList.get(position);
+        roomHolder.imageView.setImageResource(ResContent.getRoomTypeByTypeId(room.getRoomId()));
+        roomHolder.name.setText(room.getRoomName());
         return convertView;
     }
-
-
-
-
 
 
 }

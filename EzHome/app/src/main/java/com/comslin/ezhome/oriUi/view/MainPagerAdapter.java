@@ -38,7 +38,7 @@ public class MainPagerAdapter extends PagerAdapter implements XRefreshView.XRefr
     private LayoutInflater layoutInflater;
     private List<Device> deviceList = new ArrayList<>();
     private List<Room> roomList = new ArrayList<>();
-    private RoomAdapter roomAdapter = new RoomAdapter();
+    private MainRoomAdapter roomAdapter = new MainRoomAdapter();
     private DevicesAdapter devicesAdapter = new DevicesAdapter();
     private GatewayAdapter gatewayAdapter = new GatewayAdapter();
     SceneAdapter sceneAdapter=new SceneAdapter();
