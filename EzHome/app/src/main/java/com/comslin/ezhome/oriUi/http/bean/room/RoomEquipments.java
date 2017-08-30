@@ -119,4 +119,38 @@ public class RoomEquipments implements Parcelable {
             return new RoomEquipments[size];
         }
     };
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        RoomEquipments that = (RoomEquipments) o;
+
+        if (typeId != that.typeId) return false;
+        if (subTypeId != that.subTypeId) return false;
+        if (slotNo != that.slotNo) return false;
+        if (equipmentId != that.equipmentId) return false;
+        if (subTypeName != null ? !subTypeName.equals(that.subTypeName) : that.subTypeName != null)
+            return false;
+        if (typeName != null ? !typeName.equals(that.typeName) : that.typeName != null)
+            return false;
+        if (equipmentName != null ? !equipmentName.equals(that.equipmentName) : that.equipmentName != null)
+            return false;
+        return status != null ? status.equals(that.status) : that.status == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = subTypeName != null ? subTypeName.hashCode() : 0;
+        result = 31 * result + (typeName != null ? typeName.hashCode() : 0);
+        result = 31 * result + (equipmentName != null ? equipmentName.hashCode() : 0);
+        result = 31 * result + typeId;
+        result = 31 * result + subTypeId;
+        result = 31 * result + slotNo;
+        result = 31 * result + equipmentId;
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        return result;
+    }
 }

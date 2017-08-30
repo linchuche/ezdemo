@@ -11,7 +11,11 @@ import android.widget.TextView;
 import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.activity.BaseActivity;
 import com.comslin.ezhome.oriUi.activity.room.RoomListActivity;
+import com.comslin.ezhome.oriUi.http.bean.room.RoomEquipments;
 import com.comslin.ezhome.oriUi.http.bean.scene.SceneTaskList;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,14 +35,23 @@ public class SceneTaskSimpleActivity extends BaseActivity implements View.OnClic
     private LinearLayout mSceneSetTastSelDeviceClose;
     private LinearLayout mSceneLaunchLayout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.scene_set_tast_layout, topContentView, true);
-        initView();
+        EventBus.getDefault().register(this);
         initData();
+        initView();
         init();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
     private void init(){
         if (taskLists!=null&&taskLists.size()!=0){
 
@@ -75,5 +88,9 @@ public class SceneTaskSimpleActivity extends BaseActivity implements View.OnClic
                 break;
 
         }
+    }
+    @Subscribe
+    public void onMessageEvent(RoomEquipments roomEquipments){
+        finish();
     }
 }

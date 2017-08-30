@@ -39,6 +39,9 @@ public class EquipmentAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public int getSelect() {
+        return select;
+    }
 
     @Override
     public int getCount() {
