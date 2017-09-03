@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/common_view_bg_color"
+    android:background="@color/white"
     tools:context=".oriUi.activity.scene.SceneAutoAddActivity"
     android:orientation="vertical">
 

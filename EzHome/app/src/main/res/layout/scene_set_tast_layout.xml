@@ -97,6 +97,8 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:clickable="true"
+                android:onClick="onClick"
                 android:id="@id/scene_set_tast_sel_device_open"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -136,6 +138,8 @@
                 android:orientation="horizontal" />
 
             <LinearLayout
+                android:clickable="true"
+                android:onClick="onClick"
                 android:id="@id/scene_set_tast_sel_device_close"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

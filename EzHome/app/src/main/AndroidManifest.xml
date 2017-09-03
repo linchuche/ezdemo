@@ -91,6 +91,14 @@
         </activity>
         <activity android:name=".oriUi.activity.gateway.LineConnActivity">
         </activity>
+        <activity android:name=".oriUi.activity.scene.task.SceneTaskSimpleActivity">
+        </activity>
+        <activity android:name=".oriUi.activity.scene.task.SceneTaskAdvancedActivity">
+        </activity>
+        <activity android:name=".oriUi.activity.scene.task.EquipmentActivity">
+        </activity>
+        <activity android:name=".oriUi.activity.room.RoomListActivity">
+        </activity>
 
     </application>
 

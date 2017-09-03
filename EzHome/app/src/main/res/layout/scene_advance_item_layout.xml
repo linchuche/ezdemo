@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
-             android:background="@color/white"
-             android:gravity="center"
-             android:minHeight="@dimen/scene_advance_min_height"
-             android:paddingTop="@dimen/padding_ten">
+    android:layout_width="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".oriUi.activity.scene.task.SceneTaskAdvancedActivity"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center"
+    android:minHeight="@dimen/scene_advance_min_height"
+    android:paddingTop="@dimen/padding_ten">
 
     <LinearLayout
         android:id="@id/scene_advance_act_layout"
@@ -35,6 +37,8 @@
             android:paddingLeft="@dimen/padding_ten">
 
             <LinearLayout
+                android:clickable="true"
+                android:onClick="advanceTaskClick"
                 android:id="@id/scene_advance_device_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -73,6 +77,8 @@
                 android:orientation="horizontal"/>
 
             <LinearLayout
+                android:clickable="true"
+                android:onClick="advanceTaskClick"
                 android:id="@id/scene_advance_action_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -115,6 +121,7 @@
             </LinearLayout>
 
             <LinearLayout
+
                 android:id="@id/scene_advance_start_time_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -127,6 +134,8 @@
                     android:orientation="horizontal"/>
 
                 <LinearLayout
+                    android:clickable="true"
+                    android:onClick="advanceTaskClick"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
@@ -175,6 +184,8 @@
                 android:orientation="horizontal"/>
 
             <LinearLayout
+                android:clickable="true"
+                android:onClick="advanceTaskClick"
                 android:id="@id/scene_advance_continue_time_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

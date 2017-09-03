@@ -12,11 +12,15 @@ import android.view.ViewGroup;
 import com.andview.refreshview.XRefreshView;
 import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.http.HttpListResultBean;
+import com.comslin.ezhome.oriUi.http.HttpResultBean;
 import com.comslin.ezhome.oriUi.http.ListResultCallBack;
+import com.comslin.ezhome.oriUi.http.ResultCallBack;
 import com.comslin.ezhome.oriUi.http.bean.gateway.Gateway;
+import com.comslin.ezhome.oriUi.http.bean.mainpage.MainPage;
 import com.comslin.ezhome.oriUi.http.bean.room.Room;
 import com.comslin.ezhome.oriUi.http.bean.scene.Scene;
 import com.comslin.ezhome.oriUi.http.function.GatewayHttp;
+import com.comslin.ezhome.oriUi.http.function.MainPageHttp;
 import com.comslin.ezhome.oriUi.http.function.RoomHttp;
 import com.comslin.ezhome.oriUi.http.function.SceneHttp;
 import com.comslin.ezhome.oriUi.view.MainPagerAdapter;
@@ -62,7 +66,7 @@ public class MainPageFragment extends Fragment {
                 switch (mAdapterMain.getCurrentPosition()) {
 //                {"main", "场景", "类型", "房间", "网关"};
                     case 1:
-                        xRefreshView.stopRefresh();
+                       getMainPage();
                         break;
                     case 2:
                         getSceneList();
@@ -87,7 +91,16 @@ public class MainPageFragment extends Fragment {
         mStlMain.setSelectedIndicatorColors(Color.WHITE);
         return v;
     }
+    private void getMainPage(){
+        MainPageHttp.Companion.getMainPage().execute(new ResultCallBack<MainPage>(MainPage.class) {
+            @Override
+            public void onResponse(HttpResultBean<MainPage> response, int id) {
+                MainPage mainPage = response.getResult();
+                xRefreshView.stopRefresh(true);
 
+            }
+        });
+    }
     private void getRoom() {
         RoomHttp.Companion.list().execute(new ListResultCallBack<Room>(Room.class) {
             @Override
@@ -131,7 +144,6 @@ public class MainPageFragment extends Fragment {
             public void onResponse(HttpListResultBean response, int id) {
                 xRefreshView.stopRefresh(true);
                 mAdapterMain.setScendList(response.getData());
-                xRefreshView.stopRefresh(true);
 
             }
         });

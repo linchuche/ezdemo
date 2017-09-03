@@ -886,6 +886,7 @@
     <item type="id" name="scene_selsensor_cond_statu_layout">false</item>
     <item type="id" name="scene_selsensor_cond_statu_title">false</item>
     <item type="id" name="scene_selsensor_cond_statu_value">false</item>
+
     <item type="id" name="scene_selsensor_cond_statu_value_unit1_tv">false</item>
     <item type="id" name="scene_selsensor_cond_statu_value_unit2_tv">false</item>
     <item type="id" name="scene_selsensor_cond_statu_iv">false</item>
@@ -931,6 +932,8 @@
     <item type="id" name="scene_set_tast_sel_device_open_icon">false</item>
     <item type="id" name="scene_set_tast_sel_device_close">false</item>
     <item type="id" name="scene_set_tast_sel_device_close_icon">false</item>
+    <item type="id" name="scene_set_tast_sel_time_pernamon">false</item>
+    <item type="id" name="scene_set_tast_sel_time_custom">false</item>
     <item type="id" name="scene_set_tast_result_list_listView">false</item>
     <item type="id" name="scene_switch_info_layout">false</item>
     <item type="id" name="scene_switch_info_gridView">false</item>
@@ -1084,4 +1087,8 @@
     <item type="id" name="select_net_wireless_password">false</item>
     <item type="id" name="wireless_configure_tip">false</item>
     <item type="id" name="wireless_configure_start">false</item>
+    <item type="id" name="btn_custom_durtion_confirm">false</item>
+    <item type="id" name="btn_custom_durtion_cancel">false</item>
+
+
 </resources>

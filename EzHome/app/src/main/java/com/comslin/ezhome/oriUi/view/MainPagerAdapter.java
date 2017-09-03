@@ -25,6 +25,7 @@ import com.comslin.ezhome.oriUi.activity.gateway.FindGateWayActivity;
 import com.comslin.ezhome.oriUi.activity.room.RoomDetailActivity;
 import com.comslin.ezhome.oriUi.http.bean.devices.Device;
 import com.comslin.ezhome.oriUi.http.bean.gateway.Gateway;
+import com.comslin.ezhome.oriUi.http.bean.mainpage.MainPage;
 import com.comslin.ezhome.oriUi.http.bean.room.Room;
 import com.comslin.ezhome.oriUi.http.bean.scene.Scene;
 import com.felipecsl.asymmetricgridview.library.widget.AsymmetricGridView;
@@ -41,8 +42,13 @@ public class MainPagerAdapter extends PagerAdapter implements XRefreshView.XRefr
     private MainRoomAdapter roomAdapter = new MainRoomAdapter();
     private DevicesAdapter devicesAdapter = new DevicesAdapter();
     private GatewayAdapter gatewayAdapter = new GatewayAdapter();
-    SceneAdapter sceneAdapter=new SceneAdapter();
-
+    private SceneAdapter sceneAdapter = new SceneAdapter();
+    private MainFirstAdapter mainFirstAdapter = new MainFirstAdapter();
+    MainPage mainPage;
+    public void setMainPage(MainPage page){
+        mainPage = page;
+        mainFirstAdapter.setMainPage(page);
+    }
     private int currentPosition = 0;
 
     public int getCurrentPosition() {
@@ -64,10 +70,12 @@ public class MainPagerAdapter extends PagerAdapter implements XRefreshView.XRefr
         gatewayAdapter.setGatewayList(gatewayList);
         gatewayAdapter.notifyDataSetChanged();
     }
-    public void setScendList(List<Scene> scendList){
+
+    public void setScendList(List<Scene> scendList) {
         sceneAdapter.setSceneList(scendList);
         sceneAdapter.notifyDataSetChanged();
     }
+
     public MainPagerAdapter() {
 
 
@@ -103,18 +111,19 @@ public class MainPagerAdapter extends PagerAdapter implements XRefreshView.XRefr
         currentPosition = position;
         switch (position) {
             case 0:
-                DevicesAdapter devicesAdapter = new DevicesAdapter();
+
+
                 AsymmetricGridView asymmetricGridView = new AsymmetricGridView(mContext, null);
                 asymmetricGridView.setDebugging(false);
                 AsymmetricGridViewAdapter<Device> asymmetricGridViewAdapter =
-                        new AsymmetricGridViewAdapter<>(mContext, asymmetricGridView, devicesAdapter);
+                        new AsymmetricGridViewAdapter<>(mContext, asymmetricGridView, mainFirstAdapter);
                 asymmetricGridView.setRequestedColumnCount(4);
 //                asymmetricGridView.setRequestedHorizontalSpacing(Utils.dpToPx(mContext, 3));
                 asymmetricGridView.setAdapter(asymmetricGridViewAdapter);
                 container.addView(asymmetricGridView);
                 return asymmetricGridView;
             case 1:
-                RecyclerView recyclerView=new RecyclerView(mContext);
+                RecyclerView recyclerView = new RecyclerView(mContext);
                 recyclerView.setAdapter(sceneAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
                 container.addView(recyclerView);
@@ -136,10 +145,9 @@ public class MainPagerAdapter extends PagerAdapter implements XRefreshView.XRefr
                         if (position == roomAdapter.getCount() - 1) {
                             Intent intent = new Intent(mContext, RoomAddActivity.class);
                             mContext.startActivity(intent);
-                        }
-                        else {
-                            Intent intent=new Intent(mContext, RoomDetailActivity.class);
-                            intent.putExtra("room",roomList.get(position));
+                        } else {
+                            Intent intent = new Intent(mContext, RoomDetailActivity.class);
+                            intent.putExtra("room", roomList.get(position));
                             mContext.startActivity(intent);
                         }
                     }
@@ -157,8 +165,7 @@ public class MainPagerAdapter extends PagerAdapter implements XRefreshView.XRefr
                         if (position == gatewayAdapter.getCount() - 1) {
                             Intent intent = new Intent(mContext, FindGateWayActivity.class);
                             mContext.startActivity(intent);
-                        }
-                        else {
+                        } else {
 
                         }
 

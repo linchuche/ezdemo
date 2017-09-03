@@ -35,10 +35,11 @@ public abstract class ResultCallBack<T> extends Callback<HttpResultBean<T>> {
         JsonObject jsonObject = new JsonParser().parse(body).getAsJsonObject();
         Gson gson = new Gson() ;
         Type jsonType = new TypeToken<HttpResultBean>(){}.getType();
-        HttpResultBean requestBean = gson.fromJson(body ,jsonType);
+        HttpResultBean<T> requestBean = gson.fromJson(body ,jsonType);
         if(requestBean.getCode() == 200 && mClass != null){
             JsonObject dataJson = jsonObject.getAsJsonObject("result") ;
-            requestBean.setResult(new Gson().fromJson(dataJson,mClass));
+            T t =new Gson().fromJson(dataJson,mClass);
+            requestBean.setResult(t);
         }
         return requestBean ;
     }

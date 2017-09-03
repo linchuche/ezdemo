@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.activity.BaseActivity;
+import com.comslin.ezhome.oriUi.http.bean.scene.SceneConditionList;
 import com.comslin.ezhome.oriUi.util.ToastUtil;
 
 import java.util.ArrayList;
@@ -27,7 +28,9 @@ public class ChoseConditionActivity extends BaseActivity implements View.OnClick
         LayoutInflater.from(this).inflate(R.layout.scene_sel_cond_type_layout, topContentView);
         setTitle(R.string.scene_sel_cond_title);
         initPermission();
+
     }
+
     //定位所需权限组
     private String[] needPermissions = new String[]{
             Manifest.permission.ACCESS_COARSE_LOCATION,

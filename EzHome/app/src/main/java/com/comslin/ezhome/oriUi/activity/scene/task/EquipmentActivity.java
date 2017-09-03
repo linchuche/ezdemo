@@ -29,7 +29,7 @@ public class EquipmentActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_gridview,topContentView,true);
         gridView = (GridView) findViewById(R.id.gv_room_list);
-        final List<RoomEquipments> roomEquipmentsList=getIntent().getParcelableArrayListExtra("euip");
+        final List<RoomEquipments> roomEquipmentsList=getIntent().getParcelableArrayListExtra("eqip");
         final EquipmentAdapter equipmentAdapter = new EquipmentAdapter(roomEquipmentsList);
         topRightTitleTxt.setOnClickListener(new View.OnClickListener() {
             @Override

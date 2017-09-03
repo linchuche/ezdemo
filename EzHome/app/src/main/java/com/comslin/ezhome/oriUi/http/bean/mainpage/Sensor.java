@@ -1,6 +1,6 @@
 package com.comslin.ezhome.oriUi.http.bean.mainpage;
 
-public class MainPageResultSensor1 {
+public class Sensor {
     private String typeName;
     private int typeId;
     private String deviceNo;

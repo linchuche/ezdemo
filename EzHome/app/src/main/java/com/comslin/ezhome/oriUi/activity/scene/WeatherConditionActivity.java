@@ -38,7 +38,9 @@ import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeOption;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.comslin.ezhome.R;
+import com.comslin.ezhome.oriUi.SceneDataCenter;
 import com.comslin.ezhome.oriUi.activity.BaseActivity;
+import com.comslin.ezhome.oriUi.http.bean.scene.SceneConditionList;
 
 
 public class WeatherConditionActivity extends BaseActivity implements OnClickListener, OnGetGeoCoderResultListener {
@@ -80,6 +82,15 @@ public class WeatherConditionActivity extends BaseActivity implements OnClickLis
             currentLocation = reverseGeoCodeResult.getAddress();
             mSceneWeatherTxt.setText(currentLocation);
         }
+    }
+    private void saveCondition(){
+        SceneConditionList sceneConditionList  = new SceneConditionList();
+        sceneConditionList.setConditionType("天气条件");
+        sceneConditionList.setConditionExp(rainy?"有雨":"无雨");
+        sceneConditionList.setEquipmentId(1);
+        sceneConditionList.setId(1);
+        SceneDataCenter.sceneConditionList.add(sceneConditionList);
+        onBackPressed();
     }
 
     /**
@@ -145,6 +156,12 @@ public class WeatherConditionActivity extends BaseActivity implements OnClickLis
         setLeftButton(R.drawable.backbtn_selector);
         setTitle(R.string.scene_sel_cond_type_weather);
         setTopRightText(R.string.common_save);
+        topRightTitleTxt.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveCondition();
+            }
+        });
         mMapView = (MapView) findViewById(R.id.scene_weather_map);
         mSceneWeatherTxt = (TextView) findViewById(R.id.scene_weather_txt);
         mSceneLocationCondPoint = (LinearLayout) findViewById(R.id.scene_location_cond_point);

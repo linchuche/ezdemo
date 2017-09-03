@@ -29,6 +29,10 @@ public class ListRoomAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public List<Room> getRoomList() {
+        return roomList;
+    }
+
     @Override
     public long getItemId(int position) {
         return 0;

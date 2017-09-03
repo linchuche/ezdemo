@@ -42,7 +42,9 @@ import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeOption;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.comslin.ezhome.R;
+import com.comslin.ezhome.oriUi.SceneDataCenter;
 import com.comslin.ezhome.oriUi.activity.BaseActivity;
+import com.comslin.ezhome.oriUi.http.bean.scene.SceneConditionList;
 import com.comslin.ezhome.oriUi.util.ToastUtil;
 
 
@@ -147,8 +149,14 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
     private void initView() {
         mCurrentMode = LocationMode.NORMAL;
         setLeftButton(R.drawable.backbtn_selector);
-        setTitle(R.string.scene_sel_cond_type_weather);
+        setTitle(R.string.scene_sel_cond_type_location);
         setTopRightText(R.string.common_save);
+        topRightTitleTxt.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveCondition();
+            }
+        });
         mMapView = (MapView) findViewById(R.id.scene_location_cond_map);
         mSceneLocationCondDistanceTxt = (EditText) findViewById(R.id.scene_location_cond_distance_txt);
         mSceneLocationCondDistance = (LinearLayout) findViewById(R.id.scene_location_cond_distance);
@@ -159,8 +167,19 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
         mSceneLocationCondMaxIcon = (ImageView) findViewById(R.id.scene_location_cond_max_icon);
 //        mSceneLocationCondMax = (LinearLayout) findViewById(R.id.scene_location_cond_max);
     }
+    private void saveCondition(){
+        if (!checkRadius()){
+            return;
+        }
+        SceneConditionList sceneConditionList  = new SceneConditionList();
+        sceneConditionList.setConditionType("地理位置");
+        sceneConditionList.setConditionExp(radius+"米");
+        sceneConditionList.setEquipmentId(1);
+        sceneConditionList.setId(1);
+        SceneDataCenter.sceneConditionList.add(sceneConditionList);
+        onBackPressed();
+    }
 
-    boolean rainy = true;
 
     @Override
     public void onClick(View v) {
@@ -176,7 +195,21 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
 
         }
     }
-
+    private boolean checkRadius(){
+        String r = mSceneLocationCondDistanceTxt.getText().toString();
+        if (TextUtils.isEmpty(r)){
+            ToastUtil.INSTANCE.showToast(LocationConditionActivity.this,R.string.scene_location_cond_tip1);
+            return false;
+        }
+        int i = Integer.valueOf(r);
+        radius = i;
+        if (i<100||i>500){
+            ToastUtil.INSTANCE.showToast(LocationConditionActivity.this,R.string.scene_location_cond_tip4);
+            return false;
+        }
+        return true;
+    }
+    int radius;
     /**
      * 地图初始化
      */

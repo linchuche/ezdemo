@@ -11,8 +11,8 @@ public class Scene implements Parcelable {
     private String sceneType;
     private String sceneName;
     private int sceneId;
-    private String description;
     private SceneTaskList[] taskList;
+    private String description;
     private String validTime;
     private String triggerType;
     private boolean enabled;

@@ -2,6 +2,7 @@ package com.comslin.ezhome.oriUi.activity.room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -19,6 +20,8 @@ import com.comslin.ezhome.oriUi.view.ListRoomAdapter;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+
+import java.util.ArrayList;
 
 import okhttp3.Call;
 
@@ -63,10 +66,12 @@ public class RoomListActivity extends BaseActivity implements XRefreshView.XRefr
         EventBus.getDefault().register(this);
         gridView = (GridView) findViewById(R.id.gv_room_list);
         gridView.setNumColumns(3);
+        gridView.setAdapter(listRoomAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent  = new Intent(RoomListActivity.this, EquipmentActivity.class);
+                intent.putParcelableArrayListExtra("eqip",(ArrayList<? extends Parcelable>) listRoomAdapter.getRoomList());
                 startActivity(intent);
 
             }
@@ -98,6 +103,7 @@ public class RoomListActivity extends BaseActivity implements XRefreshView.XRefr
             @Override
             public void onResponse(HttpListResultBean response, int id) {
                 listRoomAdapter.setRoomList(response.getData());
+                listRoomAdapter.notifyDataSetChanged();
                 xRefreshView.stopRefresh(true);
             }
         });

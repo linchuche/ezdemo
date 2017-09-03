@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.comslin.ezhome.R;
+import com.comslin.ezhome.oriUi.SceneDataCenter;
 import com.comslin.ezhome.oriUi.activity.BaseActivity;
 import com.comslin.ezhome.oriUi.activity.room.RoomListActivity;
 import com.comslin.ezhome.oriUi.http.bean.room.RoomEquipments;
@@ -44,6 +45,13 @@ public class SceneTaskSimpleActivity extends BaseActivity implements View.OnClic
         initData();
         initView();
         init();
+        setTopRightText(R.string.common_save);
+        topRightTitleTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveSimpleData();
+            }
+        });
     }
 
     @Override
@@ -71,7 +79,13 @@ public class SceneTaskSimpleActivity extends BaseActivity implements View.OnClic
         mSceneSetTastSelDeviceClose = (LinearLayout) findViewById(R.id.scene_set_tast_sel_device_close);
         mSceneLaunchLayout = (LinearLayout) findViewById(R.id.scene_launch_layout);
     }
-
+    public void saveSimpleData() {
+        SceneTaskList sceneTaskList = new SceneTaskList();
+        sceneTaskList.setBeginTime("2000");
+        sceneTaskList.setAction("action");
+        SceneDataCenter.sceneTaskList.add(sceneTaskList);
+        onBackPressed();
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -86,7 +100,6 @@ public class SceneTaskSimpleActivity extends BaseActivity implements View.OnClic
                 mSceneSetTastSelDeviceCloseIcon.setVisibility(View.INVISIBLE);
                 mSceneSetTastSelDeviceOpenIcon.setVisibility(View.VISIBLE);
                 break;
-
         }
     }
     @Subscribe

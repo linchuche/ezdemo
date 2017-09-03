@@ -9,13 +9,16 @@ import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -38,7 +41,7 @@ public abstract class BaseActivity extends Activity {
     protected float x1, y1, x2, y2 = 0;
     private ProgressBar mProgressView;
     private static BaseActivity runningActivity;
-
+    protected final String TAG = this.getClass().getName();
     public static BaseActivity getRunningActivity() {
         return runningActivity;
     }
@@ -211,4 +214,28 @@ public abstract class BaseActivity extends Activity {
         public void ok();
         public void cancel();
     }
+    protected boolean dismissPopWindow(){
+        if (popupWindow!=null&&popupWindow.isShowing()){
+            popupWindow.dismiss();
+            return true;
+        }
+        return false;
+    }
+    protected PopupWindow popupWindow;
+    protected View showPopMenu(@LayoutRes int menu,int w,int h){
+        View pupView = LayoutInflater.from(this).inflate(menu, null);
+        popupWindow= new PopupWindow(pupView);
+        popupWindow.setWidth(w);
+        popupWindow.setHeight(h);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setFocusable(true);
+        popupWindow.showAtLocation(topContentView, Gravity.BOTTOM, 0, 0);
+        return pupView;
+
+    }
+
+    protected View showPopMenu(@LayoutRes int menu){
+       return showPopMenu(menu,ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+    }
+
 }
