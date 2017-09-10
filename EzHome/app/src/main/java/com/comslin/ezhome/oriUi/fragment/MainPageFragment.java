@@ -15,6 +15,7 @@ import com.comslin.ezhome.oriUi.http.HttpListResultBean;
 import com.comslin.ezhome.oriUi.http.HttpResultBean;
 import com.comslin.ezhome.oriUi.http.ListResultCallBack;
 import com.comslin.ezhome.oriUi.http.ResultCallBack;
+import com.comslin.ezhome.oriUi.http.TypeCallBack;
 import com.comslin.ezhome.oriUi.http.bean.gateway.Gateway;
 import com.comslin.ezhome.oriUi.http.bean.mainpage.MainPage;
 import com.comslin.ezhome.oriUi.http.bean.room.Room;
@@ -58,6 +59,7 @@ public class MainPageFragment extends Fragment {
         xRefreshView.setMoveForHorizontal(true);
         xRefreshView.setPinnedContent(true);
         mAdapterMain = new MainPagerAdapter(getActivity());
+        getMainPage();
 //        xRefreshView.setXRefreshViewListener(mAdapterMain);
         xRefreshView.setXRefreshViewListener(new XRefreshView.SimpleXRefreshListener() {
             @Override
@@ -92,10 +94,11 @@ public class MainPageFragment extends Fragment {
         return v;
     }
     private void getMainPage(){
-        MainPageHttp.Companion.getMainPage().execute(new ResultCallBack<MainPage>(MainPage.class) {
+        MainPageHttp.Companion.getMainPage().execute(new TypeCallBack<MainPage>(MainPage.class) {
             @Override
             public void onResponse(HttpResultBean<MainPage> response, int id) {
                 MainPage mainPage = response.getResult();
+                mAdapterMain.setMainPage(mainPage);
                 xRefreshView.stopRefresh(true);
 
             }

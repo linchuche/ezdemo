@@ -72,6 +72,8 @@
                 android:textSize="@dimen/common_fontsize_normal"/>
 
             <LinearLayout
+                android:clickable="true"
+                android:onClick="onClick"
                 android:id="@id/scene_manual_info_task"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

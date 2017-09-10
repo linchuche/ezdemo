@@ -44,8 +44,6 @@ public class SceneAutoAddActivity extends BaseActivity implements View.OnClickLi
         setLeftButton(R.drawable.backbtn_selector);
         setTitle(R.string.scene_add_auto_title);
         setTopRightText(R.string.scene_save);
-
-
         topRightTitleTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

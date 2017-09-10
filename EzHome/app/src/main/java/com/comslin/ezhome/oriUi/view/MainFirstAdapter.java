@@ -67,42 +67,43 @@ public class MainFirstAdapter extends BaseAdapter {
 
         switch (position) {
             case 0:
-                viewHolder.imageView.setImageResource(R.drawable.speech_full_selector);
+                viewHolder.imageView.setBackgroundResource(R.drawable.security_protect_button_selector);
+                viewHolder.imageView.setImageResource(R.drawable.security_protect);
                 viewHolder.name.setText(R.string.security_protect_yes);
                 break;
             case 1:
-                setEqipView(viewHolder, mainPage.getEquipment1());
+                setEqipView(viewHolder, mainPage.equipment1);
                 break;
             case 2:
-                setEqipView(viewHolder, mainPage.getEquipment2());
+                setEqipView(viewHolder, mainPage.equipment2);
                 break;
             case 3:
-                setEqipView(viewHolder, mainPage.getEquipment3());
+                setEqipView(viewHolder, mainPage.equipment3);
                 break;
 
             case 4:
-                setSceneView(viewHolder, mainPage.getManualScene1());
+                setSceneView(viewHolder, mainPage.manualScene1);
                 break;
             case 5:
-                setSceneView(viewHolder, mainPage.getManualScene2());
+                setSceneView(viewHolder, mainPage.manualScene2);
                 break;
             case 6:
-                setSceneView(viewHolder, mainPage.getManualScene3());
+                setSceneView(viewHolder, mainPage.manualScene3);
                 break;
             case 7:
-                setSenserView(viewHolder, mainPage.getSensor1());
+                setSenserView(viewHolder, mainPage.sensor1);
                 break;
             case 8:
-                setSenserView(viewHolder, mainPage.getSensor2());
+                setSenserView(viewHolder, mainPage.sensor2);
                 break;
             case 9:
-                setSenserView(viewHolder, mainPage.getSensor3());
+                setSenserView(viewHolder, mainPage.sensor3);
                 break;
             case 10:
-                setSenserView(viewHolder, mainPage.getSensor4());
+                setSenserView(viewHolder, mainPage.sensor4);
                 break;
             case 11:
-                setSenserView(viewHolder, mainPage.getSensor5());
+                setSenserView(viewHolder, mainPage.sensor5);
                 break;
         }
         return convertView;
