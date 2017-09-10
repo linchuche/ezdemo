@@ -309,7 +309,7 @@
     <string name="defence_plan_tip">开启了防护计划后，报警盒子会按照你设置的时间自动切换防护模式</string>
     <string name="delete">删除</string>
     <string name="delete_confirm">确认删除吗？</string>
-    <string name="describtion"/>
+    <string name="describtion" />
     <string name="detail_defend_c1_c2_f1">活动检测提醒</string>
     <string name="detail_del_device_btn_tip">确定要删除设备？</string>
     <string name="detail_del_device_success">删除成功</string>
@@ -393,7 +393,7 @@
     <string name="easyhome_scene">场景</string>
     <string name="easyhome_type">类型</string>
     <string name="edit_txt">编辑</string>
-    <string name="empty"/>
+    <string name="empty" />
     <string name="enable_cloud_fause">云存储开通失败</string>
     <string name="enable_cloud_fause_retry">开通失败，请重试。你也可以随时在设置—存储状态中开通云存储</string>
     <string name="enable_fause_exception">开启失败，服务器异常</string>
@@ -1087,7 +1087,7 @@
     <string name="son">儿子</string>
     <string name="source_detection_off">OFF</string>
     <string name="source_detection_on">ON</string>
-    <string name="space"/>
+    <string name="space" />
     <string name="start_cloud">正在开启云存储，请稍候…</string>
     <string name="start_voice_talk">正在发起对讲</string>
     <string name="storage_status">存储状态</string>

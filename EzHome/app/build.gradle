@@ -55,14 +55,14 @@ dependencies {
 
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    //    compile 'com.contrarywind:Android-PickerView:3.2.3'
+
     compile 'com.roughike:bottom-bar:2.3.1'
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.felipecsl.asymmetricgridview:library:2.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.huxq17.xrefreshview:xrefreshview:3.6.9'
-//    compile 'com.contrarywind:Android-PickerView:3.2.3'
-
     testCompile 'junit:junit:4.12'
 }
 repositories {

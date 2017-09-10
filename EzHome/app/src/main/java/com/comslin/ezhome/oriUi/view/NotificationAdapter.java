@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import com.andview.refreshview.recyclerview.BaseRecyclerAdapter;
 import com.comslin.ezhome.R;
+import com.comslin.ezhome.oriUi.http.bean.user.Notification;
 
 /**
  * Created by linChao on 2017-05-18.
@@ -14,6 +15,10 @@ import com.comslin.ezhome.R;
 
 public class NotificationAdapter extends BaseRecyclerAdapter {
     LayoutInflater layoutInflater;
+    Notification notification;
+    public void setData(Notification notification){
+        this.notification = notification;
+    }
     @Override
     public RecyclerView.ViewHolder getViewHolder(View view) {
         return null;
