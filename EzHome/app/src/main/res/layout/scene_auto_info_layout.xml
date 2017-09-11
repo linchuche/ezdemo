@@ -28,7 +28,7 @@
                 android:textIsSelectable="false"
                 android:textSize="@dimen/common_fontsize_normal"/>
 
-            <TextView
+            <EditText
                 android:id="@id/scene_auto_info_name"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
                 android:textIsSelectable="false"
                 android:textSize="@dimen/common_fontsize_normal"/>
 
-            <TextView
+            <EditText
                 android:id="@id/scene_auto_info_desc"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

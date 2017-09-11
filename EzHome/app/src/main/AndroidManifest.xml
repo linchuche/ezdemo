@@ -33,7 +33,7 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote"></service>
+            android:process=":remote" />
 
         <activity
             android:name=".oriUi.activity.account.LoginActivity"
@@ -55,29 +55,32 @@
             android:theme="@style/ActionBarBackTheme" />
         <activity android:name=".oriUi.activity.NotificationActivity" />
         <activity android:name=".oriUi.activity.account.AboutAppActivity" />
-        <activity android:name=".oriUi.activity.RoomDetailActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.SceneLanchActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.SceneAutoAddActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.SceneManualAddActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.SceneSemiAddActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.SceneManualInfoActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.SceneAutoInfoActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.ChoseConditionActivity"></activity>
-        <activity android:name=".oriUi.activity.room.RoomDetailActivity"></activity>
-        <activity android:name=".oriUi.activity.user.UserInfoActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.WeatherConditionActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.TimePickerActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.LocationConditionActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.SensorSetActivity"></activity>
-        <activity android:name=".oriUi.activity.gateway.ConnectModeActivity"></activity>
-        <activity android:name=".oriUi.activity.gateway.FindGateWayActivity"></activity>
-        <activity android:name=".oriUi.activity.gateway.WifiConnActivity"></activity>
-        <activity android:name=".oriUi.activity.gateway.LineConnActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.task.SceneTaskSimpleActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.task.SceneTaskAdvancedActivity"></activity>
-        <activity android:name=".oriUi.activity.scene.task.EquipmentActivity"></activity>
-        <activity android:name=".oriUi.activity.room.RoomListActivity"></activity>
-        <activity android:name=".oriUi.DeviceShareActivity"></activity>
+        <activity android:name=".oriUi.activity.RoomDetailActivity" />
+        <activity android:name=".oriUi.activity.scene.SceneLanchActivity" />
+        <activity android:name=".oriUi.activity.scene.SceneAutoAddActivity" />
+        <activity android:name=".oriUi.activity.scene.SceneManualAddActivity" />
+        <activity android:name=".oriUi.activity.scene.SceneSemiAddActivity" />
+        <activity android:name=".oriUi.activity.scene.SceneManualInfoActivity" />
+        <activity android:name=".oriUi.activity.scene.SceneAutoInfoActivity" />
+        <activity android:name=".oriUi.activity.scene.ChoseConditionActivity" />
+        <activity android:name=".oriUi.activity.room.RoomDetailActivity" />
+        <activity android:name=".oriUi.activity.user.UserInfoActivity" />
+        <activity android:name=".oriUi.activity.scene.WeatherConditionActivity" />
+        <activity android:name=".oriUi.activity.scene.TimePickerActivity" />
+        <activity android:name=".oriUi.activity.scene.LocationConditionActivity" />
+        <activity android:name=".oriUi.activity.scene.SensorSetActivity" />
+        <activity android:name=".oriUi.activity.gateway.ConnectModeActivity" />
+        <activity android:name=".oriUi.activity.gateway.FindGateWayActivity" />
+        <activity android:name=".oriUi.activity.gateway.WifiConnActivity" />
+        <activity android:name=".oriUi.activity.gateway.LineConnActivity" />
+        <activity android:name=".oriUi.activity.scene.task.SceneTaskSimpleActivity" />
+        <activity android:name=".oriUi.activity.scene.task.SceneTaskAdvancedActivity" />
+        <activity android:name=".oriUi.activity.scene.task.EquipmentActivity" />
+        <activity android:name=".oriUi.activity.room.RoomListActivity" />
+        <activity android:name=".oriUi.DeviceShareActivity" />
+        <activity android:name=".oriUi.DataManagerActivity" />
+        <activity android:name=".oriUi.activity.DeviceAddActivity" />
+        <activity android:name=".oriUi.activity.SensorAddActivity"></activity>
     </application>
 
 </manifest>

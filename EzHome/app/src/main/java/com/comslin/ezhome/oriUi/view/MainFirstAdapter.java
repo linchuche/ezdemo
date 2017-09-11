@@ -1,6 +1,7 @@
 package com.comslin.ezhome.oriUi.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Parcel;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.comslin.ezhome.R;
+import com.comslin.ezhome.oriUi.activity.DeviceAddActivity;
+import com.comslin.ezhome.oriUi.activity.SensorAddActivity;
+import com.comslin.ezhome.oriUi.activity.scene.SceneLanchActivity;
 import com.comslin.ezhome.oriUi.http.bean.mainpage.MainPage;
 import com.comslin.ezhome.oriUi.http.bean.mainpage.Sensor;
 import com.comslin.ezhome.oriUi.http.bean.room.RoomEquipments;
@@ -57,8 +61,11 @@ public class MainFirstAdapter extends BaseAdapter {
         if (convertView == null) {
             viewHolder = new ViewHolder();
             convertView = layoutInflater.inflate(R.layout.device_type_list_item_layout, parent, false);
+            convertView.setClickable(true);
             viewHolder.imageView = (ImageView) convertView.findViewById(R.id.device_type_list_item_icon);
             viewHolder.name = (TextView) convertView.findViewById(R.id.device_type_list_item_title_txtvew);
+            viewHolder.contentView = convertView;
+
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -113,8 +120,15 @@ public class MainFirstAdapter extends BaseAdapter {
         if (roomEquipments != null) {
             viewHolder.imageView.setImageResource(DevicesAdapter.getResByTypeId(roomEquipments.getTypeId()));
             viewHolder.name.setText(roomEquipments.getEquipmentName());
+
         } else {
-            viewHolder.imageView.setImageResource(R.drawable.add_src);
+            viewHolder.imageView.setImageResource(R.drawable.securitr_lock_default);
+            viewHolder.contentView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mContext.startActivity(new Intent(mContext, DeviceAddActivity.class));
+                }
+            });
             viewHolder.name.setText("添加设备");
         }
     }
@@ -124,7 +138,13 @@ public class MainFirstAdapter extends BaseAdapter {
             viewHolder.imageView.setImageResource(DevicesAdapter.getResByTypeId(sensor.getTypeId()));
             viewHolder.name.setText(sensor.getDeviceName());
         } else {
-            viewHolder.imageView.setImageResource(R.drawable.add_src);
+            viewHolder.contentView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mContext.startActivity(new Intent(mContext, SensorAddActivity.class));
+                }
+            });
+            viewHolder.imageView.setImageResource(R.drawable.securitr_sensor_default);
             viewHolder.name.setText("添加传感器");
         }
     }
@@ -134,7 +154,13 @@ public class MainFirstAdapter extends BaseAdapter {
             viewHolder.imageView.setImageResource(DevicesAdapter.getResByTypeId(scene.getSceneId()));
             viewHolder.name.setText(scene.getSceneName());
         } else {
-            viewHolder.imageView.setImageResource(R.drawable.add_src);
+            viewHolder.contentView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mContext.startActivity(new Intent(mContext, SceneLanchActivity.class));
+                }
+            });
+            viewHolder.imageView.setImageResource(R.drawable.securitr_scene_default);
             viewHolder.name.setText("添加情景");
         }
     }
@@ -183,6 +209,7 @@ public class MainFirstAdapter extends BaseAdapter {
     };
 
     class ViewHolder {
+        View contentView;
         ImageView imageView;
         TextView name;
     }

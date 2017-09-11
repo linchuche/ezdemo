@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.comslin.ezhome.R;
+import com.comslin.ezhome.oriUi.DataManagerActivity;
+import com.comslin.ezhome.oriUi.DeviceShareActivity;
 import com.comslin.ezhome.oriUi.activity.account.AboutAppActivity;
 import com.comslin.ezhome.oriUi.activity.NotificationActivity;
 import com.comslin.ezhome.oriUi.activity.user.UserInfoActivity;
@@ -67,6 +69,8 @@ public class PersonInfoFragment extends Fragment implements View.OnClickListener
         mSettingNotion.setOnClickListener(this);
         mSettingAbout.setOnClickListener(this);
         mSettingPerson.setOnClickListener(this);
+        mSettingDataManager.setOnClickListener(this);
+        mSettingShare.setOnClickListener(this);
     }
 
     @Override
@@ -84,6 +88,14 @@ public class PersonInfoFragment extends Fragment implements View.OnClickListener
                 Intent intent3=new Intent(getActivity(), UserInfoActivity.class);
                 getActivity().startActivity(intent3);
                 break;
+            case R.id.setting_data_manager:
+                getActivity().startActivity(new Intent(getActivity(), DataManagerActivity.class));
+                break;
+            case R.id.setting_share:
+                getActivity().startActivity(new Intent(getActivity(), DeviceShareActivity.class));
+
+                break;
+
         }
     }
 }
