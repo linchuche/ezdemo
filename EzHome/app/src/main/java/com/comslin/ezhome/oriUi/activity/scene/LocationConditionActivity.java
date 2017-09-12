@@ -173,24 +173,26 @@ public class LocationConditionActivity extends BaseActivity implements OnClickLi
         }
         SceneConditionList sceneConditionList  = new SceneConditionList();
         sceneConditionList.setConditionType("地理位置");
-        sceneConditionList.setConditionExp(radius+"米");
+        sceneConditionList.setConditionExp(min? "<":">"+radius+"米");
         sceneConditionList.setEquipmentId(1);
         sceneConditionList.setId(1);
         SceneDataCenter.sceneConditionList.add(sceneConditionList);
         onBackPressed();
     }
 
-
+boolean min;
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.scene_location_cond_max:
                 mSceneLocationCondMaxIcon.setVisibility(View.VISIBLE);
                 mSceneLocationCondMinIcon.setVisibility(View.INVISIBLE);
+                min = false;
                 break;
             case R.id.scene_location_cond_min:
                 mSceneLocationCondMinIcon.setVisibility(View.INVISIBLE);
                 mSceneLocationCondMinIcon.setVisibility(View.VISIBLE);
+                min = true;
                 break;
 
         }

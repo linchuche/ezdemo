@@ -13,5 +13,6 @@ public class SensorSetActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        topTitleTxt.setText("选择传感器");
     }
 }

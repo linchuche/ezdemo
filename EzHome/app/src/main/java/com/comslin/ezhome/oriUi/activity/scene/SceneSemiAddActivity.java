@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.comslin.ezhome.R;
 import com.comslin.ezhome.oriUi.SceneDataCenter;
@@ -18,6 +19,8 @@ import com.comslin.ezhome.oriUi.activity.scene.task.SceneTaskSimpleActivity;
 import com.comslin.ezhome.oriUi.http.HttpResultBean;
 import com.comslin.ezhome.oriUi.http.ResultCallBack;
 import com.comslin.ezhome.oriUi.http.bean.scene.Scene;
+import com.comslin.ezhome.oriUi.http.bean.scene.SceneConditionList;
+import com.comslin.ezhome.oriUi.http.bean.scene.SceneTaskList;
 import com.comslin.ezhome.oriUi.http.function.SceneHttp;
 import com.comslin.ezhome.oriUi.util.ToastUtil;
 
@@ -43,6 +46,27 @@ public class SceneSemiAddActivity extends BaseActivity implements View.OnClickLi
     private EditText mSceneAutoInfoName;
     private EditText mSceneAutoInfoDesc;
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        StringBuilder taskBuild = new StringBuilder();
+        for (SceneTaskList sceneTaskList : SceneDataCenter.sceneTaskList) {
+            taskBuild.append(sceneTaskList.getAction());
+            taskBuild.append(".");
+        }
+        if (!TextUtils.isEmpty(taskBuild))
+            mSceneAutoInfoTaskTxt.setText(taskBuild.toString());
+        StringBuilder condBuild = new StringBuilder();
+        for (SceneConditionList sceneConditionList:SceneDataCenter.sceneConditionList){
+            condBuild.append(sceneConditionList.getConditionType());
+            condBuild.append(sceneConditionList.getConditionExp());
+            condBuild.append(".");
+        }
+        if (!TextUtils.isEmpty(condBuild))
+            mSceneAutoInfoCondTxt.setText(condBuild);
+    }
+    TextView mSceneAutoInfoTaskTxt;
+    TextView mSceneAutoInfoCondTxt;
     private void initView(){
 
         launchCondition = findViewById(R.id.scene_auto_info_cond);
@@ -50,6 +74,8 @@ public class SceneSemiAddActivity extends BaseActivity implements View.OnClickLi
         validTime = findViewById(R.id.scene_add_auto_exetime);
         mSceneAutoInfoName = (EditText) findViewById(R.id.scene_auto_info_name);
         mSceneAutoInfoDesc = (EditText) findViewById(R.id.scene_auto_info_desc);
+        mSceneAutoInfoCondTxt = (TextView) findViewById(R.id.scene_auto_info_cond_txt);
+        mSceneAutoInfoTaskTxt = (TextView) findViewById(R.id.scene_auto_info_task_txt);
     }
     @Override
     protected void onDestroy() {

@@ -28,6 +28,7 @@ public class EquipmentActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_gridview,topContentView,true);
+        topTitleTxt.setText("选择设备");
         gridView = (GridView) findViewById(R.id.gv_room_list);
         final List<RoomEquipments> roomEquipmentsList=getIntent().getParcelableArrayListExtra("eqip");
         final EquipmentAdapter equipmentAdapter = new EquipmentAdapter(roomEquipmentsList);

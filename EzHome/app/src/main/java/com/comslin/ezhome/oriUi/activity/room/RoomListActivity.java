@@ -63,6 +63,7 @@ public class RoomListActivity extends BaseActivity implements XRefreshView.XRefr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_gridview, topContentView, true);
+        topTitleTxt.setText("选择房间");
         EventBus.getDefault().register(this);
         gridView = (GridView) findViewById(R.id.gv_room_list);
         gridView.setNumColumns(3);
