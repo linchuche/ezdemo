@@ -56,21 +56,6 @@ public abstract class BaseActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        StringBuilder taskBuild = new StringBuilder();
-        for (SceneTaskList sceneTaskList : SceneDataCenter.sceneTaskList) {
-            taskBuild.append(sceneTaskList.getAction());
-            taskBuild.append(".");
-        }
-        if (!TextUtils.isEmpty(taskBuild))
-            mSceneAutoInfoTaskTxt.setText(taskBuild.toString());
-        StringBuilder condBuild = new StringBuilder();
-        for (SceneConditionList sceneConditionList:SceneDataCenter.sceneConditionList){
-            condBuild.append(sceneConditionList.getConditionType());
-            condBuild.append(sceneConditionList.getConditionExp());
-            condBuild.append(".");
-        }
-        if (!TextUtils.isEmpty(condBuild))
-            mSceneAutoInfoCondTxt.setText(condBuild);
     }
 
     @Override

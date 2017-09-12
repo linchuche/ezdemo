@@ -20,9 +20,14 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import com.andview.refreshview.XRefreshView;
+import com.comslin.ezhome.R;
+import com.comslin.ezhome.oriUi.activity.DeviceAddActivity;
 import com.comslin.ezhome.oriUi.activity.RoomAddActivity;
+import com.comslin.ezhome.oriUi.activity.SensorAddActivity;
 import com.comslin.ezhome.oriUi.activity.gateway.FindGateWayActivity;
 import com.comslin.ezhome.oriUi.activity.room.RoomDetailActivity;
+import com.comslin.ezhome.oriUi.activity.scene.SceneLanchActivity;
+import com.comslin.ezhome.oriUi.activity.scene.task.EquipmentActivity;
 import com.comslin.ezhome.oriUi.http.bean.devices.Device;
 import com.comslin.ezhome.oriUi.http.bean.gateway.Gateway;
 import com.comslin.ezhome.oriUi.http.bean.mainpage.MainPage;
@@ -120,6 +125,24 @@ public class MainPagerAdapter extends PagerAdapter implements XRefreshView.XRefr
                 asymmetricGridView.setRequestedColumnCount(4);
 //                asymmetricGridView.setRequestedHorizontalSpacing(Utils.dpToPx(mContext, 3));
                 asymmetricGridView.setAdapter(asymmetricGridViewAdapter);
+                asymmetricGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Object o= view.getTag(R.id.item_device_type);
+                        if (o!=null&&o instanceof Integer){
+                            int i = (int)o;
+                            switch (i){
+                                case 0:mContext.startActivity(new Intent(mContext, DeviceAddActivity.class));
+                                    break;
+                                case 1:mContext.startActivity(new Intent(mContext, SensorAddActivity.class));
+                                    break;
+                                case 2:mContext.startActivity(new Intent(mContext, SceneLanchActivity.class));
+                                    break;
+
+                            }
+                        }
+                    }
+                });
                 container.addView(asymmetricGridView);
                 return asymmetricGridView;
             case 1:

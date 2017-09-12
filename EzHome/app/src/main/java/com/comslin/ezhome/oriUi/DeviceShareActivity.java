@@ -4,13 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.comslin.ezhome.R;
+import com.comslin.ezhome.oriUi.activity.BaseActivity;
 
-public class DeviceShareActivity extends AppCompatActivity {
+public class DeviceShareActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_device_share);
+        getLayoutInflater().inflate(R.layout.activity_device_share,topContentView,true);
         setTitle(R.string.setting_share);
     }
 }

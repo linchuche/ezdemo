@@ -61,10 +61,9 @@ public class MainFirstAdapter extends BaseAdapter {
         if (convertView == null) {
             viewHolder = new ViewHolder();
             convertView = layoutInflater.inflate(R.layout.device_type_list_item_layout, parent, false);
-            convertView.setClickable(true);
             viewHolder.imageView = (ImageView) convertView.findViewById(R.id.device_type_list_item_icon);
             viewHolder.name = (TextView) convertView.findViewById(R.id.device_type_list_item_title_txtvew);
-            viewHolder.contentView = convertView;
+            viewHolder.contentView = convertView.findViewById(R.id.item_device_type);
 
             convertView.setTag(viewHolder);
         } else {
@@ -123,12 +122,7 @@ public class MainFirstAdapter extends BaseAdapter {
 
         } else {
             viewHolder.imageView.setImageResource(R.drawable.securitr_lock_default);
-            viewHolder.contentView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mContext.startActivity(new Intent(mContext, DeviceAddActivity.class));
-                }
-            });
+            viewHolder.contentView.setTag(R.id.item_device_type,0);
             viewHolder.name.setText("添加设备");
         }
     }
@@ -144,6 +138,8 @@ public class MainFirstAdapter extends BaseAdapter {
                     mContext.startActivity(new Intent(mContext, SensorAddActivity.class));
                 }
             });
+            viewHolder.contentView.setTag(R.id.item_device_type,1);
+
             viewHolder.imageView.setImageResource(R.drawable.securitr_sensor_default);
             viewHolder.name.setText("添加传感器");
         }
@@ -160,6 +156,7 @@ public class MainFirstAdapter extends BaseAdapter {
                     mContext.startActivity(new Intent(mContext, SceneLanchActivity.class));
                 }
             });
+            viewHolder.contentView.setTag(R.id.item_device_type,2);
             viewHolder.imageView.setImageResource(R.drawable.securitr_scene_default);
             viewHolder.name.setText("添加情景");
         }

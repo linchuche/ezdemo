@@ -11,7 +11,7 @@ public class DataManagerActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_manager);
+        getLayoutInflater().inflate(R.layout.activity_data_manager,topContentView,true);
         setTitle("数据管理");
     }
 }

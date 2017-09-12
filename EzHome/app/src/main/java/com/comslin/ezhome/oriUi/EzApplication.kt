@@ -3,6 +3,7 @@ package com.comslin.ezhome.oriUi
 import android.app.Application
 
 import com.comslin.ezhome.oriUi.manager.SpManager
+import com.uuzuche.lib_zxing.activity.ZXingLibrary
 import com.zhy.http.okhttp.OkHttpUtils
 
 import java.util.concurrent.TimeUnit
@@ -25,5 +26,6 @@ class EzApplication : Application() {
                 .build()
 
         OkHttpUtils.initClient(okHttpClient)
+        ZXingLibrary.initDisplayOpinion(this)
     }
 }
